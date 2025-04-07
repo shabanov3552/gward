@@ -4,7 +4,7 @@
 //#region Базовые стили 
 
 body::after {
-	content: "";
+	// content: "";
 	background-color: rgba(58, 58, 58, 0.8);
 	position: fixed;
 	width: 100%;
@@ -63,9 +63,12 @@ body::after {
 		transform: translate(120%, 0px);
 		transition: all 0.6s ease 0s;
 		background: #fff;
-		max-width: 667px;
+		max-width: 715px;
 		width: 100%;
 		height: 100%;
+		box-shadow: 0 0 120px 40px rgba(132, 132, 132, 0.82);
+		display: grid;
+		align-content: start;
 
 		.popup_show & {
 			visibility: visible;
@@ -95,9 +98,11 @@ body::after {
 
 	&__close {
 		outline: none;
-		width: 22px;
-		height: 22px;
-		flex: 0 0 22px;
+		width: 28px;
+		height: 28px;
+		flex: 0 0 28px;
+		grid-row: 1/2;
+		justify-self: end;
 
 		svg {
 			height: 100%;
@@ -124,25 +129,12 @@ body::after {
 	// .popup__header
 
 	&__header {
-		border-bottom: 1px solid #CACACA;
-		padding: func.rem(40);
-		padding-left: func.rem(54);
-		padding-right: func.rem(65);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		@media (max-width:bp.$md) {
-			padding: func.rem(30);
-		}
-
-		@media (max-width: func.em(679.98)) {
-			padding: func.rem(15);
-		}
-
-		@media (max-width:bp.$xs) {
-			padding: func.rem(10);
-		}
+		display: grid;
+		gap: 30px;
+		padding-right: func.rem(70);
+		padding-left: func.rem(95);
+		padding-top: func.rem(29);
+		margin-bottom: func.rem(20);
 
 		.video-popup &,
 		.basket-empty & {
@@ -165,28 +157,20 @@ body::after {
 	// .popup__title
 
 	&__title {
-		font-size: 36px;
-		font-weight: 800;
-
-		@media (max-width:bp.$md) {
-			font-size: 25px;
-		}
-
-		@media (max-width:bp.$xs) {
-
-			#policy &,
-			#consent & {
-				font-size: 20px;
-			}
-		}
+		font-weight: 600;
+		font-size: 26px;
+		color: #000;
+		line-height: 122%;
+		grid-row: 2/3;
 	}
 
 	// .popup__main
 
 	&__main {
-		padding: func.rem(24) func.rem(60) func.rem(50);
+		padding: func.rem(0) func.rem(95);
+		padding-bottom: func.rem(100);
 		overflow: auto;
-		height: calc(100% - 121px);
+		height: auto;
 
 		#policy &,
 		#consent & {
@@ -286,6 +270,7 @@ body::after {
 //#endregion
 
 //#region Стили модалки шаринга
+
 .share {
 
 	// .share__social
@@ -310,3 +295,85 @@ body::after {
 }
 
 //#endregion
+
+.popup-form-edit {
+
+	// .popup-form-edit__header
+
+	&__header {
+		margin-bottom: func.rem(33);
+
+		.form__line {
+			gap: 28px;
+
+			&:first-child {
+				margin-bottom: func.rem(10);
+			}
+		}
+
+		.form__label {
+			flex: 0 0 160px;
+		}
+	}
+
+	// .popup-form-edit__main
+
+	&__main {
+		margin-bottom: func.rem(51);
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			background: #f0f0f0;
+			border-radius: 10px;
+			z-index: -1;
+			inset: -16px -25px -28px -28px;
+
+		}
+
+		&>.form__line {
+			gap: 28px;
+
+			.form__label {
+				flex: 0 0 160px;
+			}
+		}
+
+	}
+
+	// .popup-form-edit__list
+
+	&__list {
+		margin-top: func.rem(14);
+	}
+
+	// .popup-form-edit__row
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr repeat(2, 150px);
+		gap: 30px;
+		align-items: center;
+
+		.form__line {
+			gap: 10px;
+
+			.form__label {
+				flex: 0 0 60px;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: func.rem(13);
+		}
+	}
+
+	// .popup-form-edit__footer
+
+	&__footer {
+		display: grid;
+		gap: 24px;
+	}
+}

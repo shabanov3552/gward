@@ -1,0 +1,297 @@
+@@include('html/_header.htm',{
+"title":"Продукты",
+"modClass":"products-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Продукты</div>
+         <button type="button" data-popup="#add-product" class="action-button button-black">Создать продукт</button>
+      </div>
+      <div class="products">
+         <div class="products__header">
+            <form action="" class="form form_products-search">
+               <div class="form__group">
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Название или артикул",
+                  "value":""
+                  })
+                  @@include('html/_form-select.htm',{
+                  "label":"Фабрика"
+                  })
+               </div>
+               <div class="form__buttons">
+                  <button type="submit" class="form__submit button-black">Найти</button>
+                  <button type="reset" class="form__reset button-transparent">Сбросить</button>
+               </div>
+            </form>
+         </div>
+         <div class="products__main">
+            <div class="table products-table">
+               <div class="table__head">
+                  <div class="table__name">Наименование</div>
+                  <div class="table__name">Артикул</div>
+                  <div class="table__name">Фабрика</div>
+                  <div class="table__name">Цвета</div>
+                  <div class="table__name">Размеры</div>
+                  <div class="table__name">Упаковка</div>
+               </div>
+               <div class="table__body" data-dnd-container="1">
+                  <!-- отследить перемещение  можно по событию onUpdateDrag
+                       event.detail.item.dataset.dndItem номер элемента 
+                       event.detail.newDraggableIndex новая позиция -->
+                  <div class="table__row" data-dnd-item="1">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">1. ACID1</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content class="fabric-name__content">ZHANGJIAGANG HANDA</div>
+                           <button hidden data-showmore-button="1" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">7, 8, 9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row" data-dnd-item="2">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">2. Перчатки защитные виниловые</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear (without color) (TPE)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content="17" class="fabric-name__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro officia nulla, impedit atque omnis architecto numquam optio suscipit recusandae quas?</div>
+                           <button hidden data-showmore-button="300" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row" data-dnd-item="3">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">3. ACID1</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content class="fabric-name__content">ZHANGJIAGANG HANDA</div>
+                           <button hidden data-showmore-button="1" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">7, 8, 9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row" data-dnd-item="4">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">4. Перчатки защитные виниловые</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear (without color) (TPE)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content="17" class="fabric-name__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro officia nulla, impedit atque omnis architecto numquam optio suscipit recusandae quas?</div>
+                           <button hidden data-showmore-button="300" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row" data-dnd-item="5">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">5. ACID1</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content class="fabric-name__content">ZHANGJIAGANG HANDA</div>
+                           <button hidden data-showmore-button="1" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">7, 8, 9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row" data-dnd-item="6">
+                     <div class="table__cell">
+                        <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">6. Перчатки защитные виниловые</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear (without color) (TPE)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div data-showmore class="fabric-name">
+                           <div data-showmore-content="17" class="fabric-name__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro officia nulla, impedit atque omnis architecto numquam optio suscipit recusandae quas?</div>
+                           <button hidden data-showmore-button="300" type="button" class="fabric-name__more"><img src="@img/icons/show-more.svg" alt=""></button>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="product-colors">
+                           <div class="product-colors__item" style="background: #000;"></div>
+                           <div class="product-colors__item" style="background: #ec350c;"></div>
+                           <div class="product-colors__item" style="background: #ff9b00;"></div>
+                           <div class="product-colors__item" style="background: #ef0;"></div>
+                           <div class="product-colors__item" style="background: #fff;"></div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">9, 10, 11</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Коробка</div>
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Дублировать</a>
+                                 <a href="" class="context-menu__item">Изменить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

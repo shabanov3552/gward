@@ -1,0 +1,54 @@
+@@include('html/_header.htm',{
+"title":"Валюты",
+"modClass":"currencies-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Валюты</div>
+         <button type="button" data-popup="#add-product" class="action-button button-black">Добавить</button>
+      </div>
+      <div class="table currencies-table">
+         <div class="table__body" data-dnd-container="1">
+            <div class="table__row" data-dnd-item="1">
+               <div class="table__cell">
+                  <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+               </div>
+               <div class="table__cell">
+                  <div class="table__text table__text_bold">Китайский юань</div>
+                  <div class="table__actions-buttons">
+                     <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                     <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                  </div>
+               </div>
+            </div>
+            <div class="table__row" data-dnd-item="2">
+               <div class="table__cell">
+                  <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+               </div>
+               <div class="table__cell">
+                  <div class="table__text table__text_bold">Доллар США</div>
+                  <div class="table__actions-buttons">
+                     <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                     <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                  </div>
+               </div>
+            </div>
+            <div class="table__row" data-dnd-item="3">
+               <div class="table__cell">
+                  <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+               </div>
+               <div class="table__cell">
+                  <div class="table__text table__text_bold">Казахстанский тенге</div>
+                  <div class="table__actions-buttons">
+                     <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                     <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

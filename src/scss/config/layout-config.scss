@@ -18,10 +18,12 @@ body {
 
 // Оболочка wrapper
 .wrapper {
+
    min-height: 100%;
    display: flex;
    flex-direction: column;
    overflow: hidden;
+   background: var(--main-bg);
 
    @supports (overflow: clip) {
       overflow: clip;
@@ -36,6 +38,10 @@ body {
    >* {
       min-width: 0;
    }
+}
+
+.page {
+   padding-left: func.rem(73);
 }
 
 // Ограничивающий контейнер

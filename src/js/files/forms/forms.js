@@ -123,7 +123,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	// Если включено, добавляем функционал "Автовысота"
 	if (options.autoHeight) {
 		setTimeout(() => {
-			const textareas = document.querySelectorAll('textarea[data-autoheight]');
+			const textareas = document.querySelectorAll('textarea');
 			if (textareas.length) {
 				textareas.forEach(textarea => {
 					const startHeight = textarea.hasAttribute('data-autoheight-min') ?
@@ -139,6 +139,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 					});
 				});
 				function setHeight(textarea, height) {
+					console.log('qwe');
 					textarea.style.height = `${height}px`;
 				}
 			}

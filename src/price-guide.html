@@ -1,0 +1,115 @@
+@@include('html/_header.htm',{
+"title":"Цены",
+"modClass":"price-guide-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Цены</div>
+         <button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+      </div>
+      <div class="price-guide">
+         <div class="price-guide__header">
+            <form action="" class="form form_price-guide">
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Артикул",
+               "value":""
+               })
+               <div class="form__buttons">
+                  <button type="submit" class="form__submit button-black">Найти</button>
+                  <button type="reset" class="form__reset button-transparent">Сбросить</button>
+               </div>
+            </form>
+         </div>
+         <div class="price-guide__main">
+            <div class="table price-guide-table">
+               <div class="table__head">
+                  <div class="table__name">Артикул</div>
+                  <div class="table__name">Продавец</div>
+                  <div class="table__name">Цвет</div>
+                  <div class="table__name">Размер</div>
+                  <div class="table__name">FOB $</div>
+                  <div class="table__name">FOB ¥</div>
+               </div>
+               <div class="table__body">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Zhangjiagang Good</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Berry</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">7(s)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">1.4</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">0.4</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <div class="table__text"></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text"></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text"></div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">7(s)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">1.4</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">0.4</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <div class="table__text">TPE Clear (without color) (TPE)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">GAOMI JIATE LABOR</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Violet</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">8(l)</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">1.5</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">0.5</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

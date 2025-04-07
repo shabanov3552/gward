@@ -1,0 +1,105 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.price-guide {
+
+   // .price-guide__header
+
+   &__header {
+      max-width: 855px;
+      margin-bottom: func.rem(25);
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(19) 0;
+      padding-left: func.rem(26);
+      padding-right: func.rem(58);
+
+      .form {
+
+         // .form_price-guide
+
+         &_price-guide {
+            display: flex;
+         }
+
+         &__line {
+            flex: 1 1 auto;
+            margin-right: func.rem(30);
+         }
+
+         // .form__buttons
+
+         &__buttons {
+            display: flex;
+         }
+
+         // .form__submit
+
+         &__submit {
+            width: 185px;
+            flex: 0 0 185px;
+            margin-right: func.rem(29);
+         }
+
+         // .form__reset
+
+         &__reset {
+            flex: 0 0 146px;
+            width: 146px;
+         }
+      }
+   }
+
+   // .price-guide__main
+
+   &__main {}
+}
+
+
+.table {
+
+   // .table__head
+
+   &__head {}
+
+   // .table__name
+
+   &__name {}
+
+   // .table__body
+
+   &__body {}
+
+   // .table__row
+
+   &__row {}
+
+   // .table__cell
+
+   &__cell {}
+
+   // .table__text
+
+   &__text {}
+
+   // .table__actions-buttons
+
+   &__actions-buttons {}
+
+   // .table__button
+
+   &__button {
+
+      // .table__button_edit
+
+      &_edit {}
+
+      // .table__button_del
+
+      &_del {}
+   }
+}
+
+.price-guide-table {}

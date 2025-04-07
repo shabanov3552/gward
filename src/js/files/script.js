@@ -2,6 +2,14 @@
 import { isMobile, bodyLockToggle, bodyLockStatus } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+// Default SortableJS
+import Sortable from 'sortablejs';
+
+// Core SortableJS (without default plugins)
+// import Sortable from 'sortablejs/modular/sortable.core.esm.js';
+
+// Complete SortableJS (with all plugins)
+// import Sortable from 'sortablejs/modular/sortable.complete.esm.js';
 
 //#region Глобальный клик
 
@@ -36,11 +44,12 @@ document.addEventListener("click", function (e) {
       e.target.closest('.form__clear-svg').classList.remove('_active');
       // Inputmask.remove(input);
       // input.style.height = `auto`;
+      input.style.height = null;
    }
    // автовысота для textarea
-   if (e.target.closest('textarea')) {
-      txtarAutoHeight(e.target)
-   }
+   // if (e.target.closest('textarea')) {
+   //    txtarAutoHeight(e.target)
+   // }
    // спрятать/показать input в личкабе
    if (e.target.closest('.personal-data__change')) {
       changeData(e.target)
@@ -125,30 +134,30 @@ function copyUrl() {
 
 //#region автовысота для textarea
 
-function txtarAutoHeight(target) {
-   const el = target;
-   if (el.closest('textarea')) {
+// function txtarAutoHeight(target) {
+//    const el = target;
+//    if (el.closest('textarea')) {
 
-      let origHeight
-      if (el.dataset.height) {
-         origHeight = el.dataset.height
-      } else {
-         origHeight = el.scrollHeight
-         el.dataset.height = origHeight
-      }
-      origHeight = Number(origHeight)
-      el.style.height = el.setAttribute('style', 'height: ' + (origHeight + 1) + 'px');
-      el.addEventListener('input', e => {
-         if (el.scrollHeight > origHeight) {
-            el.style.height = 'auto';
-            el.style.height = (el.scrollHeight) + 10 + 'px';
-         } else {
-            el.style.height = 'auto';
-            el.style.height = origHeight + 'px';
-         }
-      });
-   }
-}
+//       let origHeight
+//       if (el.dataset.height) {
+//          origHeight = el.dataset.height
+//       } else {
+//          origHeight = el.scrollHeight
+//          el.dataset.height = origHeight
+//       }
+//       origHeight = Number(origHeight)
+//       el.style.height = el.setAttribute('style', 'height: ' + (origHeight + 1) + 'px');
+//       el.addEventListener('input', e => {
+//          if (el.scrollHeight > origHeight) {
+//             el.style.height = 'auto';
+//             el.style.height = (el.scrollHeight) + 10 + 'px';
+//          } else {
+//             el.style.height = 'auto';
+//             el.style.height = origHeight + 'px';
+//          }
+//       });
+//    }
+// }
 
 //#endregion
 
@@ -446,7 +455,7 @@ function dropdownAction(e, ddWrapper, ddActive) {
    const target = e.target;
    const ddButton = ddWrapper.querySelector('[data-dropdown-button]');
 
-   if (target == ddButton) {
+   if (target.closest('[data-dropdown-button]') === ddButton) {
       if (ddActive && ddActive !== ddWrapper) {
          ddActive.classList.remove('_dd-active');
       }
@@ -455,5 +464,200 @@ function dropdownAction(e, ddWrapper, ddActive) {
       e.preventDefault();
    }
 }
+
+//#endregion
+
+document.addEventListener('DOMContentLoaded', e => {
+   const leftSidebar = document.querySelector('.left-sidebar');
+   const menuItems = leftSidebar.querySelectorAll('[data-menu-item]');
+   const submenuBlocks = leftSidebar.querySelectorAll('[data-submenu-block]');
+   const submenuLinks = leftSidebar.querySelectorAll('[data-submenu-link]');
+   const submenuBlocksLevel2 = leftSidebar.querySelectorAll('[data-submenu-lv2]');
+   let timerId;
+
+   leftSidebar.addEventListener('pointerover', event => {
+      clearTimeout(timerId);
+      if (event.target.closest('.left-sidebar__menu')) {
+         document.documentElement.classList.add('sidebar-open');
+      }
+   })
+
+   leftSidebar.addEventListener('pointerleave', event => {
+      timerId = setTimeout(() => {
+         document.documentElement.classList.remove('sidebar-open', 'submenu-open', 'submenu-lv2-open');
+         leftSidebar.querySelectorAll('._active').forEach(node => node.classList.remove('_active'));
+      }, 500)
+   })
+
+   leftSidebar.addEventListener('click', event => {
+      let target = event.target;
+
+      if (target.closest('[data-menu-item]')) {
+         document.documentElement.classList.add('submenu-open');
+         let menuItemNumber = target.closest('[data-menu-item]').dataset.menuItem;
+
+         menuItems.forEach(item => {
+            if (item.dataset.menuItem !== menuItemNumber) {
+               item.classList.remove('_active');
+            }
+            if (item.dataset.menuItem === menuItemNumber) {
+               item.classList.add('_active');
+            }
+         })
+
+         submenuBlocks.forEach(block => {
+            if (block.dataset.submenuBlock !== menuItemNumber) {
+               block.classList.remove('_active');
+               document.documentElement.classList.remove('submenu-lv2-open');
+            }
+
+            if (block.dataset.submenuBlock === menuItemNumber) {
+               block.classList.add('_active');
+            }
+         })
+      }
+
+      if (target.closest('[data-submenu-link]')) {
+         event.preventDefault();
+         document.documentElement.classList.add('submenu-lv2-open');
+         let submenuLinkNumber = target.closest('[data-submenu-link]').dataset.submenuLink;
+
+         submenuLinks.forEach(item => {
+            if (item.dataset.submenuLink !== submenuLinkNumber) {
+               item.classList.remove('_active');
+            }
+            if (item.dataset.submenuLink === submenuLinkNumber) {
+               item.classList.add('_active');
+            }
+         })
+
+         submenuBlocksLevel2.forEach(block => {
+            if (block.dataset.submenuLv2 !== submenuLinkNumber) {
+               block.classList.remove('_active');
+            }
+
+            if (block.dataset.submenuLv2 === submenuLinkNumber) {
+               block.classList.add('_active');
+            }
+         })
+      }
+   })
+
+})
+
+const dndContainer = document.querySelector('[data-dnd-container]');
+if (dndContainer !== null) {
+   Sortable.create(dndContainer, {
+      handle: '[data-dnd-handle]',
+      animation: 150,
+      onUpdate: function (q) {
+         document.dispatchEvent(new CustomEvent("onUpdateDrag", {
+            detail: q
+         }));
+      },
+   });
+}
+
+// document.addEventListener('onUpdateDrag', e => {
+//    console.log('dndItem', e.detail.item.dataset.dndItem); // номер перемещенного элемента
+//    console.log('newDraggableIndex', e.detail.newDraggableIndex); // новая позиция
+//    console.log(e.detail);
+// });
+
+//#region Загрузка файлов с превью
+
+class FileUploader {
+   constructor(element) {
+      this.fileUpload = element;
+      this.fileUploadInput = this.fileUpload.querySelector('.file-upload__input');
+      this.fileUploadText = this.fileUpload.querySelector('.file-upload__pseudo-input span');
+      this.fileUploadPreview = this.fileUpload.querySelector('.file-upload__preview');
+      this.maxFiles = +this.fileUploadInput.dataset.maxFiles;
+      this.maxSize = this.fileUploadInput.dataset.maxSize * 1024 * 1024;
+      this.fileList = [];
+
+      this.fileUploadInput.addEventListener('change', this.handleFilesChange.bind(this));
+      this.fileUploadPreview.addEventListener('click', this.handleFileDelete.bind(this));
+   }
+
+   handleFilesChange() {
+      Array.from(this.fileUploadInput.files).forEach(item => {
+         if (!this.fileList.some(obj => obj.name === item.name)) {
+            if (this.fileList.length >= this.maxFiles) {
+               this.setTextMessage(`Превышено количество файлов, максимум ${this.maxFiles}`);
+               return;
+            }
+
+            this.fileList.push(item);
+            const currentTotalSize = this.fileList.reduce((acc, file) => acc + file.size, 0);
+
+            if (currentTotalSize > this.maxSize) {
+               this.fileList.pop();
+               this.setTextMessage(`Превышен допустимый объем файлов, максимум ${this.fileUploadInput.dataset.maxSize} Мб`);
+               return;
+            }
+         }
+      });
+      this.updateFileInput();
+   }
+
+   handleFileDelete(e) {
+      const target = e.target;
+      if (target.closest('.file-upload__remove-preview')) {
+         const fileItem = target.closest('.file-upload__preview-item');
+         const fileName = fileItem.dataset.fileName;
+         this.fileList = this.fileList.filter(file => file.name !== fileName);
+         this.updateFileInput();
+      }
+   }
+
+   setTextMessage(message) {
+      this.fileUploadText.textContent = message;
+      setTimeout(() => {
+         this.fileUploadText.textContent = 'Прикрепить файл';
+      }, 5000);
+   }
+
+   renderFileList() {
+      this.fileUploadPreview.innerHTML = '';
+      this.fileList.forEach(file => {
+         this.fileUploadPreview.insertAdjacentElement('beforeend', this.createFilePreview(file));
+      });
+   }
+
+   createFilePreview(file) {
+      const filePreview = document.createElement('div');
+      filePreview.classList.add('file-upload__preview-item');
+      filePreview.dataset.fileName = file.name;
+      filePreview.insertAdjacentHTML('beforeend', `
+         <svg class="file-upload__remove-preview" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C3.6 16 0 12.4 0 8C0 3.6 3.6 0 8 0C12.4 0 16 3.6 16 8C16 12.4 12.4 16 8 16ZM12 4.95059L10.88 3.76471L8 6.81412L5.12 3.76471L4 4.95059L6.88 8L4 11.0494L5.12 12.2353L8 9.18588L10.88 12.2353L12 11.0494L9.12 8L12 4.95059Z" fill="#8A8A8A" />
+         </svg>
+      `);
+
+      if (file.type.includes('image')) {
+         const reader = new FileReader();
+         const img = document.createElement('img');
+         img.classList.add('file-upload__preview-image');
+         filePreview.insertAdjacentElement('afterbegin', img);
+         reader.onload = e => img.src = e.target.result;
+         reader.readAsDataURL(file);
+      } else {
+         filePreview.insertAdjacentHTML('afterbegin', `<span>${file.name}</span>`);
+         filePreview.classList.add('file-upload__preview-item_doc');
+      }
+      return filePreview;
+   }
+
+   updateFileInput() {
+      const dataTransfer = new DataTransfer();
+      this.fileList.forEach(file => dataTransfer.items.add(file));
+      this.fileUploadInput.files = dataTransfer.files;
+      this.renderFileList();
+   }
+}
+
+
+document.querySelectorAll('.js-file-upload').forEach(uploadElement => new FileUploader(uploadElement));
 
 //#endregion

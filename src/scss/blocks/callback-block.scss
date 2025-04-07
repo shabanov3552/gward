@@ -1,0 +1,107 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.callback-block {
+   background: var(--red-gradient);
+   color: #fff;
+   border-radius: 7px;
+   max-width: 836px;
+   padding: func.rem(42) func.rem(48) func.rem(56) func.rem(48);
+   // .callback-block__descr
+
+   &__descr {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      color: #fff;
+      margin-bottom: func.rem(49);
+      max-width: 572px;
+   }
+
+   // .callback-block__bottom
+
+   &__bottom {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 47px;
+   }
+
+   // .callback-block__bottom-left
+
+   &__bottom-left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+   }
+
+   // .callback-block__photo
+
+   &__photo {
+      width: 93px;
+      height: 93px;
+      border-radius: 7px;
+      overflow: hidden;
+
+      img {
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   // .callback-block__contacts
+
+   &__contacts {}
+
+   // .callback-block__name
+
+   &__name {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 137%;
+      color: #fff;
+      margin-bottom: func.rem(17);
+   }
+
+   // .callback-block__contacts-row
+
+   &__contacts-row {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+   }
+
+   // .callback-block__link
+
+   &__link {
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   // .callback-block__button
+
+   &__button {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 112%;
+      text-align: center;
+      color: #000;
+      background: #fff;
+      border-radius: 29px;
+      padding: func.rem(19.5) func.rem(25);
+
+      &:hover {
+         background: rgb(240, 240, 240);
+      }
+   }
+}

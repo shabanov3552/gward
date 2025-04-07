@@ -1,0 +1,117 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.products {
+
+   // .products__header
+
+   &__header {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(19) func.rem(26);
+      margin-bottom: func.rem(25);
+   }
+
+   // .products__main
+
+   &__main {}
+}
+
+.form {
+
+   // .form_products-search
+
+   &_products-search {
+      display: flex;
+      gap: 37px;
+
+      @media (max-width:bp.$pc) {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 15px;
+      }
+
+      .form__group {
+         display: flex;
+         gap: 37px;
+      }
+
+      .form__line {
+         .select {
+            width: 306px;
+         }
+      }
+
+      .form__label {}
+
+      .form__input-chunk {
+         width: 272px;
+      }
+
+      .form__buttons {
+         display: grid;
+         grid-template-columns: repeat(2, auto);
+         align-items: center;
+         gap: 29px;
+      }
+
+      .form__submit {
+         width: 185px;
+      }
+
+      .form__reset {
+         width: 146px;
+      }
+   }
+}
+
+.table {
+
+   // .table__head
+
+   &__head {}
+
+   // .table__name
+
+   &__name {}
+
+   // .table__body
+
+   &__body {}
+
+   // .table__row
+
+   &__row {}
+
+   // .table__cell
+
+   &__cell {}
+
+   // .table__text
+
+   &__text {}
+}
+
+.products-table {}
+
+.gripper {}
+
+.fabric-name {
+
+   // .fabric-name__content
+
+   &__content {}
+
+   // .fabric-name__more
+
+   &__more {}
+}
+
+.product-colors {
+
+   // .product-colors__item
+
+   &__item {}
+}

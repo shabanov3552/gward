@@ -61,7 +61,7 @@ flsFunctions.isWebp();
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Модуль "Эффект волн"
@@ -100,7 +100,7 @@ import * as flsForms from "./files/forms/forms.js";
 
 flsForms.formFieldsInit({
 	viewPass: true,
-	autoHeight: false
+	autoHeight: true
 });
 
 

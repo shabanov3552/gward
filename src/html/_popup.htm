@@ -125,4 +125,123 @@
 		</div>
 	</div>
 	<!-- Заказать звонок -->
+
+	<!-- Добавление/редактирование продукта -->
+	<div id="edit-products" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Добавление/редактирование продукта</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+
+					<form action="" class="form popup-form-edit">
+						<div class="popup-form-edit__header">
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Артикул",
+							"value":""
+							})
+							@@include('./_form-select.htm',{
+							"label":"Продавец"
+							})
+						</div>
+						<div class="popup-form-edit__main">
+							@@include('./_form-select.htm',{
+							"label":"Цвет"
+							})
+							<div class="popup-form-edit__list">
+								<div class="popup-form-edit__row">
+									@@include('./_form-checkbox.htm',{
+									"name":"XS (6)"
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB $",
+									"value":""
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB ¥",
+									"value":""
+									})
+								</div>
+								<div class="popup-form-edit__row">
+									@@include('./_form-checkbox.htm',{
+									"name":"XS (6)"
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB $",
+									"value":""
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB ¥",
+									"value":""
+									})
+								</div>
+								<div class="popup-form-edit__row">
+									@@include('./_form-checkbox.htm',{
+									"name":"XS (6)"
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB $",
+									"value":""
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB ¥",
+									"value":""
+									})
+								</div>
+								<div class="popup-form-edit__row">
+									@@include('./_form-checkbox.htm',{
+									"name":"XS (6)"
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB $",
+									"value":""
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB ¥",
+									"value":""
+									})
+								</div>
+								<div class="popup-form-edit__row">
+									@@include('./_form-checkbox.htm',{
+									"name":"XS (6)"
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB $",
+									"value":""
+									})
+									@@include('./_form-input.htm',{
+									"modifierClass":"",
+									"label":"FOB ¥",
+									"value":""
+									})
+								</div>
+							</div>
+						</div>
+						<div class="popup-form-edit__footer">
+							<button type="button" class="form__button button-transparent">Добавить ещё один цвет</button>
+							<button type="button" class="form__button button-black">Сохранить</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Добавление/редактирование продукта -->
 </div>

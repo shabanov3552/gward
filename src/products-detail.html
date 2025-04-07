@@ -1,0 +1,178 @@
+@@include('html/_header.htm',{
+"title":"Продукты Деталка",
+"modClass":"products-detail-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">AP LX500 (G60 Lotus)</div>
+         <!-- <button type="button" data-popup="#add-product" class="action-button button-black">Создать продукт</button> -->
+      </div>
+      <div class="products-detail">
+         <form action="" class="products-detail__form form">
+            <div class="products-detail__section">
+               <div class="products-detail__title">Название и артикул</div>
+               <div class="products-detail__groupe">
+                  @@include('html/_form-input_status.htm',{
+                  "modifierClass":"show-status",
+                  "label":"Наименование по-русски",
+                  "value":"Перчатки защитные латексные"
+                  })
+                  @@include('html/_form-input_status.htm',{
+                  "modifierClass":"",
+                  "label":"Наименование по-китайски",
+                  "value":""
+                  })
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Данные пары</div>
+               <div class="products-detail__groupe">
+                  @@include('html/_form-textarea_status.htm',{
+                  "modifierClass":"show-status",
+                  "label":"Описание индивидуальной упаковки по-английски"
+                  })
+                  @@include('html/_form-textarea.htm',{
+                  "modifierClass":"",
+                  "label":"Описание индивидуальной упаковки по-русски"
+                  })
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Данные упаковки</div>
+               <div class="products-detail__groupe">
+                  @@include('html/_form-select.htm',{
+                  "label":"Формат упаковки"
+                  })
+                  @@include('html/_form-select_multiple.htm',{
+                  "label":"Классификация по ГОСТ 12.4.252-2013 (ТР ТС 019/2011)"
+                  })
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Фабрики</div>
+               <div class="dynamic-fields">
+                  <div class="dynamic-fields__item">
+                     @@include('html/_form-input_no-label.htm',{
+                     "modifierClass":"",
+                     "value":"ZHANGJIAGANG HANDA"
+                     })
+                     <button type="button" class="dynamic-fields__button dynamic-fields__button_add">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#dynamic-fields_icon"></use>
+                        </svg>
+                     </button>
+                     <label class="radio">
+                        <input class="radio__input" type="radio" value="1" name="fabrics" checked>
+                        <div class="radio__chunk"></div>
+                        <span class="radio__text">Главная фабрика</span>
+                     </label>
+                     <a href="" class="dynamic-fields__link">На страницу фабрики</a>
+                  </div>
+                  <div class="dynamic-fields__item">
+                     @@include('html/_form-input_no-label.htm',{
+                     "modifierClass":"",
+                     "value":"HANDAHANDA ZHANGJIAGANG"
+                     })
+                     <button type="button" class="dynamic-fields__button dynamic-fields__button_remove">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#dynamic-fields_icon"></use>
+                        </svg>
+                     </button>
+                     <label class="radio">
+                        <input class="radio__input" type="radio" value="2" name="fabrics">
+                        <div class="radio__chunk"></div>
+                        <span class="radio__text">Главная фабрика</span>
+                     </label>
+                     <a href="" class="dynamic-fields__link">На страницу фабрики</a>
+                  </div>
+                  <div class="dynamic-fields__item">
+                     @@include('html/_form-input_no-label.htm',{
+                     "modifierClass":"",
+                     "value":""
+                     })
+                     <button type="button" class="dynamic-fields__button dynamic-fields__button_remove">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#dynamic-fields_icon"></use>
+                        </svg>
+                     </button>
+                     <label class="radio">
+                        <input class="radio__input" type="radio" value="3" name="fabrics">
+                        <div class="radio__chunk"></div>
+                        <span class="radio__text">Главная фабрика</span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Цвета</div>
+               <div class="dynamic-fields">
+                  @@include('html/_dynamic-fields__item.htm',{})
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Размеры</div>
+               <div class="products-detail__groupe">
+                  <div class="products-detail__checkbox-groupe">
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">XS (6)</span>
+                     </label>
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">S (7)</span>
+                     </label>
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">M (8)</span>
+                     </label>
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">L (9)</span>
+                     </label>
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">XL (10)</span>
+                     </label>
+                     <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox">
+                        <div class="checkbox__chunk"></div>
+                        <span class="checkbox__text">XXL (11)</span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="products-detail__section">
+               <div class="products-detail__title">Изображения</div>
+               <div class="products-detail__groupe">
+                  @@include('html/_file-upload.htm',{
+                  "name":"Индивидуальная упаковка лицевая"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Печать на пачке"
+                  })
+                  @@include('html/_file-upload_generate-btn.htm',{
+                  "name":"Изображение"
+                  })
+               </div>
+               <div class="products-detail__add-block">
+                  <button class="products-detail__add-button button-transparent" type="button">
+                     <img src="@img/icons/icon_plus.svg" alt="">
+                  </button>
+               </div>
+            </div>
+            <div class="form__fixed-block">
+               <!-- Коммент от Глеба, кнопка сохраняет все отредактированные поля -->
+               <button type="submit" class="form__button-save button-green">Сохранить</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

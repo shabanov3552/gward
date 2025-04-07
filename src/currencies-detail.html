@@ -1,0 +1,33 @@
+@@include('html/_header.htm',{
+"title":"Валюты деталка",
+"modClass":"currencies-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Доллар США</div>
+         <!-- <button type="button" data-popup="#add-product" class="action-button button-black">Добавить</button> -->
+      </div>
+      <div class="currencies-detail">
+         <form action="" class="form">
+            @@include('html/_form-input.htm',{
+            "modifierClass":"",
+            "label":"Наименование",
+            "value":"Доллар США"
+            })
+            @@include('html/_form-input.htm',{
+            "modifierClass":"",
+            "label":"Обозначение",
+            "value":"USD"
+            })
+            @@include('html/_form-input.htm',{
+            "modifierClass":"",
+            "label":"Наим. по-англ.",
+            "value":"US dollar"
+            })
+         </form>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

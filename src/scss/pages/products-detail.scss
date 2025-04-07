@@ -1,0 +1,214 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.products-detail {
+
+   // .products-detail__form
+
+   &__form {}
+
+   // .products-detail__section
+
+   &__section {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(0) func.rem(40);
+      padding-top: func.rem(38);
+      padding-bottom: func.rem(45);
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(20);
+      }
+   }
+
+   // .products-detail__title
+
+   &__title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+      margin-bottom: func.rem(14);
+   }
+
+   // .products-detail__groupe
+
+   &__groupe {
+      max-width: 1177px;
+   }
+
+   // .products-detail__checkbox-groupe
+
+   &__checkbox-groupe {
+      display: flex;
+      gap: 35px;
+      flex-wrap: wrap;
+   }
+
+   .form {
+
+      // .form__line
+
+      &__line {
+         gap: 22px;
+         margin-bottom: func.rem(13);
+
+         &:last-child {
+            margin: 0;
+         }
+
+         // .form__line_in-groupe
+
+         &_in-groupe {
+            margin: 0;
+         }
+      }
+
+      // .form__label
+
+      &__label {
+         flex: 0 0 363px;
+
+         @media (max-width:bp.$pc) {
+            flex: 0 0 250px;
+         }
+      }
+
+      // .form__input
+
+      &__input {}
+
+      // .form__clear-svg
+
+      &__clear-svg {}
+
+      // .form__input-group
+
+      &__input-group {}
+
+      // .form__line-inner
+
+      &__line-inner {}
+   }
+
+   // .products-detail__add-block
+
+   &__add-block {
+      border-top: 1px solid #b5b5b5;
+      max-width: 1177px;
+      padding-top: func.rem(17);
+      margin-top: func.rem(19);
+      padding-left: func.rem(386);
+   }
+
+   // .products-detail__add-button
+
+   &__add-button {
+      width: 100%;
+   }
+}
+
+.dynamic-fields {
+
+   // .dynamic-fields__item
+
+   &__item {
+      display: grid;
+      grid-template-columns: minmax(729px, 500px) repeat(3, auto);
+      justify-content: start;
+      align-items: center;
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(12);
+      }
+   }
+
+   // .dynamic-fields__button
+
+   &__button {
+      margin-left: func.rem(23);
+      margin-right: func.rem(37);
+      width: 48px;
+      height: 48px;
+      border: 1px solid #4c4c4c;
+      border-radius: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+         background: rgba(131, 131, 131, 0.1);
+      }
+
+      svg {
+         width: 18px;
+         height: 18px;
+      }
+
+      // .dynamic-fields__button_add
+
+      &_add {
+         svg {
+            fill: #4c4c4c;
+         }
+      }
+
+      // .dynamic-fields__button_remove
+
+      &_remove {
+         svg {
+            transform: rotate(-45deg);
+
+            use {
+               fill: #e25252;
+            }
+         }
+      }
+   }
+
+   // .dynamic-fields__link
+
+   &__link {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #7d0606;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   .form {
+
+      // .form__line
+
+      &__line {
+         margin: 0;
+      }
+
+      // .form__input
+
+      &__input {}
+
+      // .form__clear-svg
+
+      &__clear-svg {}
+   }
+
+   .radio {
+      margin-right: func.rem(34);
+      // .radio__input
+
+      &__input {}
+
+      // .radio__chunk
+
+      &__chunk {}
+
+      // .radio__text
+
+      &__text {}
+   }
+}

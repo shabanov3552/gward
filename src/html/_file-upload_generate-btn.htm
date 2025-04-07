@@ -1,0 +1,14 @@
+<div class="file-upload file-upload_generate js-file-upload">
+   <div class="file-upload__name">@@name</div>
+   <label class="file-upload__label">
+      <!-- data-max-files максимальное колличество файлов -->
+      <!-- data-max-size общий максимальный размер файлов в Мб -->
+      <input type="file" name="file" id="input-file" accept="image/png, image/jpeg, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
+      <div class="file-upload__pseudo-input">
+         <img src="@img/icons/file-upload-icon.svg" alt="">
+         <span>Прикрепить файл</span>
+      </div>
+   </label>
+   <div class="file-upload__preview"></div>
+   <button type="button" class="file-upload__generate-btn button-transparent">Сгенерировать</button>
+</div>

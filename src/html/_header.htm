@@ -10,11 +10,33 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<div class="wrapper @@modClass">
+		@@include('_left-sidebar.htm',{})
 		<header class="header">
 			<div class="header__container">
+				<a href="" class="header__logo">
+					<svg class="header__logo-icon">
+						<use xlink:href="img/icons/icons.svg#header_logo"></use>
+					</svg>
+				</a>
+				<div class="header__actions-block">
+					<button type="button" class="header__search">
+						<svg class="header__search-icon">
+							<use xlink:href="img/icons/icons.svg#icon_search"></use>
+						</svg>
+					</button>
+					<a href="" class="header__logout">
+						<svg class="header__logout-icon">
+							<use xlink:href="img/icons/icons.svg#icon_cabinet"></use>
+						</svg>
+						<span>Выйти</span>
+					</a>
+				</div>
 			</div>
 		</header>

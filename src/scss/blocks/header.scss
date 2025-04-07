@@ -1,7 +1,108 @@
 @use '../config/breakpoints' as bp;
 @use '../config/mixins' as mixin;
 @use '../config/functions' as func;
+
 //====================================================================================================
+.header {
+	padding: func.rem(14.5) 0;
+	background-color: #fff;
+
+	// .header__container
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: func.rem(100);
+		padding-right: func.rem(62);
+		max-width: 100%;
+	}
+
+	// .header__logo
+
+	&__logo {
+		width: 136px;
+		height: 37px;
+
+		// .sidebar-open & {
+		// 	position: relative;
+		// 	z-index: 5;
+		// 	transform: translateX(-19px);
+		// }
+	}
+
+	// .header__logo-icon
+
+	&__logo-icon {
+		width: 100%;
+		height: 100%;
+
+		use {
+			fill: var(--red-color);
+		}
+
+		// .sidebar-open & {
+		// 	use {
+		// 		fill: #fff;
+		// 	}
+		// }
+	}
+
+	// .header__actions-block
+
+	&__actions-block {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	// .header__search
+
+	&__search {
+		height: 56px;
+		width: 263px;
+		background: var(--main-bg);
+		border-radius: 28px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-right: func.rem(18);
+	}
+
+	// .header__search-icon
+
+	&__search-icon {
+		width: 27px;
+		height: 25px;
+
+		use {
+			fill: var(--red-color);
+		}
+	}
+
+	// .header__logout
+
+	&__logout {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: 18px;
+		color: var(--red-color);
+	}
+
+	// .header__logout-icon
+
+	&__logout-icon {
+		width: 24px;
+		height: 24px;
+		flex: 0 0 24px;
+		margin-right: func.rem(14);
+
+		use {
+			fill: var(--red-color);
+		}
+	}
+}
 
 //====================================================================================================
 

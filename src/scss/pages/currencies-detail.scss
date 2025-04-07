@@ -1,0 +1,45 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.currencies-detail {
+   background: #fff;
+   padding: func.rem(40);
+   padding-top: func.rem(30);
+   border-radius: 10px;
+   max-width: 836px;
+
+   .form {
+
+      // .form__line
+
+      &__line {
+         max-width: 382px;
+
+         &:not(:last-child) {
+            margin-bottom: func.rem(13);
+         }
+      }
+
+      // .form__label
+
+      &__label {
+         flex: 0 0 150px;
+      }
+
+      // .form__input
+
+      &__input {
+         // flex: 0 0 210px;
+      }
+
+      // .form__clear-svg
+
+      &__clear-svg {}
+
+      // .form__input-status
+
+      &__input-status {}
+   }
+}
