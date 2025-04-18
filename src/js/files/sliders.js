@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -28,9 +28,9 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.swip')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.swip', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
@@ -104,6 +104,60 @@ function initSliders() {
 			on: {
 
 			}
+		});
+	}
+
+	if (document.querySelector('.dc-product-photos__slider-main')) {
+		let thumbsSlider = new Swiper('.dc-product-photos__slider-thumbs', {
+			modules: [Navigation],
+			direction: 'vertical',
+			slidesPerView: 3,
+			spaceBetween: 20,
+			navigation: {
+				prevEl: '.dc-product-photos__nav .swiper-button-prev',
+				nextEl: '.dc-product-photos__nav .swiper-button-next',
+			},
+		});
+		let mainSlider = new Swiper('.dc-product-photos__slider-main', {
+			modules: [Thumbs],
+			spaceBetween: 20,
+			// grabCursor: true,
+			// navigation: {
+			// 	prevEl: '.dc-product-photos__nav .swiper-button-prev',
+			// 	nextEl: '.dc-product-photos__nav .swiper-button-next',
+			// },
+			thumbs: {
+				swiper: thumbsSlider,
+			},
+		});
+	}
+
+	if (document.querySelector('.product-slider__slider')) {
+		document.querySelectorAll('.product-slider__slider').forEach(slider => {
+			const prevEl = slider.parentElement.querySelector('.product-slider__nav .swiper-button-prev');
+			const nextEl = slider.parentElement.querySelector('.product-slider__nav .swiper-button-next');
+
+			new Swiper(slider, {
+				modules: [Navigation],
+				slidesPerView: 5,
+				spaceBetween: 20,
+				autoHeight: false,
+				navigation: {
+					prevEl: prevEl,
+					nextEl: nextEl,
+				},
+				breakpoints: {
+					1200: {
+						slidesPerView: 3,
+					},
+					1400: {
+						slidesPerView: 4,
+					},
+					1600: {
+						slidesPerView: 5,
+					}
+				}
+			})
 		});
 	}
 }

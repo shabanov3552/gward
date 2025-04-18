@@ -11,6 +11,22 @@
 	position: relative;
 	width: 100%;
 
+	&_catalog-sort {
+		width: auto;
+
+		.select__title {
+			background: none;
+			box-shadow: none;
+			border: none;
+			width: auto;
+			height: 20px;
+		}
+
+		.select__value {
+			flex-direction: row-reverse;
+		}
+	}
+
 	// .select__body
 	&__body {
 		position: relative;
@@ -28,6 +44,11 @@
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 		padding-right: func.rem(20);
 		padding-left: func.rem(16);
+
+		._select-multiple & {
+			min-height: 48px;
+			height: auto;
+		}
 	}
 
 	// .select__value
@@ -63,6 +84,13 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+
+		._select-multiple & {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: 8px;
+			padding: func.rem(15) 0;
+		}
 	}
 
 	// .select__text

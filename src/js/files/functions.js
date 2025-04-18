@@ -530,6 +530,7 @@ export function showMore(targetBlocks) {
 			for (let index = 1; index < showMoreItems.length; index++) {
 				const showMoreItem = showMoreItems[index - 1];
 				hiddenHeight += showMoreItem.offsetHeight;
+				hiddenHeight--
 				if (index == showMoreTypeValue) break
 			}
 		} else if (showMoreType === 'parag') {

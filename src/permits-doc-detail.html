@@ -1,0 +1,370 @@
+@@include('html/_header.htm',{
+"title":"Разрешительная детальная",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Сертификат Соответствия Rubberex Скан В.00243</div>
+         <button type="button" class="action-button button-black" data-popup="#">Редактировать</button>
+      </div>
+      <div class="permits-doc-detail">
+         <div class="permits-doc-detail__grid permits-doc-detail__grid_2-col">
+            <div class="permits-doc-detail__block">
+               <div class="permits-doc-detail__header">
+                  <div class="permits-doc-detail__title">Сертфикат</div>
+                  <div class="permits-doc-detail__status">
+                     <img src="@img/icons/doc-valid.svg" alt="">
+                     <span>Действующий документ</span>
+                  </div>
+               </div>
+               <div class="permits-doc-detail__desrc">
+                  <div class="permits-doc-detail__row">
+                     <div class="permits-doc-detail__name">Номер документа</div>
+                     <div class="permits-doc-detail__value">5345</div>
+                  </div>
+                  <div class="permits-doc-detail__row">
+                     <div class="permits-doc-detail__name">Срок действия</div>
+                     <div class="permits-doc-detail__value">12.04.2024 – 12.04.2025</div>
+                  </div>
+                  <div class="permits-doc-detail__row">
+                     <div class="permits-doc-detail__name">Орган по сертификации</div>
+                     <div class="permits-doc-detail__value">УФМС Красноярского края</div>
+                  </div>
+               </div>
+               <div data-showmore="items" class="permits-doc-detail__sm-block">
+                  <div data-showmore-content="3" class="permits-doc-detail__sm-content">
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"pdf"
+                        })
+                        <span>Скан документа</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол сертификации</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол сертификации 2</span>
+                     </a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="permits-doc-detail__sm-button"><span>раскрыть все</span><span>скрыть</span></button>
+               </div>
+            </div>
+            <div class="permits-doc-detail__block">
+               <div class="permits-doc-detail__header">
+                  <div class="permits-doc-detail__title">Инспекционный контроль 1</div>
+               </div>
+
+               <div data-showmore="items" class="permits-doc-detail__sm-block">
+                  <div data-showmore-content="6" class="permits-doc-detail__sm-content">
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о том</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о сем с очень длинным названием</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Важный протокол</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="permits-doc-detail__sm-button"><span>раскрыть все</span><span>скрыть</span></button>
+               </div>
+
+            </div>
+         </div>
+         <div class="permits-doc-detail__grid permits-doc-detail__grid_3-col">
+            <div class="permits-doc-detail__block">
+               <div class="permits-doc-detail__header">
+                  <div class="permits-doc-detail__title">Инспекционный контроль 2</div>
+               </div>
+
+               <div data-showmore="items" class="permits-doc-detail__sm-block">
+                  <div data-showmore-content="6" class="permits-doc-detail__sm-content">
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о том</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о сем с очень длинным названием</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Важный протокол</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="permits-doc-detail__sm-button"><span>раскрыть все</span><span>скрыть</span></button>
+               </div>
+
+            </div>
+            <div class="permits-doc-detail__block">
+               <div class="permits-doc-detail__header">
+                  <div class="permits-doc-detail__title">Инспекционный контроль 3</div>
+               </div>
+
+               <div data-showmore="items" class="permits-doc-detail__sm-block">
+                  <div data-showmore-content="6" class="permits-doc-detail__sm-content">
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о том</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о сем с очень длинным названием</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Важный протокол</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="permits-doc-detail__sm-button"><span>раскрыть все</span><span>скрыть</span></button>
+               </div>
+
+            </div>
+            <div class="permits-doc-detail__block">
+               <div class="permits-doc-detail__header">
+                  <div class="permits-doc-detail__title">Инспекционный контроль 4</div>
+               </div>
+
+               <div data-showmore="items" class="permits-doc-detail__sm-block">
+                  <div data-showmore-content="6" class="permits-doc-detail__sm-content">
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о том</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Протокол о сем с очень длинным названием</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Важный протокол</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о проделанной работе</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Отчет о результатах таких-то действий</span>
+                     </a>
+                     <a href="" class="permits-doc-detail__doc-link">
+                        @@include('html/_doc-type.htm',{
+                        "type":"doc"
+                        })
+                        <span>Еще отчет в догонку</span>
+                     </a>
+                  </div>
+                  <button hidden data-showmore-button type="button" class="permits-doc-detail__sm-button"><span>раскрыть все</span><span>скрыть</span></button>
+               </div>
+
+            </div>
+         </div>
+         <div class="related-products">
+            <div class="related-products__title">Товары, к которым относится этот документ</div>
+            <div class="related-products__grid">
+               <div class="related-products__item">
+                  <div class="related-products__image-ibg"><img src="@img/product-card-1.png" alt=""></div>
+                  <div class="related-products__item-content">
+                     <a href="" class="related-products__name">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+                     <div class="related-products__article">Артикул: L1401</div>
+                  </div>
+               </div>
+               <div class="related-products__item">
+                  <div class="related-products__image-ibg"><img src="@img/product-card-2.png" alt=""></div>
+                  <div class="related-products__item-content">
+                     <a href="" class="related-products__name">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+                     <div class="related-products__article">Артикул: L1401</div>
+                  </div>
+               </div>
+               <div class="related-products__item">
+                  <div class="related-products__image-ibg"><img src="@img/product-card-3.png" alt=""></div>
+                  <div class="related-products__item-content">
+                     <a href="" class="related-products__name">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+                     <div class="related-products__article">Артикул: L1401</div>
+                  </div>
+               </div>
+               <div class="related-products__item">
+                  <div class="related-products__image-ibg"><img src="@img/product-card-4.png" alt=""></div>
+                  <div class="related-products__item-content">
+                     <a href="" class="related-products__name">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+                     <div class="related-products__article">Артикул: L1401</div>
+                  </div>
+               </div>
+               <div class="related-products__item">
+                  <div class="related-products__image-ibg"><img src="@img/product-card-5.png" alt=""></div>
+                  <div class="related-products__item-content">
+                     <a href="" class="related-products__name">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+                     <div class="related-products__article">Артикул: L1401</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

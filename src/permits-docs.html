@@ -1,0 +1,103 @@
+@@include('html/_header.htm',{
+"title":"Разрешительная документация",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Разрешительная документация</div>
+         <a href="add-document.html" class="action-button button-black">Добавить документ</a>
+      </div>
+      <div class="permits-docs">
+         <div class="permits-docs__header">
+            <form class="permits-docs__filters">
+               <div class="permits-docs__filters-main">
+                  <div class="permits-docs__filters-group permits-docs__filters-group_type-document">
+                     @@include('html/_form-checkbox.htm',{
+                     "name":"Сертификат"
+                     })
+                     @@include('html/_form-checkbox.htm',{
+                     "name":"Декларация"
+                     })
+                     @@include('html/_form-checkbox.htm',{
+                     "name":"Прочее"
+                     })
+                  </div>
+
+                  <div class="permits-docs__filters-group permits-docs__filters-group_type-status">
+                     @@include('html/_form-checkbox.htm',{
+                     "name":"Архивный"
+                     })
+                     @@include('html/_form-checkbox.htm',{
+                     "name":"Действующий"
+                     })
+                  </div>
+               </div>
+
+               <div class="permits-docs__filters-buttons">
+                  <button class="permits-docs__button permits-docs__button_find button-black">Найти</button>
+                  <button class="permits-docs__button permits-docs__button_reset button-transparent">Сбросить</button>
+               </div>
+            </form>
+         </div>
+         <div class="permits-docs__main">
+            <div class="table permits-docs-table">
+               <div class="table__body">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">
+                           <img src="@img/icons/icon_folder.svg" alt="">
+                           <span>Сертификат Соответствия Rubberex Скан В.00243</span>
+                        </a>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Сертификат</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__doc-statys">
+                           <img src="@img/icons/doc-valid.svg" alt="">
+                           <div class="table__text">Действующий документ</div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">05.04.2024 – 12.04.2025</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">
+                           <img src="@img/icons/icon_folder.svg" alt="">
+                           <span>Rubberex ПИ 982 ИЛХП, 983 ИЛХП, 984 ИЛХП, 985 ИЛХП от 19.07.2019</span>
+                        </a>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Декларация</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__doc-statys">
+                           <img src="@img/icons/doc-archive.svg" alt="">
+                           <div class="table__text">Архивный документ</div>
+                        </div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">05.04.2024 – 12.04.2025</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="permits-docs__pagging">@@include('html/_pagging.htm',{})</div>
+         </div>
+      </div>
+
+   </div>
+</main>
+@@include('html/_footer.htm',{})

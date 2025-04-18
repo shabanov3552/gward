@@ -1,0 +1,78 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.related-products {
+   background: #fff;
+   border-radius: 10px;
+   padding: func.rem(30) func.rem(40);
+
+   @media (max-width:bp.$xxl) {
+      padding: func.rem(20);
+   }
+
+   // .related-products__title
+
+   &__title {
+      font-weight: 600;
+      font-size: 26px;
+      color: #000;
+      margin-bottom: func.rem(32);
+   }
+
+   // .related-products__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 50px;
+   }
+
+   // .related-products__item
+
+   &__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+   }
+
+   // .related-products__image-ibg
+
+   &__image-ibg {
+      width: 60px;
+      height: 60px;
+      flex: 0 0 60px;
+      background: #ececec;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: func.rem(18);
+   }
+
+   // .related-products__item-content
+
+   &__item-content {}
+
+   // .related-products__name
+
+   &__name {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 144%;
+      color: #931222;
+
+      &:hover {
+         text-decoration: underline;
+      }
+
+      &::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+      }
+   }
+
+   // .related-products__article
+
+   &__article {}
+}

@@ -96,12 +96,21 @@
          display: grid;
          grid-template-columns: repeat(2, minmax(200px, 303px)) repeat(3, minmax(100px, 132px)) minmax(180px, 1fr);
       }
+
+      .permits-docs-table & {
+         display: grid;
+         grid-template-columns: 1fr 170px 300px 0.76fr;
+
+         @media (max-width:bp.$pc) {
+            grid-template-columns: 1fr 170px 276px minmax(240px, auto);
+         }
+      }
    }
 
    // .table__cell
 
    &__cell {
-      padding: func.rem(6);
+      padding: func.rem(6) func.rem(15);
       display: flex;
 
       &:not(:last-child) {
@@ -120,6 +129,16 @@
       &:has(.table__actions-buttons) {
          justify-content: space-between;
          align-items: center;
+
+         .permits-docs-table & {
+            align-items: start;
+
+            @media (max-width:bp.$pc) {
+               .table__text {
+                  width: 120px;
+               }
+            }
+         }
       }
 
       .price-guide-table & {
@@ -179,6 +198,44 @@
          width: 15px;
          height: 19px;
          flex: 0 0 15px;
+      }
+   }
+
+   // .table__link
+
+   &__link {
+      height: auto;
+      align-items: center;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 137%;
+      color: #7d0606;
+      gap: 35px;
+      display: flex;
+      align-items: center;
+      padding-left: func.rem(20);
+
+      img {
+         width: 21px;
+         flex: 0 0 21px;
+      }
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   // .table__doc-statys
+
+   &__doc-statys {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+
+      img {
+         height: auto;
+         width: 20px;
+         flex: 0 0 20px;
       }
    }
 }

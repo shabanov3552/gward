@@ -1,0 +1,283 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.catalog {
+   margin-top: func.rem(40);
+
+   // .catalog__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+   }
+
+   // .catalog__sidebar
+
+   &__sidebar {
+      align-self: start;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      padding: func.rem(30) func.rem(32) func.rem(45) func.rem(36);
+   }
+
+   // .catalog__links
+
+   &__links {
+      margin-bottom: func.rem(55);
+   }
+
+   // .catalog__link
+
+   &__link {
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 125%;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      padding: func.rem(13) func.rem(19);
+
+      &._active {
+         border-color: #93a6c5;
+      }
+
+      &:hover {
+         border-color: #93a6c5;
+      }
+   }
+
+   // .catalog__filters
+
+   &__filters {}
+
+   // .catalog__main
+
+   &__main {}
+
+   // .catalog__main-header
+
+   &__main-header {
+      margin-bottom: func.rem(34);
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .catalog__selected-filters
+
+   &__selected-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+   }
+
+   // .catalog__s-f-list
+
+   &__s-f-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+   }
+
+   // .catalog__s-f-item
+
+   &__s-f-item {
+      padding: func.rem(6) func.rem(9);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(61, 74, 98, 0.1);
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+         svg use {
+            fill: #931222;
+         }
+      }
+
+      svg {
+         width: 16px;
+         height: 16px;
+
+         use {
+            fill: #8a8a8a;
+         }
+      }
+   }
+
+   // .catalog__item-del-icon
+
+   &__item-del-icon {}
+
+   // .catalog__reset-btn
+
+   &__reset-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 157%;
+      cursor: pointer;
+
+      svg {
+         transition: all 0.3s ease 0s;
+         width: 17px;
+         height: 17px;
+         flex: 0 0 17px;
+
+         use {
+            fill: #931222;
+         }
+      }
+
+      &:hover {
+         svg {
+            transform: rotate(90deg);
+         }
+      }
+   }
+
+   // .catalog__content
+
+   &__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 77px 32px;
+
+      @media (max-width:bp.$pc) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width:bp.$xxl) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-card__image-ibg {
+         background: #fff;
+      }
+   }
+
+   // .catalog__pagging
+
+   &__pagging {
+      margin-top: func.rem(50);
+   }
+}
+
+.filters {
+
+   // .filters__list
+
+   &__list {
+      margin-bottom: func.rem(32);
+   }
+
+   // .filters__block
+
+   &__block {
+      &:not(:last-child) {
+         margin-bottom: func.rem(50);
+      }
+   }
+
+   // .filters__title
+
+   &__title {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: func.rem(17);
+   }
+
+   // .filters__inputs-field
+
+   &__inputs-field {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+
+      .form {
+
+         // .form__line
+
+         &__line {}
+
+         // .form__label
+
+         &__label {
+            position: absolute;
+         }
+
+         // .form__input
+
+         &__input {}
+
+         // .form__clear-svg
+
+         &__clear-svg {}
+      }
+   }
+
+   // .filters__chekbox-list
+
+   &__chekbox-list {
+      padding-left: func.rem(10);
+      margin-left: func.rem(-10);
+      padding-bottom: func.rem(10);
+      max-height: 227px;
+      overflow: auto;
+      display: grid;
+      gap: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.15) rgba(255, 255, 255, 0);
+   }
+
+   // .filters__reset-btn
+
+   &__reset-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 157%;
+      cursor: pointer;
+
+      svg {
+         transition: all 0.3s ease 0s;
+         width: 17px;
+         height: 17px;
+         flex: 0 0 17px;
+
+         use {
+            fill: #931222;
+         }
+      }
+
+      &:hover {
+         svg {
+            transform: rotate(90deg);
+         }
+      }
+   }
+}
+
+.form {
+
+   // .form__line
+
+   &__line {}
+
+   // .form__label
+
+   &__label {}
+
+   // .form__input
+
+   &__input {}
+
+   // .form__clear-svg
+
+   &__clear-svg {}
+}

@@ -1,0 +1,55 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.product-card {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+
+   // .product-card__image-ibg
+
+   &__image-ibg {
+      // width: 290px;
+      height: 290px;
+      margin-bottom: func.rem(14);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #ebebeb;
+      display: block;
+
+      img {
+         width: calc(100% - 12px);
+         height: calc(100% - 12px);
+         inset: 6px;
+      }
+   }
+
+   // .product-card__link
+
+   &__link {
+      flex: 1 1 auto;
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 144%;
+      color: #931222;
+      margin-bottom: func.rem(9);
+
+      &:hover {
+         text-decoration: underline;
+      }
+
+      &::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+      }
+   }
+
+   // .product-card__article
+
+   &__article {}
+}

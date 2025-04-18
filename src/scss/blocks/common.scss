@@ -117,6 +117,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: func.rem(18);
+      align-items: flex-start;
 
       .currencies-page & {
          max-width: 836px;
@@ -291,5 +292,58 @@
       &:not(:last-child) {
          margin-bottom: func.rem(10);
       }
+   }
+}
+
+.doc-type {
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 137%;
+   color: #fff;
+   border-radius: 4px;
+   padding: func.rem(4) func.rem(6);
+   text-transform: uppercase;
+   background: #000;
+
+   // .doc-type_pdf
+
+   &_pdf {
+      background: #da4f4f;
+   }
+
+   // .doc-type_jpg
+
+   &_jpg {
+      background: #2ac9a2;
+   }
+
+   // .doc-type_svg
+
+   &_svg {
+      background: #646464;
+   }
+
+   // .doc-type_png
+
+   &_png {
+      background: #2aa0c9;
+   }
+
+   // .doc-type_webp
+
+   &_webp {
+      background: #a866ac;
+   }
+
+   // .doc-type_ai
+
+   &_ai {
+      background: #ea8613;
+   }
+
+   // .doc-type_doc
+
+   &_doc {
+      background: #5f80e5;
    }
 }

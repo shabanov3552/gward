@@ -15,6 +15,11 @@
 "value":""
 })
 
+@@include('html/_form-input_palceholder.htm',{
+"modifierClass":"",
+"palceholder":""
+})
+
 @@include('html/_form-textarea.htm',{
 "modifierClass":"",
 "label":""

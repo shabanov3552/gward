@@ -108,7 +108,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	if (options.viewPass) {
 		const passInputs = document.querySelectorAll('[type="password"]');
 		passInputs.forEach(input => {
-			console.log(input);
+			// console.log(input);
 			input.insertAdjacentHTML('afterend', '<div class="form__viewpass"></div>');
 		});
 		document.addEventListener("click", function (e) {
@@ -139,7 +139,6 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 					});
 				});
 				function setHeight(textarea, height) {
-					console.log('qwe');
 					textarea.style.height = `${height}px`;
 				}
 			}

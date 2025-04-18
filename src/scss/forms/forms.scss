@@ -62,6 +62,24 @@ textarea {
 		.has-error & {}
 	}
 
+	// .form__date-range
+
+	&__date-range {
+		display: grid;
+		grid-template-columns: 172px auto 172px;
+		align-items: center;
+		gap: 8px;
+	}
+
+	// .form__date-range-icon
+
+	&__date-range-icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 15px;
+	}
+
 	// .form__input-chunk
 
 	&__input-chunk {
@@ -114,6 +132,10 @@ textarea {
 
 		&._active {
 			display: block;
+
+			&~.form__date-range-icon {
+				display: none;
+			}
 		}
 
 		use {

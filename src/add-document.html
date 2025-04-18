@@ -1,0 +1,74 @@
+@@include('html/_header.htm',{
+"title":"Добавить документ",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Добавить документ</div>
+         <!-- <a href="add-document.html" class="action-button button-black">Добавить документ</a> -->
+      </div>
+      <div class="add-doc">
+         <form class="add-doc__form">
+            <div class="add-doc__main">
+               <div class="add-doc__list">
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Название документа",
+                  "value":""
+                  })
+                  @@include('html/_form-select.htm',{
+                  "label":"Тип документа"
+                  })
+                  @@include('html/_form-select.htm',{
+                  "label":"Статус документа"
+                  })
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Номер документа",
+                  "value":""
+                  })
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Дата выдачи документа",
+                  "value":""
+                  })
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Наим. органа по сертификации",
+                  "value":""
+                  })
+                  @@include('html/_form-date-range.htm',{
+                  "modifierClass":"",
+                  "label":"Срок действия"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Cкан документа"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Протокол сертификации"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Протоколы инспекционного контроля 1"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Отчеты инспекционного контроля 1"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Протоколы инспекционного контроля 2"
+                  })
+                  @@include('html/_file-upload.htm',{
+                  "name":"Отчеты инспекционного контроля 2"
+                  })
+                  @@include('html/_form-select_multiple.htm',{
+                  "label":"Привязка к товарам"
+                  })
+               </div>
+            </div>
+            <button type="submit" class="add-doc__button button-black">Сохранить</button>
+         </form>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

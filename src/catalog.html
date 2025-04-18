@@ -1,0 +1,158 @@
+@@include('html/_header.htm',{
+"title":"Каталог",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Перчатки антивибрационные</div>
+         <!-- <button type="button" data-popup="#add-product" class="action-button button-black">Создать продукт</button> -->
+      </div>
+      <div class="catalog">
+         <div class="catalog__grid">
+            <div class="catalog__sidebar">
+               <div class="catalog__links">
+                  <a href="" class="catalog__link _active">Перчатки антивибрационные</a>
+                  <a href="" class="catalog__link">Перчатки антипорезные</a>
+                  <a href="" class="catalog__link">Перчатки трикотажные утепленные</a>
+                  <a href="" class="catalog__link">Перчатки резиновые</a>
+               </div>
+               <div class="catalog__filters">
+                  <form action="" class="filters">
+                     <div class="filters__list">
+                        <div class="filters__block">
+                           <div class="filters__title">Размер (мм)</div>
+                           <div class="filters__inputs-field">
+                              @@include('html/_form-input_placeholder.htm',{
+                              "modifierClass":"",
+                              "placeholder":"От"
+                              })
+                              @@include('html/_form-input_placeholder.htm',{
+                              "modifierClass":"",
+                              "placeholder":"До"
+                              })
+                           </div>
+                        </div>
+                        <div class="filters__block">
+                           <div class="filters__title">Чекбоксы со скроллом</div>
+                           <div class="filters__chekbox-list">
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Первый"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Второй"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Третий"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Четвертый"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Пятый"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Шестой"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Седьмой"
+                              })
+                           </div>
+                        </div>
+                        <div class="filters__block">
+                           <div class="filters__title">Еще параметр</div>
+                           <div class="filters__chekbox-list">
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Первый"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Второй"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Третий"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Четвертый"
+                              })
+                              @@include('html/_form-checkbox.htm',{
+                              "name":"Пятый"
+                              })
+                           </div>
+                        </div>
+                     </div>
+                     <button type="reset" class="filters__reset-btn">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_reset"></use>
+                        </svg>
+                        <span>Сбросить</span>
+                     </button>
+                  </form>
+               </div>
+            </div>
+            <div class="catalog__main">
+               <div class="catalog__main-header">
+                  <div class="catalog__selected-filters">
+                     <div class="catalog__s-f-list">
+                        <div class="catalog__s-f-item">
+                           <span>Параметр 1</span>
+                           <svg class="catalog__item-del-icon">
+                              <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                           </svg>
+                        </div>
+                        <div class="catalog__s-f-item">
+                           <span>Параметр 2</span>
+                           <svg class="catalog__item-del-icon">
+                              <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="catalog__reset-btn">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_reset"></use>
+                        </svg>
+                        <span>Сбросить</span>
+                     </div>
+                  </div>
+                  <select name="" data-show-selected data-class-modif="catalog-sort">
+                     <option value="1" selected>Показывать по 24</option>
+                     <option value="2">Показывать по 40</option>
+                     <option value="3">Показывать по 60</option>
+                  </select>
+               </div>
+               <div class="catalog__content">
+                  @@include('html/_product-card.htm',{
+                  "src":"img/product-card-1.png",
+                  "name":"VibroNit Перчатки виброзащитные с нитриловым покрытием",
+                  "article":"Артикул: TPE Clear (without color) "
+                  })
+                  @@include('html/_product-card.htm',{
+                  "src":"img/product-card-2.png",
+                  "name":"VibroHit Перчатки виброзащитные из HPPE-волокна с латексным покрытием",
+                  "article":"Артикул: TPE Clear (without color) "
+                  })
+                  @@include('html/_product-card.htm',{
+                  "src":"img/product-card-3.png",
+                  "name":"VibroSkin Перчатки вибро-защитные из кожи и спилка 1/20",
+                  "article":"Артикул: AP SK410 (XY147 Gward Ural Zima)"
+                  })
+                  @@include('html/_product-card.htm',{
+                  "src":"img/product-card-4.png",
+                  "name":"ARGO Перчатки виброзащитные многофункциональные спилок/кожа",
+                  "article":"Артикул: TPE Clear (without color) "
+                  })
+                  @@include('html/_product-card.htm',{
+                  "src":"img/product-card-5.png",
+                  "name":"No-Cut Arthur Перчатки из HPPE-нити со стекловолокном с нитриловым покрытием",
+                  "article":"Артикул: TPE Clear (without color) "
+                  })
+               </div>
+               <div class="catalog__pagging">
+                  @@include('html/_pagging.htm',{})
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

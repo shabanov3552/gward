@@ -1,0 +1,51 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.add-doc {
+   margin-top: func.rem(30);
+   // .add-doc__form
+
+   &__form {}
+
+   // .add-doc__main
+
+   &__main {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(40);
+      margin-bottom: func.rem(25);
+
+      .form__line {
+         gap: 45px;
+         margin-bottom: func.rem(13);
+
+         &:not(:last-child) {}
+
+         .form__label {
+            flex: 0 0 340px;
+         }
+      }
+
+      .file-upload {
+         margin-bottom: func.rem(13);
+
+         .file-upload__name {
+            // flex: 0 0 300px;
+         }
+      }
+   }
+
+   // .add-doc__list
+
+   &__list {
+      max-width: 1180px;
+   }
+
+   // .add-doc__button
+
+   &__button {
+      width: 838px;
+   }
+}
