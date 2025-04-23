@@ -1,5 +1,5 @@
 import webp from "gulp-webp";
-import imagemin from "gulp-imagemin";
+// import imagemin from "gulp-imagemin";
 
 export const WebP = () => {
 	return app.gulp.src(app.path.src.images, { encoding: false })
@@ -23,7 +23,8 @@ export const WebP = () => {
 			)
 		)
 }
-export const imagesOptimize = () => {
+export const imagesOptimize = async () => {
+	const imagemin = await import("gulp-imagemin");
 	return app.gulp.src(app.path.src.images, { encoding: false })
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({

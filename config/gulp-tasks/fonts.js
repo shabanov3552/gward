@@ -1,7 +1,7 @@
 import fs from 'fs';
 import fonter from 'gulp-fonter-fix';
-import ttf2woff2 from 'gulp-ttf2woff2';
-import * as path from 'path';
+// import ttf2woff2 from 'gulp-ttf2woff2';
+// import * as path from 'path';
 
 export const otfToTtf = () => {
 	// Створення папки fonts
@@ -26,7 +26,8 @@ export const otfToTtf = () => {
 		// Выгружаем в исходную папку
 		.pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
 }
-export const ttfToWoff2 = () => {
+export const ttfToWoff2 = async () => {
+	const ttf2woff2 = await import('gulp-ttf2woff2');
 	// Ищем файлы шрифтов .ttf
 	return app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, { encoding: false })
 		.pipe(app.plugins.plumber(

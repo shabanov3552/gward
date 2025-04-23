@@ -7,6 +7,19 @@ import { pathtofiles } from "./config/gulp-settings.js";
 // Импорт функционала NodeJS
 import fs from 'fs';
 
+if (process.argv.includes('--bitrix')) {
+	var buildFolder = `./dist`;
+	pathtofiles.build = {
+		// html: `${buildFolder}/`,
+		js: `${buildFolder}/js/`,
+		css: `${buildFolder}/scss/`,
+		images: `${buildFolder}/img/`,
+		fonts: `${buildFolder}/fonts/`,
+		files: `${buildFolder}/files/`
+	}
+	pathtofiles.buildFolder = buildFolder
+}
+
 // Передаем значения в глобальную переменную
 global.app = {
 	isBuild: process.argv.includes('--build'),
@@ -14,6 +27,7 @@ global.app = {
 	isWebP: !process.argv.includes('--nowebp'),
 	isImgOpt: !process.argv.includes('--noimgopt'),
 	isFontsReW: process.argv.includes('--rewrite'),
+	isBitrix: process.argv.includes('--bitrix'),
 	gulp: gulp,
 	path: pathtofiles,
 	plugins: plugins
@@ -46,10 +60,49 @@ const fonts = gulp.series(reset, function (done) {
 const devTasks = gulp.series(fonts, gitignore);
 // Порядок выполнения заданий для режима продакшн
 let buildTasks;
-if (process.argv.includes('--nowebp')) {
-	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(WebP, imagesOptimize, copySvg), gitignore));
+if (process.argv.includes('--bitrix')) {
+	// тут нам не нужен html только стили и скрипты
+	buildTasks = gulp.series(
+		fonts,
+		// jsDev,
+		js,
+		css,
+		WebP,
+		copySvg
+	);
 } else {
-	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(WebP, copySvg), gitignore));
+	if (process.argv.includes('--nowebp')) {
+		buildTasks = gulp.series(
+			fonts,
+			jsDev,
+			js,
+			gulp.parallel(
+				html,
+				css,
+				gulp.parallel(
+					WebP,
+					imagesOptimize,
+					copySvg
+				),
+				gitignore
+			)
+		);
+	} else {
+		buildTasks = gulp.series(
+			fonts,
+			jsDev,
+			js,
+			gulp.parallel(
+				html,
+				css,
+				gulp.parallel(
+					WebP,
+					copySvg
+				),
+				gitignore
+			)
+		);
+	}
 }
 
 
