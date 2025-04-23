@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Цены</title>
+	<title>Складские и утилизационные сборы</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="wrapper price-guide-page">
+	<div class="wrapper ">
 		<div class="left-sidebar">
 			<div class="left-sidebar__menu-wrapper">
 				<a href="" class="left-sidebar__logo">
@@ -210,112 +210,145 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Цены</div>
-					<button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+					<div class="page-title">Складские и утилизационные сборы</div>
+					<!-- <button type="button" data-popup="#create-parametr" class="action-button button-black">Создать параметр</button> -->
 				</div>
-				<div class="price-guide">
-					<div class="price-guide__header">
-						<form action="" class="form form_price-guide">
-							<div class="form__line ">
-								<label for="" class="form__label">Артикул</label>
-								<div class="form__input-chunk">
-									<input id="" type="text" name="" class="form__input" value="">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
+				<div class="charges">
+					<div class="charges__section">
+						<div class="charges__title">Склад перевозчика</div>
+						<form action="" method="" class="form charges__form">
+							<div class="charges-card">
+								<div class="charges-card__title">Цена выгрузки</div>
+								<div class="charges-card__descr">Цена в рублях за выгрузку одной коробки на складе перевозчика</div>
+								<div class="charges-card__row _active">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
 								</div>
 							</div>
-							<div class="form__buttons">
-								<button type="submit" class="form__submit button-black">Найти</button>
-								<button type="reset" class="form__reset button-transparent">Сбросить</button>
+							<div class="charges-card">
+								<div class="charges-card__title">Цена обработки выхода</div>
+								<div class="charges-card__descr">Цена в рублях за выходную обработку одной коробки на складе перевозчика</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="charges-card">
+								<div class="charges-card__title">Коробок на палете</div>
+								<div class="charges-card__descr">Количество коробок, помещающееся на палете</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="charges-card">
+								<div class="charges-card__title">Цена обработки выхода</div>
+								<div class="charges-card__descr">Цена в рублях за выходную обработку одной коробки на складе перевозчика</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
+								</div>
 							</div>
 						</form>
 					</div>
-					<div class="price-guide__main">
-						<div class="table price-guide-table">
-							<div class="table__head">
-								<div class="table__name">Артикул</div>
-								<div class="table__name">Продавец</div>
-								<div class="table__name">Цвет</div>
-								<div class="table__name">Размер</div>
-								<div class="table__name">FOB $</div>
-								<div class="table__name">FOB ¥</div>
-							</div>
-							<div class="table__body">
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text">TPE Clear</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Zhangjiagang Good</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Berry</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
+					<div class="charges__section">
+						<div class="charges__title">Утилизационные сборы</div>
+						<form action="" method="" class="form charges__form">
+							<div class="charges-card">
+								<div class="charges-card__title">Ставка 6161</div>
+								<div class="charges-card__descr">Ставка утил сбора для ТНВЭД 6161 в рублях</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
 										</div>
 									</div>
-								</div>
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
-									</div>
-								</div>
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text">TPE Clear (without color) (TPE)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">GAOMI JIATE LABOR</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Violet</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">8(l)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.5</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.5</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
-									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
 								</div>
 							</div>
-						</div>
+							<div class="charges-card">
+								<div class="charges-card__title">Цена подбора</div>
+								<div class="charges-card__descr">Норма утил сбора ТНВЭД 6161 в процентах</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="charges-card">
+								<div class="charges-card__title">Цена обработки входа</div>
+								<div class="charges-card__descr">Ставка утил сбора для ТНВЭД 3926 в рублях</div>
+								<div class="charges-card__row">
+									<div class="form__line charges-card__line">
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" placeholder="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<button type="button" class="charges-card__button ">
+										<img src="img/icons/icon_edit_white.svg" alt="">
+										<img src="img/icons/icon_check-button.svg" alt="">
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

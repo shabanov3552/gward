@@ -1,0 +1,102 @@
+@@include('html/_header.htm',{
+"title":"Прочая документация",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Прочая документация</div>
+         <button type="button" data-popup="#add-other-doc" class="action-button button-black">Добавить документ</button>
+      </div>
+      <div class="docs-list">
+         <div class="docs-list__header">
+            <form action="" class="form form_docs-list">
+               <div class="form__cheks">
+                  @@include('html/_form-checkbox.htm',{
+                  "name":"Сертификат"
+                  })
+                  @@include('html/_form-checkbox.htm',{
+                  "name":"Декларация"
+                  })
+                  @@include('html/_form-checkbox.htm',{
+                  "name":"Еще какой-то"
+                  })
+               </div>
+               <div class="form__buttons">
+                  <button type="submit" class="form__submit button-black">Найти</button>
+                  <button type="submit" class="form__reset button-transparent">Сбросить</button>
+               </div>
+            </form>
+            <div class="docs-list__sort">
+               <select name="" data-show-selected data-class-modif="catalog-sort">
+                  <option value="1" selected>Сортировка от А до Я</option>
+                  <option value="2">Сортировка от Я до А</option>
+               </select>
+            </div>
+         </div>
+         <div class="docs-list__main">
+            <div class="table docs-list-table">
+               <div class="table__body">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">
+                           @@include('html/_doc-type.htm',{
+                           "type":"pdf"
+                           })
+                           <span>Сертификат о том</span>
+                        </a>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Декларация</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">
+                           @@include('html/_doc-type.htm',{
+                           "type":"webp"
+                           })
+                           <span>Декларация о сем с очень длинным названием</span>
+                        </a>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Сертификат</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">
+                           @@include('html/_doc-type.htm',{
+                           "type":"pdf"
+                           })
+                           <span>Декларация о результатах таких-то действий</span>
+                        </a>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Декларация</div>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <div class="docs-list__pagging">
+               @@include('html/_pagging.htm',{})
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

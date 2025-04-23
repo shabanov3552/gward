@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Цены</title>
+	<title>Эксплуатационная документация</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="wrapper price-guide-page">
+	<div class="wrapper ">
 		<div class="left-sidebar">
 			<div class="left-sidebar__menu-wrapper">
 				<a href="" class="left-sidebar__logo">
@@ -210,12 +210,12 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Цены</div>
-					<button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+					<div class="page-title">Эксплуатационная документация</div>
+					<button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button>
 				</div>
-				<div class="price-guide">
-					<div class="price-guide__header">
-						<form action="" class="form form_price-guide">
+				<div class="operational-docs">
+					<div class="operational-docs__header">
+						<form action="" class="form form_operational-docs">
 							<div class="form__line ">
 								<label for="" class="form__label">Артикул</label>
 								<div class="form__input-chunk">
@@ -227,39 +227,18 @@
 							</div>
 							<div class="form__buttons">
 								<button type="submit" class="form__submit button-black">Найти</button>
-								<button type="reset" class="form__reset button-transparent">Сбросить</button>
 							</div>
 						</form>
 					</div>
-					<div class="price-guide__main">
-						<div class="table price-guide-table">
-							<div class="table__head">
-								<div class="table__name">Артикул</div>
-								<div class="table__name">Продавец</div>
-								<div class="table__name">Цвет</div>
-								<div class="table__name">Размер</div>
-								<div class="table__name">FOB $</div>
-								<div class="table__name">FOB ¥</div>
-							</div>
+					<div class="operational-docs__main">
+						<div class="table operational-docs-table">
 							<div class="table__body">
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text">TPE Clear</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Zhangjiagang Good</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Berry</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
+										<a href="" class="table__link">
+											<img src="img/icons/dc-documents.svg" alt="">
+											<span>Сертификат Соответствия Rubberex Скан В.00243</span>
+										</a>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
@@ -268,22 +247,10 @@
 								</div>
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
+										<a href="" class="table__link">
+											<img src="img/icons/dc-documents.svg" alt="">
+											<span>Эксплуатационный документ с аномально длинным названием</span>
+										</a>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
@@ -292,28 +259,54 @@
 								</div>
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text">TPE Clear (without color) (TPE)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">GAOMI JIATE LABOR</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Violet</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">8(l)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.5</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.5</div>
+										<a href="" class="table__link">
+											<img src="img/icons/dc-documents.svg" alt="">
+											<span>Сертификат Соответствия Rubberex Скан В.00243</span>
+										</a>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
 										</div>
 									</div>
 								</div>
+							</div>
+
+						</div>
+						<div class="operational-docs__pagging">
+							<div class="pagging">
+								<a href="" class="pagging__arrow">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon_pagging-left"></use>
+									</svg>
+								</a>
+								<ul class="pagging__list">
+									<li class="pagging__li">
+										<a href="" class="pagging__item">1</a>
+									</li>
+									<li class="pagging__li-dots">
+										<a href="" class="pagging__item-dots">...</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">6</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item _active">7</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">8</a>
+									</li>
+									<li class="pagging__li-dots">
+										<a href="" class="pagging__item-dots">...</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">12</a>
+									</li>
+								</ul>
+								<a href="" class="pagging__arrow">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon_pagging-right"></use>
+									</svg>
+								</a>
 							</div>
 						</div>
 					</div>

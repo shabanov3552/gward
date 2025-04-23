@@ -1,0 +1,85 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.docs-list {
+
+   // .docs-list__header
+
+   &__header {
+      margin-bottom: func.rem(25);
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: space-between;
+      align-items: end;
+
+      .form {
+
+         // .form_docs-list
+
+         &_docs-list {
+            background: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: func.rem(19) 0;
+            padding-left: func.rem(34);
+            padding-right: func.rem(40);
+            gap: 85px;
+         }
+
+         // .form__cheks
+
+         &__cheks {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 15px 30px;
+
+            .checkbox {
+               align-items: center;
+            }
+         }
+
+         // .form__buttons
+
+         &__buttons {
+            display: flex;
+            gap: 29px;
+         }
+
+         // .form__submit
+
+         &__submit {
+            flex: 0 0 208px;
+            width: 208px;
+         }
+
+         // .form__reset
+
+         &__reset {
+            flex: 0 0 146px;
+            width: 146px;
+         }
+      }
+   }
+
+   // .docs-list__sort
+
+   &__sort {}
+
+   // .docs-list__main
+
+   &__main {}
+
+   // .docs-list__pagging
+
+   &__pagging {
+      margin-top: func.rem(35);
+      max-width: 1182px;
+   }
+}
+
+
+
+.docs-list-table {}

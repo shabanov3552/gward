@@ -1,0 +1,102 @@
+@@include('html/_header.htm',{
+"title":"Конструкторская детальная",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</div>
+         <!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
+      </div>
+      <div class="const-docs-detail">
+         <div class="const-docs-detail__grid">
+            <div class="const-docs-detail__block">
+               <div class="const-docs-detail__descr">
+                  <div class="const-docs-detail__title">Артикул: TPE Clear (without color) (TPE)</div>
+                  <a href="" class="const-docs-detail__link">На страницу товара</a>
+                  <div class="const-docs-detail__text">
+                     <p>Перчатки изготовлены из нейлоновой пряжи яркого желто-зеленого цвета, связываемой в трикотажную перчатку на вязальных машинах 13 класса, с оверложенной манжетой. Плотность трикотажного полотна не менее 150 грамм на квадратный метр. Готовая перчатка путем обмакивания покрывается: с ладонной части, на тыльной стороне фалангах пальцев и межпальцевом пространстве, нитрилом фиолетового цвета плотностью не менее 350 грамм на квадратный метр. Мягкий и эластичный трикотажный манжет в виде «резинки» удобно облегает запястье и фиксирует перчатку на руке.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="const-docs-detail__block">
+               <div data-tabs class="const-docs-detail__tabs">
+                  <div class="const-docs-detail__title">Документы</div>
+                  <nav data-tabs-titles class="const-docs-detail__navigation">
+                     <button type="button" class="const-docs-detail__nav-title _tab-active">Раскроечные лекала</button>
+                     <button type="button" class="const-docs-detail__nav-title">Размерные чертежи</button>
+                     <button type="button" class="const-docs-detail__nav-title">Таблица такая-то</button>
+                  </nav>
+                  <div data-tabs-body class="const-docs-detail__content">
+                     <div class="const-docs-detail__body">
+                        <div class="const-docs-detail__body-row">
+                           <div class="const-docs-detail__row-label">Раскроечное лекало 1</div>
+                           <div class="const-docs-detail__row-chunk">
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"pdf"
+                                 })
+                              </a>
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"jpg"
+                                 })
+                              </a>
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"svg"
+                                 })
+                              </a>
+                           </div>
+                        </div>
+                        <div class="const-docs-detail__body-row">
+                           <div class="const-docs-detail__row-label">Раскроечное лекало 2</div>
+                           <div class="const-docs-detail__row-chunk">
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"jpg"
+                                 })
+                              </a>
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"png"
+                                 })
+                              </a>
+                           </div>
+                        </div>
+                        <div class="const-docs-detail__body-row">
+                           <div class="const-docs-detail__row-label">Раскроечное лекало 3</div>
+                           <div class="const-docs-detail__row-chunk">
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"pdf"
+                                 })
+                              </a>
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"jpg"
+                                 })
+                              </a>
+                              <a href="" class="const-docs-detail__doc-link">
+                                 @@include('html/_doc-type.htm',{
+                                 "type":"svg"
+                                 })
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="const-docs-detail__body">
+                        Содержимое второго таба
+                     </div>
+                     <div class="const-docs-detail__body">
+                        Содержимое третьего таба
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

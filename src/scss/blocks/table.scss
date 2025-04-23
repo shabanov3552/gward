@@ -37,6 +37,15 @@
          display: grid;
          grid-template-columns: repeat(2, minmax(200px, 303px)) repeat(3, minmax(100px, 132px)) minmax(180px, 1fr);
       }
+
+      .basic-params-table & {
+         display: grid;
+         grid-template-columns: 100px 0.899fr 185px 0.7fr 0.89fr 1fr;
+
+         &::before {
+            content: '';
+         }
+      }
    }
 
    // .table__name
@@ -105,6 +114,26 @@
             grid-template-columns: 1fr 170px 276px minmax(240px, auto);
          }
       }
+
+      .construction-docs-table & {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .docs-list-table & {
+         display: grid;
+         grid-template-columns: 642px 1fr;
+      }
+
+      .basic-params-table & {
+         display: grid;
+         grid-template-columns: 100px 0.899fr 185px 0.7fr 0.89fr 1fr;
+      }
+
+      .trade-margins-table & {
+         display: grid;
+         grid-template-columns: 100px 1fr;
+      }
    }
 
    // .table__cell
@@ -153,6 +182,7 @@
    // .table__text
 
    &__text {
+      overflow-wrap: anywhere;
       // .table__text_bold
 
       &_bold {

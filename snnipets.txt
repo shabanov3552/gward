@@ -15,7 +15,7 @@
 "value":""
 })
 
-@@include('html/_form-input_palceholder.htm',{
+@@include('html/_form-input_placeholder.htm',{
 "modifierClass":"",
 "palceholder":""
 })
@@ -48,4 +48,8 @@
 
 @@include('html/_form-checkbox.htm',{
 "name":""
+})
+
+@@include('html/_doc-type.htm',{
+"type":"pdf"
 })

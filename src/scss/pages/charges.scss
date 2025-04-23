@@ -1,0 +1,119 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.charges {
+   margin-top: func.rem(33);
+
+   // .charges__section
+
+   &__section {
+      &:not(:last-child) {
+         margin-bottom: func.rem(54);
+      }
+   }
+
+   // .charges__title
+
+   &__title {
+      font-weight: 600;
+      font-size: 26px;
+      color: #000;
+      margin-bottom: func.rem(30);
+   }
+
+   // .charges__form
+
+   &__form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px 54px;
+
+      @media (max-width:bp.$pc) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+}
+
+.form {}
+
+.charges-card {
+   background: #fff;
+   border-radius: 10px;
+   padding: func.rem(38) func.rem(40);
+   display: flex;
+   flex-direction: column;
+
+   // .charges-card__title
+
+   &__title {
+      font-weight: 600;
+      margin-bottom: func.rem(21);
+   }
+
+   // .charges-card__descr
+
+   &__descr {
+      margin-bottom: func.rem(32);
+      line-height: 162%;
+      flex: 1 1 auto;
+   }
+
+   // .charges-card__row
+
+   &__row {
+      max-width: 404px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 7px;
+   }
+
+   // .charges-card__line
+
+   &__line {
+      pointer-events: none;
+
+      ._active & {
+         pointer-events: all;
+      }
+   }
+
+   // .charges-card__button
+
+   &__button {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #4c4c4c;
+      border-radius: 9px;
+
+      &:hover {
+         opacity: 0.8;
+      }
+
+      img {
+         &:last-child {
+            display: none;
+         }
+      }
+
+      ._active & {
+         background: #931222;
+
+         img {
+            &:first-child {
+               display: none;
+            }
+
+            &:last-child {
+               display: block;
+            }
+         }
+      }
+   }
+}
+
+.js-toggle-input {}

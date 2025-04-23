@@ -1,0 +1,56 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.trade-margins {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 56px;
+   align-items: start;
+
+   @media (max-width:func.em(1699)) {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 1100px;
+   }
+
+   // .trade-margins__form-wrapper
+
+   &__form-wrapper {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(40);
+      align-self: start;
+   }
+
+   // .trade-margins__form-title
+
+   &__form-title {
+      font-weight: 600;
+      margin-bottom: func.rem(14);
+   }
+
+   // .trade-margins__form
+
+   &__form {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      .form__line {
+         width: 100%;
+      }
+
+      .form__label {
+         flex: 0 0 272px;
+      }
+
+      .form__button {
+         width: 139px;
+         flex: 0 0 139px;
+      }
+   }
+}
+
+.trade-margins-table {}

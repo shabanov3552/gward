@@ -1,0 +1,124 @@
+@@include('html/_header.htm',{
+"title":"Складские и утилизационные сборы",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Складские и утилизационные сборы</div>
+         <!-- <button type="button" data-popup="#create-parametr" class="action-button button-black">Создать параметр</button> -->
+      </div>
+      <div class="charges">
+         <div class="charges__section">
+            <div class="charges__title">Склад перевозчика</div>
+            <form action="" method="" class="form charges__form">
+               <div class="charges-card">
+                  <div class="charges-card__title">Цена выгрузки</div>
+                  <div class="charges-card__descr">Цена в рублях за выгрузку одной коробки на складе перевозчика</div>
+                  <div class="charges-card__row _active">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+               <div class="charges-card">
+                  <div class="charges-card__title">Цена обработки выхода</div>
+                  <div class="charges-card__descr">Цена в рублях за выходную обработку одной коробки на складе перевозчика</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+               <div class="charges-card">
+                  <div class="charges-card__title">Коробок на палете</div>
+                  <div class="charges-card__descr">Количество коробок, помещающееся на палете</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+               <div class="charges-card">
+                  <div class="charges-card__title">Цена обработки выхода</div>
+                  <div class="charges-card__descr">Цена в рублях за выходную обработку одной коробки на складе перевозчика</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="charges__section">
+            <div class="charges__title">Утилизационные сборы</div>
+            <form action="" method="" class="form charges__form">
+               <div class="charges-card">
+                  <div class="charges-card__title">Ставка 6161</div>
+                  <div class="charges-card__descr">Ставка утил сбора для ТНВЭД 6161 в рублях</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+               <div class="charges-card">
+                  <div class="charges-card__title">Цена подбора</div>
+                  <div class="charges-card__descr">Норма утил сбора ТНВЭД 6161 в процентах</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+               <div class="charges-card">
+                  <div class="charges-card__title">Цена обработки входа</div>
+                  <div class="charges-card__descr">Ставка утил сбора для ТНВЭД 3926 в рублях</div>
+                  <div class="charges-card__row">
+                     @@include('html/_form-input_placeholder.htm',{
+                     "modifierClass":"charges-card__line",
+                     "placeholder":""
+                     })
+                     <button type="button" class="charges-card__button ">
+                        <img src="@img/icons/icon_edit_white.svg" alt="">
+                        <img src="@img/icons/icon_check-button.svg" alt="">
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Цены</title>
+	<title>Базовые параметры</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="wrapper price-guide-page">
+	<div class="wrapper ">
 		<div class="left-sidebar">
 			<div class="left-sidebar__menu-wrapper">
 				<a href="" class="left-sidebar__logo">
@@ -210,112 +210,95 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Цены</div>
-					<button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+					<div class="page-title">Базовые параметры</div>
+					<button type="button" data-popup="#create-parametr" class="action-button button-black">Создать параметр</button>
 				</div>
-				<div class="price-guide">
-					<div class="price-guide__header">
-						<form action="" class="form form_price-guide">
-							<div class="form__line ">
-								<label for="" class="form__label">Артикул</label>
-								<div class="form__input-chunk">
-									<input id="" type="text" name="" class="form__input" value="">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-							</div>
-							<div class="form__buttons">
-								<button type="submit" class="form__submit button-black">Найти</button>
-								<button type="reset" class="form__reset button-transparent">Сбросить</button>
-							</div>
-						</form>
+
+				<div class="table basic-params-table">
+					<div class="table__head">
+						<div class="table__name">Наименование</div>
+						<div class="table__name">Переменная</div>
+						<div class="table__name">Знач.</div>
+						<div class="table__name">Формула</div>
+						<div class="table__name">Действие</div>
 					</div>
-					<div class="price-guide__main">
-						<div class="table price-guide-table">
-							<div class="table__head">
-								<div class="table__name">Артикул</div>
-								<div class="table__name">Продавец</div>
-								<div class="table__name">Цвет</div>
-								<div class="table__name">Размер</div>
-								<div class="table__name">FOB $</div>
-								<div class="table__name">FOB ¥</div>
+					<div class="table__body" data-dnd-container="1">
+						<!-- отследить перемещение  можно по событию onUpdateDrag
+                 event.detail.item.dataset.dndItem номер элемента 
+                 event.detail.newDraggableIndex новая позиция -->
+						<div class="table__row" data-dnd-item="1">
+							<div class="table__cell">
+								<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
 							</div>
-							<div class="table__body">
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text">TPE Clear</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Zhangjiagang Good</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Berry</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
-									</div>
-								</div>
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
-									</div>
-								</div>
-								<div class="table__row">
-									<div class="table__cell">
-										<div class="table__text">TPE Clear (without color) (TPE)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">GAOMI JIATE LABOR</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Violet</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">8(l)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.5</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.5</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
-									</div>
+							<div class="table__cell">
+								<div class="table__text">Первая 20% предоплата Поставщику</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">price</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">0.2</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">Стоимость контейнера * 0,2/100%</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">mul</div>
+								<div class="table__actions-buttons">
+									<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
+									<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
 								</div>
 							</div>
 						</div>
+						<div class="table__row" data-dnd-item="2">
+							<div class="table__cell">
+								<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">Комиссия Банка за совершение валютных операций для 20% предоплаты</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">dollar</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">25</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">Для долларовой калькуляции = 25$, для юаневой калькуляции = 300 ¥</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">div</div>
+								<div class="table__actions-buttons">
+									<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
+									<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class="table__row" data-dnd-item="3">
+							<div class="table__cell">
+								<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">Валютный контроль для 1й предоплаты стоимость</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">percentParam</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">{"sea":"1","course":"1","ensure": "1","fixed":"1"}</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">Первая 20% предоплата поставщику *0,12/100</div>
+							</div>
+							<div class="table__cell">
+								<div class="table__text">mul</div>
+								<div class="table__actions-buttons">
+									<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
+									<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>

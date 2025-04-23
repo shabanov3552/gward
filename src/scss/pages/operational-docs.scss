@@ -1,0 +1,63 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.operational-docs {
+
+   // .operational-docs__header
+
+   &__header {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 1000px;
+      margin-bottom: func.rem(25);
+      padding: func.rem(20) func.rem(26);
+      padding-right: func.rem(46);
+
+      .form {
+
+         // .form_operational-docs
+
+         &_operational-docs {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+         }
+
+         &__line {
+            flex: 1 1 auto;
+         }
+
+         // .form__buttons
+
+         &__buttons {}
+
+         // .form__submit
+
+         &__submit {
+            width: 208px;
+            flex: 0 0 208px;
+         }
+      }
+   }
+
+   // .operational-docs__main
+
+   &__main {}
+
+   // .operational-docs__pagging
+
+   &__pagging {
+      margin-top: func.rem(26);
+      max-width: 1182px;
+   }
+
+   // .operational-docs__doc-name
+
+   &__doc-name {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+   }
+}

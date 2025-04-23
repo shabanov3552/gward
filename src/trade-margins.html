@@ -1,0 +1,71 @@
+@@include('html/_header.htm',{
+"title":"Наценки",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Наценки</div>
+         <!-- <button type="button" data-popup="#create-parametr" class="action-button button-black">Создать параметр</button> -->
+      </div>
+      <div class="trade-margins">
+         <div class="table trade-margins-table">
+            <div class="table__body" data-dnd-container="1">
+               <!-- отследить перемещение  можно по событию onUpdateDrag
+                 event.detail.item.dataset.dndItem номер элемента 
+                 event.detail.newDraggableIndex новая позиция -->
+               <div class="table__row" data-dnd-item="1">
+                  <div class="table__cell">
+                     <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                  </div>
+                  <div class="table__cell">
+                     <div class="table__text table__text_bold">1</div>
+                     <div class="table__actions-buttons">
+                        <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                        <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="table__row" data-dnd-item="2">
+                  <div class="table__cell">
+                     <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                  </div>
+                  <div class="table__cell">
+                     <div class="table__text table__text_bold">1.32</div>
+                     <div class="table__actions-buttons">
+                        <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                        <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+               <div class="table__row" data-dnd-item="3">
+                  <div class="table__cell">
+                     <div class="gripper" data-dnd-handle><img src="@img/icons/gripper.svg" alt=""></div>
+                  </div>
+                  <div class="table__cell">
+                     <div class="table__text table__text_bold">1.62</div>
+                     <div class="table__actions-buttons">
+                        <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                        <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <div class="trade-margins__form-wrapper">
+            <div class="trade-margins__form-title">Добавление новой наценки</div>
+            <form action="" class="trade-margins__form form">
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Имя наценки (коэффициент)",
+               "value":""
+               })
+               <button type="submit" class="form__button button-black">Добавить</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Цены</title>
+	<title>Нормативная база</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="wrapper price-guide-page">
+	<div class="wrapper ">
 		<div class="left-sidebar">
 			<div class="left-sidebar__menu-wrapper">
 				<a href="" class="left-sidebar__logo">
@@ -210,56 +210,53 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Цены</div>
-					<button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+					<div class="page-title">Нормативная база</div>
+					<button type="button" data-popup="#add-reg-doc" class="action-button button-black">Добавить документ</button>
 				</div>
-				<div class="price-guide">
-					<div class="price-guide__header">
-						<form action="" class="form form_price-guide">
-							<div class="form__line ">
-								<label for="" class="form__label">Артикул</label>
-								<div class="form__input-chunk">
-									<input id="" type="text" name="" class="form__input" value="">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
+				<div class="docs-list">
+					<div class="docs-list__header">
+						<form action="" class="form form_docs-list">
+							<div class="form__cheks">
+								<label class="checkbox">
+									<input class="checkbox__input" type="checkbox">
+									<div class="checkbox__chunk"></div>
+									<span class="checkbox__text">ГОСТ</span>
+								</label>
+								<label class="checkbox">
+									<input class="checkbox__input" type="checkbox">
+									<div class="checkbox__chunk"></div>
+									<span class="checkbox__text">СНИП</span>
+								</label>
+								<label class="checkbox">
+									<input class="checkbox__input" type="checkbox">
+									<div class="checkbox__chunk"></div>
+									<span class="checkbox__text">Еще какой-то</span>
+								</label>
 							</div>
 							<div class="form__buttons">
 								<button type="submit" class="form__submit button-black">Найти</button>
-								<button type="reset" class="form__reset button-transparent">Сбросить</button>
+								<button type="submit" class="form__reset button-transparent">Сбросить</button>
 							</div>
 						</form>
+						<div class="docs-list__sort">
+							<select name="" data-show-selected data-class-modif="catalog-sort">
+								<option value="1" selected>Сортировка от А до Я</option>
+								<option value="2">Сортировка от Я до А</option>
+							</select>
+						</div>
 					</div>
-					<div class="price-guide__main">
-						<div class="table price-guide-table">
-							<div class="table__head">
-								<div class="table__name">Артикул</div>
-								<div class="table__name">Продавец</div>
-								<div class="table__name">Цвет</div>
-								<div class="table__name">Размер</div>
-								<div class="table__name">FOB $</div>
-								<div class="table__name">FOB ¥</div>
-							</div>
+					<div class="docs-list__main">
+						<div class="table docs-list-table">
 							<div class="table__body">
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text">TPE Clear</div>
+										<a href="" class="table__link">
+											<span class="doc-type doc-type_pdf">pdf</span>
+											<span>Сертификат о том</span>
+										</a>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">Zhangjiagang Good</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Berry</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
+										<div class="table__text">ГОСТ</div>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
@@ -268,22 +265,13 @@
 								</div>
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text"></div>
+										<a href="" class="table__link">
+											<span class="doc-type doc-type.webp" .webp</span>
+												<span>Декларация о сем с очень длинным названием</span>
+										</a>
 									</div>
 									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text"></div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
+										<div class="table__text">СНИП</div>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
@@ -292,28 +280,57 @@
 								</div>
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text">TPE Clear (without color) (TPE)</div>
+										<a href="" class="table__link">
+											<span class="doc-type doc-type.webp" .webp</span>
+												<span>Декларация о результатах таких-то действий</span>
+										</a>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">GAOMI JIATE LABOR</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">Violet</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">8(l)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.5</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.5</div>
+										<div class="table__text">ГОСТ</div>
 										<div class="table__actions-buttons">
 											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
 											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
 										</div>
 									</div>
 								</div>
+							</div>
+
+						</div>
+						<div class="docs-list__pagging">
+							<div class="pagging">
+								<a href="" class="pagging__arrow">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon_pagging-left"></use>
+									</svg>
+								</a>
+								<ul class="pagging__list">
+									<li class="pagging__li">
+										<a href="" class="pagging__item">1</a>
+									</li>
+									<li class="pagging__li-dots">
+										<a href="" class="pagging__item-dots">...</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">6</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item _active">7</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">8</a>
+									</li>
+									<li class="pagging__li-dots">
+										<a href="" class="pagging__item-dots">...</a>
+									</li>
+									<li class="pagging__li">
+										<a href="" class="pagging__item">12</a>
+									</li>
+								</ul>
+								<a href="" class="pagging__arrow">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon_pagging-right"></use>
+									</svg>
+								</a>
 							</div>
 						</div>
 					</div>
