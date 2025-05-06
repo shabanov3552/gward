@@ -1,0 +1,100 @@
+@@include('html/_header.htm',{
+"title":"Создание калькуляции: Документы",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">TPE на Москву 2 контейнера MAERSK</div>
+         <!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
+      </div>
+      <div class="create-calc">
+         <div class="create-calc-steps">
+            <div class="create-calc-steps__wrapper">
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">1</div>
+                  <div class="create-calc-steps__step-title">Параметры</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">2</div>
+                  <div class="create-calc-steps__step-title">Продукты</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">3</div>
+                  <div class="create-calc-steps__step-title">Свойства</div>
+               </div>
+               <div class="create-calc-steps__step _active">
+                  <div class="create-calc-steps__step-num">4</div>
+                  <div class="create-calc-steps__step-title">Документы</div>
+               </div>
+            </div>
+         </div>
+         <div class="create-calc__header">
+            <div class="create-calc__title">Документы</div>
+         </div>
+         <div class="create-calc__section">
+            <div class="create-calc__field">
+               <div class="create-calc__field-label">Инвойс реальный русский</div>
+               <div class="create-calc__field-main">
+                  <button type="submit" class="create-calc__generate button-transparent">Сгенерировать</button>
+               </div>
+            </div>
+            <div class="create-calc__field">
+               <div class="create-calc__field-label">Инвойс реальный English</div>
+               <div class="create-calc__field-main">
+                  <div class="create-calc__status">
+                     <img src="@img/icons/doc-valid.svg" alt="">
+                     <span>Документ добавлен</span>
+                  </div>
+                  <a href="" class="create-calc__download button-transparent">
+                     @@include('html/_doc-type.htm',{
+                     "type":"pdf"
+                     })
+                     <span>Скачать</span>
+                  </a>
+                  <a href="" class="create-calc__download button-transparent">
+                     @@include('html/_doc-type.htm',{
+                     "type":"xls"
+                     })
+                     <span>Скачать</span>
+                  </a>
+                  <a href="" class="create-calc__link button-transparent">Удалить</a>
+                  <a href="" class="create-calc__link button-transparent">Редактировать</a>
+               </div>
+            </div>
+            <div class="create-calc__field">
+               <div class="create-calc__field-label">Ответ на коммерческое предложение</div>
+               <div class="create-calc__field-main">
+                  <button type="submit" class="create-calc__generate button-transparent">Сгенерировать</button>
+               </div>
+            </div>
+            <div class="create-calc__field">
+               <div class="create-calc__field-label">Спецификация на базе шаблона ФТС</div>
+               <div class="create-calc__field-main">
+                  <div class="create-calc__status">
+                     <img src="@img/icons/doc-valid.svg" alt="">
+                     <span>Документ добавлен</span>
+                  </div>
+                  <a href="" class="create-calc__download button-transparent">
+                     @@include('html/_doc-type.htm',{
+                     "type":"doc"
+                     })
+                     <span>Скачать</span>
+                  </a>
+                  <a href="" class="create-calc__download button-transparent">
+                     @@include('html/_doc-type.htm',{
+                     "type":"xls"
+                     })
+                     <span>Скачать</span>
+                  </a>
+                  <a href="" class="create-calc__link button-transparent">Удалить</a>
+                  <a href="" class="create-calc__link button-transparent">Редактировать</a>
+               </div>
+            </div>
+         </div>
+         <button type="submit" form="create-calc-form" class="create-calc__save-button button-green">Сохранить</button>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

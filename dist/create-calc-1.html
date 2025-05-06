@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Добавить документ</title>
+	<title>Создание калькуляции: Параметры</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -210,187 +210,117 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Добавить документ</div>
-					<!-- <a href="add-document.html" class="action-button button-black">Добавить документ</a> -->
+					<div class="page-title">Калькуляция: создание</div>
+					<!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
 				</div>
-				<div class="add-doc">
-					<form class="add-doc__form">
-						<div class="add-doc__main">
-							<div class="add-doc__list">
-								<div class="form__line ">
-									<label for="" class="form__label">Название документа</label>
-									<div class="form__input-chunk">
-										<input id="" type="text" name="" class="form__input" value="">
-										<svg class="form__clear-svg">
-											<use xlink:href="img/icons/icons.svg#input_clear"></use>
-										</svg>
-									</div>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Тип документа</label>
-									<select id="" name="" data-show-selected>
-										<option value="" selected></option>
-										<option value="1">Пункт №1</option>
-										<option value="2">Пункт №2</option>
-										<option value="3">Пункт №3</option>
-										<option value="4">Пункт №4</option>
-									</select>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Статус документа</label>
-									<select id="" name="" data-show-selected>
-										<option value="" selected></option>
-										<option value="1">Пункт №1</option>
-										<option value="2">Пункт №2</option>
-										<option value="3">Пункт №3</option>
-										<option value="4">Пункт №4</option>
-									</select>
-								</div>
-								<div class="form__line ">
-									<label for="" class="form__label">Номер документа</label>
-									<div class="form__input-chunk">
-										<input id="" type="text" name="" class="form__input" value="">
-										<svg class="form__clear-svg">
-											<use xlink:href="img/icons/icons.svg#input_clear"></use>
-										</svg>
-									</div>
-								</div>
-								<div class="form__line ">
-									<label for="" class="form__label">Дата выдачи документа</label>
-									<div class="form__input-chunk">
-										<input id="" type="text" name="" class="form__input" value="">
-										<svg class="form__clear-svg">
-											<use xlink:href="img/icons/icons.svg#input_clear"></use>
-										</svg>
-									</div>
-								</div>
-								<div class="form__line ">
-									<label for="" class="form__label">Наим. органа по сертификации</label>
-									<div class="form__input-chunk">
-										<input id="" type="text" name="" class="form__input" value="">
-										<svg class="form__clear-svg">
-											<use xlink:href="img/icons/icons.svg#input_clear"></use>
-										</svg>
-									</div>
-								</div>
-								<div class="form__line ">
-									<label for="" class="form__label">Срок действия</label>
-									<div class="form__date-range">
-										<div class="form__input-chunk">
-											<input id="date-from" type="text" name="" class="form__input" value="" data-datepicker autocomplete="off">
-											<svg class="form__clear-svg">
-												<use xlink:href="img/icons/icons.svg#input_clear"></use>
-											</svg>
-											<img src="img/icons/icon_calendar.svg" alt="" class="form__date-range-icon">
-										</div>
-										<span>—</span>
-										<div class="form__input-chunk">
-											<input id="date-to" type="text" name="" class="form__input" value="" data-datepicker autocomplete="off">
-											<svg class="form__clear-svg">
-												<use xlink:href="img/icons/icons.svg#input_clear"></use>
-											</svg>
-											<img src="img/icons/icon_calendar.svg" alt="" class="form__date-range-icon">
-										</div>
-									</div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Cкан документа</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Протокол сертификации</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Протоколы инспекционного контроля 1</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Отчеты инспекционного контроля 1</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Протоколы инспекционного контроля 2</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="file-upload js-file-upload">
-									<div class="file-upload__name">Отчеты инспекционного контроля 2</div>
-									<label class="file-upload__label">
-										<!-- data-max-files максимальное колличество файлов -->
-										<!-- data-max-size общий максимальный размер файлов в Мб -->
-										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
-										<div class="file-upload__pseudo-input">
-											<img src="img/icons/file-upload-icon.svg" alt="">
-											<span>Прикрепить файл</span>
-										</div>
-									</label>
-									<div class="file-upload__preview"></div>
-								</div>
-								<div class="form__line">
-									<label for="" class="form__label">Привязка к товарам</label>
-									<select id="" name="" data-show-selected multiple data-tags>
-										<option value="" selected></option>
-										<option value="1">Пункт №1</option>
-										<option value="2">Пункт №2</option>
-										<option value="3">Пункт №3</option>
-										<option value="4">Пункт №4</option>
-										<option value="5">Пункт №5</option>
-										<option value="6">Пункт №6</option>
-										<option value="7">Пункт №7</option>
-										<option value="8">Пункт №8</option>
-										<option value="9">Пункт №9</option>
-										<option value="10">Пункт №10</option>
-									</select>
-								</div>
+				<div class="create-calc">
+					<div class="create-calc-steps">
+						<div class="create-calc-steps__wrapper">
+							<div class="create-calc-steps__step _active">
+								<div class="create-calc-steps__step-num">1</div>
+								<div class="create-calc-steps__step-title">Параметры</div>
+							</div>
+							<div class="create-calc-steps__step">
+								<div class="create-calc-steps__step-num">2</div>
+								<div class="create-calc-steps__step-title">Продукты</div>
+							</div>
+							<div class="create-calc-steps__step">
+								<div class="create-calc-steps__step-num">3</div>
+								<div class="create-calc-steps__step-title">Свойства</div>
+							</div>
+							<div class="create-calc-steps__step">
+								<div class="create-calc-steps__step-num">4</div>
+								<div class="create-calc-steps__step-title">Документы</div>
 							</div>
 						</div>
-						<button type="submit" class="add-doc__button button-black">Сохранить</button>
-					</form>
+					</div>
+					<div class="create-calc__header">
+						<div class="create-calc__title">Параметры</div>
+					</div>
+					<div class="create-calc__section">
+						<form action="" class="form form_create-calc" id="create-calc-form">
+							<div class="form__line ">
+								<label for="" class="form__label">Название калькуляции</label>
+								<div class="form__input-chunk">
+									<input id="" type="text" name="" class="form__input" value="">
+									<svg class="form__clear-svg">
+										<use xlink:href="img/icons/icons.svg#input_clear"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Покупатель</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Продавец</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Порт отправления</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Порт прихода</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Склад</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Тип контейнера</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+							<div class="form__line">
+								<label for="" class="form__label">Валюта</label>
+								<select id="" name="" data-show-selected>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+						</form>
+					</div>
+					<button type="submit" form="create-calc-form" class="create-calc__save-button button-black">Сохранить</button>
 				</div>
 			</div>
 		</main>

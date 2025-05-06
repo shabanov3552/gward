@@ -8738,12 +8738,173 @@
                 if (state.elements.arrow) Object.assign(state.elements.arrow.style, initialStyles.arrow);
             }
         });
+        var mouseCoords = {
+            clientX: 0,
+            clientY: 0
+        };
+        var activeInstances = [];
+        function storeMouseCoords(_ref) {
+            var clientX = _ref.clientX, clientY = _ref.clientY;
+            mouseCoords = {
+                clientX,
+                clientY
+            };
+        }
+        function addMouseCoordsListener(doc) {
+            doc.addEventListener("mousemove", storeMouseCoords);
+        }
+        function removeMouseCoordsListener(doc) {
+            doc.removeEventListener("mousemove", storeMouseCoords);
+        }
+        var followCursor = {
+            name: "followCursor",
+            defaultValue: false,
+            fn: function fn(instance) {
+                var reference = instance.reference;
+                var doc = getOwnerDocument(instance.props.triggerTarget || reference);
+                var isInternalUpdate = false;
+                var wasFocusEvent = false;
+                var isUnmounted = true;
+                var prevProps = instance.props;
+                function getIsInitialBehavior() {
+                    return instance.props.followCursor === "initial" && instance.state.isVisible;
+                }
+                function addListener() {
+                    doc.addEventListener("mousemove", onMouseMove);
+                }
+                function removeListener() {
+                    doc.removeEventListener("mousemove", onMouseMove);
+                }
+                function unsetGetReferenceClientRect() {
+                    isInternalUpdate = true;
+                    instance.setProps({
+                        getReferenceClientRect: null
+                    });
+                    isInternalUpdate = false;
+                }
+                function onMouseMove(event) {
+                    var isCursorOverReference = event.target ? reference.contains(event.target) : true;
+                    var followCursor = instance.props.followCursor;
+                    var clientX = event.clientX, clientY = event.clientY;
+                    var rect = reference.getBoundingClientRect();
+                    var relativeX = clientX - rect.left;
+                    var relativeY = clientY - rect.top;
+                    if (isCursorOverReference || !instance.props.interactive) instance.setProps({
+                        getReferenceClientRect: function getReferenceClientRect() {
+                            var rect = reference.getBoundingClientRect();
+                            var x = clientX;
+                            var y = clientY;
+                            if (followCursor === "initial") {
+                                x = rect.left + relativeX;
+                                y = rect.top + relativeY;
+                            }
+                            var top = followCursor === "horizontal" ? rect.top : y;
+                            var right = followCursor === "vertical" ? rect.right : x;
+                            var bottom = followCursor === "horizontal" ? rect.bottom : y;
+                            var left = followCursor === "vertical" ? rect.left : x;
+                            return {
+                                width: right - left,
+                                height: bottom - top,
+                                top,
+                                right,
+                                bottom,
+                                left
+                            };
+                        }
+                    });
+                }
+                function create() {
+                    if (instance.props.followCursor) {
+                        activeInstances.push({
+                            instance,
+                            doc
+                        });
+                        addMouseCoordsListener(doc);
+                    }
+                }
+                function destroy() {
+                    activeInstances = activeInstances.filter((function(data) {
+                        return data.instance !== instance;
+                    }));
+                    if (activeInstances.filter((function(data) {
+                        return data.doc === doc;
+                    })).length === 0) removeMouseCoordsListener(doc);
+                }
+                return {
+                    onCreate: create,
+                    onDestroy: destroy,
+                    onBeforeUpdate: function onBeforeUpdate() {
+                        prevProps = instance.props;
+                    },
+                    onAfterUpdate: function onAfterUpdate(_, _ref2) {
+                        var followCursor = _ref2.followCursor;
+                        if (isInternalUpdate) return;
+                        if (followCursor !== void 0 && prevProps.followCursor !== followCursor) {
+                            destroy();
+                            if (followCursor) {
+                                create();
+                                if (instance.state.isMounted && !wasFocusEvent && !getIsInitialBehavior()) addListener();
+                            } else {
+                                removeListener();
+                                unsetGetReferenceClientRect();
+                            }
+                        }
+                    },
+                    onMount: function onMount() {
+                        if (instance.props.followCursor && !wasFocusEvent) {
+                            if (isUnmounted) {
+                                onMouseMove(mouseCoords);
+                                isUnmounted = false;
+                            }
+                            if (!getIsInitialBehavior()) addListener();
+                        }
+                    },
+                    onTrigger: function onTrigger(_, event) {
+                        if (isMouseEvent(event)) mouseCoords = {
+                            clientX: event.clientX,
+                            clientY: event.clientY
+                        };
+                        wasFocusEvent = event.type === "focus";
+                    },
+                    onHidden: function onHidden() {
+                        if (instance.props.followCursor) {
+                            unsetGetReferenceClientRect();
+                            removeListener();
+                            isUnmounted = true;
+                        }
+                    }
+                };
+            }
+        };
         tippy.setDefaultProps({
             render
         });
         const tippy_esm = tippy;
-        modules_flsModules.tippy = tippy_esm("[data-tippy-content]", {
+        tippy_esm(".dc-product-spec__tippy", {
             placement: "top-end"
+        });
+        tippy_esm(".calc-detail-table [data-tippy-content]", {
+            plugins: [ followCursor ],
+            placement: "right",
+            followCursor: true,
+            onShow(instance) {
+                instance.popper._tippy.popper.classList.add("tippy-fz");
+            }
+        });
+        if (document.querySelector(".js-template")) tippy_esm(document.querySelectorAll("[data-dropdown-triger]"), {
+            plugins: [ followCursor ],
+            content: document.querySelector(".js-template").innerHTML,
+            allowHTML: true,
+            interactive: true,
+            trigger: "click",
+            followCursor: "initial",
+            onShow(instance) {
+                const template = document.querySelector(".js-template");
+                console.log(template);
+                const clone = template.cloneNode(true);
+                clone.style.display = "block";
+                instance.setContent(clone);
+            }
         });
         function isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
@@ -15930,16 +16091,18 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             }));
         }));
-        const dndContainer = document.querySelector("[data-dnd-container]");
-        if (dndContainer !== null) sortable_esm.create(dndContainer, {
-            handle: "[data-dnd-handle]",
-            animation: 150,
-            onUpdate: function(q) {
-                document.dispatchEvent(new CustomEvent("onUpdateDrag", {
-                    detail: q
-                }));
-            }
-        });
+        const dndContainers = document.querySelectorAll("[data-dnd-container]");
+        if (dndContainers.length > 0) dndContainers.forEach((dndContainer => {
+            sortable_esm.create(dndContainer, {
+                handle: "[data-dnd-handle]",
+                animation: 150,
+                onUpdate: function(q) {
+                    document.dispatchEvent(new CustomEvent("onUpdateDrag", {
+                        detail: q
+                    }));
+                }
+            });
+        }));
         class FileUploader {
             constructor(element) {
                 this.fileUpload = element;
@@ -16017,6 +16180,58 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         }
         document.querySelectorAll(".js-file-upload").forEach((uploadElement => new FileUploader(uploadElement)));
+        document.addEventListener("DOMContentLoaded", (() => {
+            const calcTables = document.querySelectorAll(".calc-prod-card__table-grid");
+            if (calcTables) calcTables.forEach((table => {
+                table.classList.add(`cell-count-${table.children.length}`);
+            }));
+        }));
+        document.addEventListener("DOMContentLoaded", (() => {
+            const thumb = document.querySelector(".js-thumb");
+            const headerContent = document.querySelector(".js-scrollable-head");
+            const contentContainer = document.querySelector(".js-scrollable-content");
+            if (thumb && headerContent && contentContainer) {
+                let isDragging = false;
+                let startX, startScrollLeft;
+                function updateThumb() {
+                    const scrollWidth = contentContainer.scrollWidth;
+                    const containerWidth = contentContainer.clientWidth;
+                    const ratio = containerWidth / scrollWidth;
+                    const thumbWidth = Math.max(ratio * containerWidth, 20);
+                    const scrollLeft = contentContainer.scrollLeft;
+                    const thumbLeft = scrollLeft / scrollWidth * containerWidth;
+                    thumb.style.width = thumbWidth + "px";
+                    thumb.style.left = thumbLeft + "px";
+                }
+                function syncScroll(source, target) {
+                    source.addEventListener("scroll", (() => {
+                        target.scrollLeft = source.scrollLeft;
+                        updateThumb();
+                    }));
+                }
+                syncScroll(headerContent, contentContainer);
+                syncScroll(contentContainer, headerContent);
+                window.addEventListener("resize", updateThumb);
+                updateThumb();
+                thumb.addEventListener("mousedown", (e => {
+                    isDragging = true;
+                    startX = e.pageX;
+                    startScrollLeft = contentContainer.scrollLeft;
+                    document.body.style.userSelect = "none";
+                }));
+                document.addEventListener("mousemove", (e => {
+                    if (!isDragging) return;
+                    const dx = e.pageX - startX;
+                    const scrollWidth = contentContainer.scrollWidth - contentContainer.clientWidth;
+                    const trackWidth = contentContainer.clientWidth - thumb.offsetWidth;
+                    contentContainer.scrollLeft = startScrollLeft + dx * scrollWidth / trackWidth;
+                }));
+                document.addEventListener("mouseup", (() => {
+                    isDragging = false;
+                    document.body.style.userSelect = "";
+                }));
+            }
+        }));
         window["FLS"] = true;
         isWebp();
         tabs();

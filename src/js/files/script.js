@@ -467,6 +467,8 @@ function dropdownAction(e, ddWrapper, ddActive) {
 
 //#endregion
 
+//#region Открытие бокового меню
+
 document.addEventListener('DOMContentLoaded', e => {
    const leftSidebar = document.querySelector('.left-sidebar');
    const menuItems = leftSidebar.querySelectorAll('[data-menu-item]');
@@ -545,24 +547,27 @@ document.addEventListener('DOMContentLoaded', e => {
 
 })
 
-const dndContainer = document.querySelector('[data-dnd-container]');
-if (dndContainer !== null) {
-   Sortable.create(dndContainer, {
-      handle: '[data-dnd-handle]',
-      animation: 150,
-      onUpdate: function (q) {
-         document.dispatchEvent(new CustomEvent("onUpdateDrag", {
-            detail: q
-         }));
-      },
+//#endregion
+
+//#region Перетаскивание строк в таблицах
+
+// const dndContainer = document.querySelector('[data-dnd-container]');
+const dndContainers = document.querySelectorAll('[data-dnd-container]');
+if (dndContainers.length > 0) {
+   dndContainers.forEach(dndContainer => {
+      Sortable.create(dndContainer, {
+         handle: '[data-dnd-handle]',
+         animation: 150,
+         onUpdate: function (q) {
+            document.dispatchEvent(new CustomEvent("onUpdateDrag", {
+               detail: q
+            }));
+         },
+      });
    });
 }
 
-// document.addEventListener('onUpdateDrag', e => {
-//    console.log('dndItem', e.detail.item.dataset.dndItem); // номер перемещенного элемента
-//    console.log('newDraggableIndex', e.detail.newDraggableIndex); // новая позиция
-//    console.log(e.detail);
-// });
+//#endregion
 
 //#region Загрузка файлов с превью
 
@@ -657,7 +662,81 @@ class FileUploader {
    }
 }
 
-
 document.querySelectorAll('.js-file-upload').forEach(uploadElement => new FileUploader(uploadElement));
 
+//#endregion
+
+//#region добавление класса с количеством колонок
+
+document.addEventListener('DOMContentLoaded', () => {
+   const calcTables = document.querySelectorAll('.calc-prod-card__table-grid');
+   if (calcTables) {
+      calcTables.forEach(table => {
+         table.classList.add(`cell-count-${table.children.length}`)
+      })
+   }
+});
+
+//#endregion
+
+//#region горизонтальная прокрутка с кастомным скроллом между прокручиваемыми блоками
+document.addEventListener('DOMContentLoaded', () => {
+   const thumb = document.querySelector('.js-thumb');
+   const headerContent = document.querySelector('.js-scrollable-head');
+   const contentContainer = document.querySelector('.js-scrollable-content');
+
+   if (thumb && headerContent && contentContainer) {
+      let isDragging = false;
+      let startX, startScrollLeft;
+
+      // Функция обновления размеров и позиции thumb
+      function updateThumb() {
+         const scrollWidth = contentContainer.scrollWidth;
+         const containerWidth = contentContainer.clientWidth;
+         const ratio = containerWidth / scrollWidth;
+         const thumbWidth = Math.max(ratio * containerWidth, 20);
+         const scrollLeft = contentContainer.scrollLeft;
+         const thumbLeft = (scrollLeft / scrollWidth) * containerWidth;
+         thumb.style.width = thumbWidth + 'px';
+         thumb.style.left = thumbLeft + 'px';
+      }
+
+      // Синхронизация горизонтальной прокрутки
+      function syncScroll(source, target) {
+         source.addEventListener('scroll', () => {
+            target.scrollLeft = source.scrollLeft;
+            updateThumb();
+         });
+      }
+
+      // Синхронизируем header и content
+      syncScroll(headerContent, contentContainer);
+      syncScroll(contentContainer, headerContent);
+
+      // При изменении окна пересчёт
+      window.addEventListener('resize', updateThumb);
+      updateThumb();
+
+      // Drag логика для кастомного скроллбара
+      thumb.addEventListener('mousedown', (e) => {
+         isDragging = true;
+         startX = e.pageX;
+         startScrollLeft = contentContainer.scrollLeft;
+         document.body.style.userSelect = 'none';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+         if (!isDragging) return;
+         const dx = e.pageX - startX;
+         const scrollWidth = contentContainer.scrollWidth - contentContainer.clientWidth;
+         const trackWidth = contentContainer.clientWidth - thumb.offsetWidth;
+         contentContainer.scrollLeft = startScrollLeft + (dx * scrollWidth / trackWidth);
+      });
+
+      document.addEventListener('mouseup', () => {
+         isDragging = false;
+         document.body.style.userSelect = '';
+      });
+   }
+});
 //#endregion

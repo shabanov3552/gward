@@ -1,0 +1,527 @@
+@@include('html/_header.htm',{
+"title":"Создание калькуляции: Продукты",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">TPE на Москву 2 контейнера MAERSK</div>
+         <!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
+      </div>
+      <div class="create-calc">
+         <div class="create-calc-steps">
+            <div class="create-calc-steps__wrapper">
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">1</div>
+                  <div class="create-calc-steps__step-title">Параметры</div>
+               </div>
+               <div class="create-calc-steps__step _active">
+                  <div class="create-calc-steps__step-num">2</div>
+                  <div class="create-calc-steps__step-title">Продукты</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">3</div>
+                  <div class="create-calc-steps__step-title">Свойства</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">4</div>
+                  <div class="create-calc-steps__step-title">Документы</div>
+               </div>
+            </div>
+         </div>
+         <div class="create-calc__header">
+            <div class="create-calc__title">Продукты</div>
+            <button type="submit" class="create-calc__button button-black">Добавить продукт</button>
+         </div>
+         <div class="create-calc__section">
+            <div class="create-calc__section-header">
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Артикул",
+               "value":""
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Продавец"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Фабрика"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Формат упаковки"
+               })
+            </div>
+            <div class="create-calc__colors">
+               <div class="color-block">
+                  <div class="color-block__header">
+                     <div class="color-block__select">
+                        @@include('html/_form-select.htm',{
+                        "label":"Цвет"
+                        })
+                     </div>
+                     <!-- <a href="" class="color-block__remove-btn">Удалить этот цвет</a> -->
+                  </div>
+                  <div class="color-block__main">
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XS (6)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"S (7)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"M (8)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"L (9)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XL (10)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XXL (11)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                  </div>
+               </div>
+               <div class="color-block">
+                  <div class="color-block__header">
+                     <div class="color-block__select">
+                        @@include('html/_form-select.htm',{
+                        "label":"Цвет"
+                        })
+                     </div>
+                     <a href="" class="color-block__remove-btn">Удалить этот цвет</a>
+                  </div>
+                  <div class="color-block__main">
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XS (6)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"S (7)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"M (8)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"L (9)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XL (10)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                     <div class="color-block__col">
+                        <div class="color-block__size">
+                           <div class="color-block__size-name">
+                              Размер
+                           </div>
+                           @@include('html/_form-checkbox.htm',{
+                           "name":"XXL (11)"
+                           })
+                        </div>
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Количество",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"color-block__line",
+                        "label":"Цена",
+                        "value":""
+                        })
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="create-calc__buttons">
+               <button type="button" class="create-calc__add-color button-transparent">Добавить еще один цвет</button>
+               <button type="button" class="create-calc__save button-black">Сохранить продукт</button>
+               <button type="button" class="create-calc__cancel button-transparent">Отменить добавление продукта</button>
+            </div>
+         </div>
+         <div class="create-calc__footer">
+
+            <div class="calc-prod-card">
+               <div class="calc-prod-card__header">
+                  <div class="calc-prod-card__title">TPE Clear (without color) (TPE)</div>
+                  <div class="calc-prod-card__action-links">
+                     <a href="" class="calc-prod-card__act-link">Редактировать</a>
+                     <a href="" class="calc-prod-card__act-link">Удалить</a>
+                  </div>
+               </div>
+               <div class="calc-prod-card__main">
+                  <div class="calc-prod-card__info">
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Фабрика</div>
+                        <div class="calc-prod-card__value">ZHANGJIAGANG HANDA RUBBER PRODUCTS CO., LTD</div>
+                     </div>
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Продавец</div>
+                        <div class="calc-prod-card__value">GANG HANDA</div>
+                     </div>
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Упаковка</div>
+                        <div class="calc-prod-card__value">Коробка</div>
+                     </div>
+                  </div>
+                  <div class="calc-prod-card__tables">
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Белый</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">M(8)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">L(9)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XL(10)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XXL(11)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Серый</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">M(8)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">L(9)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XL(10)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XXL(11)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="calc-prod-card">
+               <div class="calc-prod-card__header">
+                  <div class="calc-prod-card__title">436</div>
+                  <div class="calc-prod-card__action-links">
+                     <a href="" class="calc-prod-card__act-link">Редактировать</a>
+                     <a href="" class="calc-prod-card__act-link">Удалить</a>
+                  </div>
+               </div>
+               <div class="calc-prod-card__main">
+                  <div class="calc-prod-card__info">
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Фабрика</div>
+                        <div class="calc-prod-card__value">ZHANGJIAGANG HANDA RUBBER PRODUCTS CO., LTD</div>
+                     </div>
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Продавец</div>
+                        <div class="calc-prod-card__value">GANG HANDA</div>
+                     </div>
+                     <div class="calc-prod-card__info-row">
+                        <div class="calc-prod-card__name">Упаковка</div>
+                        <div class="calc-prod-card__value">Коробка</div>
+                     </div>
+                  </div>
+                  <div class="calc-prod-card__tables">
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Violet</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">M(8)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Blue</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Violet</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">5 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="calc-prod-card__table-item">
+                        <div class="calc-prod-card__table-name">Blue</div>
+                        <div class="calc-prod-card__table-grid">
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">50 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">15 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">XS(6)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">666 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                           <div class="calc-prod-card__table-cell">
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_bold">S(7)</div>
+                              <div class="calc-prod-card__table-text calc-prod-card__table-text_italic">150 шт.</div>
+                              <div class="calc-prod-card__table-text">$ 3.55</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

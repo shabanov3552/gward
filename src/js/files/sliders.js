@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, Scrollbar } from 'swiper/modules';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -160,6 +160,37 @@ function initSliders() {
 			})
 		});
 	}
+
+	// if (document.querySelector('.calc-detail__main-table')) {
+	// 	let calcScrollTable = new Swiper('.calc-detail__main-table', {
+	// 		modules: [Scrollbar],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		// slidesPerView: "auto",
+	// 		// freeMode: true,
+	// 		// // freeMode: {
+	// 		// // 	enabled: true,
+	// 		// // },
+	// 		// scrollbar: {
+	// 		// 	el: ".swiper-scroll",
+	// 		// 	draggable: true,
+	// 		// 	snapOnRelease: false
+	// 		// },
+	// 		// mousewheel: {
+	// 		// 	releaseOnEdges: true,
+	// 		// },
+
+	// 		direction: 'horizontal',
+	// 		slidesPerView: 'auto',
+	// 		freeMode: true,
+	// 		scrollbar: {
+	// 			el: '.swiper-scroll',
+	// 			draggable: true,
+	// 		},
+	// 		mousewheel: true,
+	// 	});
+	// 	console.log(calcScrollTable);
+	// }
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
@@ -169,9 +200,10 @@ function initSlidersScroll() {
 			const sliderScrollItem = sliderScrollItems[index];
 			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
 			const sliderScroll = new Swiper(sliderScrollItem, {
+				modules: [Scrollbar],
 				observer: true,
 				observeParents: true,
-				direction: 'vertical',
+				// direction: 'vertical',
 				slidesPerView: 'auto',
 				freeMode: {
 					enabled: true,
@@ -194,5 +226,5 @@ window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
 	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-	//initSlidersScroll();
+	// initSlidersScroll();
 });

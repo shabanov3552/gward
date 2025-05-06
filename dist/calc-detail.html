@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Цены</title>
+	<title>Деталка калькуляции</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="wrapper price-guide-page">
+	<div class="wrapper ">
 		<div class="left-sidebar">
 			<div class="left-sidebar__menu-wrapper">
 				<a href="" class="left-sidebar__logo">
@@ -210,108 +210,883 @@
 					</ul>
 				</nav>
 				<div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
-					<div class="page-title">Цены</div>
-					<button type="button" data-popup="#edit-products" class="action-button button-black">Добавить продукт</button>
+					<div class="page-title">TPE на Москву 2 контейнера MAERSK</div>
+					<!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
 				</div>
-				<div class="price-guide">
-					<div class="price-guide__header">
-						<form action="" class="form form_price-guide">
-							<div class="form__line ">
-								<label for="" class="form__label">Артикул</label>
-								<div class="form__input-chunk">
-									<input id="" type="text" name="" class="form__input" value="">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
+				<div class="calc-detail">
+					<div class="calc-detail__grid">
+						<div class="calc-detail__info">
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">№ инвойса</div>
+								<div class="calc-detail__info-value">RUSSIA111</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">Дата инвойса</div>
+								<div class="calc-detail__info-value">16.12.2024</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">№ ДТ</div>
+								<div class="calc-detail__info-value">10620010/100720/0047448</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">Дата ДТ</div>
+								<div class="calc-detail__info-value">16.12.2024</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">№ Контейнера</div>
+								<div class="calc-detail__info-value">TRZD1298943</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">Порт отправления</div>
+								<div class="calc-detail__info-value">Шанхай</div>
+							</div>
+							<div class="calc-detail__info-row">
+								<div class="calc-detail__info-name">Порт назначения</div>
+								<div class="calc-detail__info-value">Красноярск, Линейная</div>
+							</div>
+						</div>
+						<div class="calc-detail__currency">
+							<div class="calc-detail__cur-main">
+								<div class="calc-detail__cur-row">
+									<div class="calc-detail__cur-name">Рубль / Юань</div>
+									<div class="calc-detail__cur-value">14.4</div>
+									<div class="calc-detail__main-currency">— валюта калькуляции</div>
+								</div>
+								<div class="calc-detail__cur-row">
+									<div class="calc-detail__cur-name">Рубль / Доллар</div>
+									<div class="calc-detail__cur-value">101.4</div>
+								</div>
+								<div class="calc-detail__cur-row">
+									<div class="calc-detail__cur-name">Доллар / Юань</div>
+									<div class="calc-detail__cur-value">7.0417</div>
 								</div>
 							</div>
-							<div class="form__buttons">
-								<button type="submit" class="form__submit button-black">Найти</button>
-								<button type="reset" class="form__reset button-transparent">Сбросить</button>
-							</div>
-						</form>
+							<button type="button" class="calc-detail__cur-button button-black">Сообщить о создании калькуляции</button>
+						</div>
 					</div>
-					<div class="price-guide__main">
-						<div class="table price-guide-table">
+					<div class="calc-detail__errors">
+						<div class="table errors-table">
+							<div class="table__title">Ошибки</div>
 							<div class="table__head">
-								<div class="table__name">Артикул</div>
-								<div class="table__name">Продавец</div>
-								<div class="table__name">Цвет</div>
-								<div class="table__name">Размер</div>
-								<div class="table__name">FOB $</div>
-								<div class="table__name">FOB ¥</div>
+								<div class="table__name">Параметр</div>
+								<div class="table__name">Дата</div>
+								<div class="table__name">Автор</div>
+								<div class="table__name">Сообщение</div>
 							</div>
 							<div class="table__body">
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text">TPE Clear</div>
+										<div class="table__text">Валютный контроль для 1й предоплаты стоимость</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">Zhangjiagang Good</div>
+										<div class="table__text">04.05.2007</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">Berry</div>
+										<div class="table__text">Ibragim</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">7(s)</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">1.4</div>
-									</div>
-									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
+										<div class="table__text">
+											<img src="img/icons/icon_error.svg" alt="">
+											Что-то творится, будьте осторожны и оглядывайтесь по сторонам
 										</div>
 									</div>
 								</div>
 								<div class="table__row">
 									<div class="table__cell">
-										<div class="table__text"></div>
+										<div class="table__text">Валютный контроль для 1й предоплаты стоимость</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text"></div>
+										<div class="table__text">04.05.2007</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text"></div>
+										<div class="table__text">Ibragim</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">7(s)</div>
+										<div class="table__text">
+											<img src="img/icons/icon_error.svg" alt="">
+											Что-то творится, будьте осторожны и оглядывайтесь по сторонам
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="calc-detail__weight">
+						<form action="" class="form form_calc-weight">
+							<div class="form__main">
+								<div class="form__line ">
+									<label for="" class="form__label">Вес нетто фактический, кг</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="form__line ">
+									<label for="" class="form__label">Вес брутто фактический, кг</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="form__button button-transparent">Сохранить</button>
+						</form>
+					</div>
+
+					<div class="calc-detail__main-table">
+						<!-- тут таблица самая большая из всех, по насышености всякими всплывашками и перетаскиваниями -->
+						<!-- плюс она ещё с кастомным скроллом между липкой шапкой и основным контентом -->
+
+						<div class="calc-detail__links-dropdown-template js-template" style="display: none;">
+							<!-- Шаблон дропдауна со ссылками, для строк внутри data-dnd-container -->
+							<!-- Сделал один шаблон чтобы чуть меньше верстки плодить))) -->
+							<a href="" class="calc-detail__link" data-popup="#create-parametr">Изменить</a>
+							<a href="" class="calc-detail__link">Изменить подсказку</a>
+							<a href="" class="calc-detail__link">Закрепить значение</a>
+							<a href="" class="calc-detail__link">Сообщить об ошибке</a>
+							<a href="" class="calc-detail__link">Удалить параметр</a>
+							<a href="" class="calc-detail__link">Файлы</a>
+							<a href="" class="calc-detail__link">Утвердить параметр</a>
+						</div>
+
+						<div class="table calc-detail-table">
+							<div class="table__sticky-head"> <!-- Липкий блок -->
+								<div class="table__head table__head_black js-scrollable-head"> <!-- Прокручиваемый блок -->
+									<div class="table__name table__name_bold"></div>
+									<div class="table__name table__name_bold"></div>
+									<div class="table__name table__name_bold">Контейнер</div>
+									<div class="table__name table__name_bold">TPE Clear (without color) (TPE)</div>
+									<div class="table__name table__name_bold">IRIS (G40)</div>
+									<div class="table__name table__name_bold">FORCE DARK SIDE ZIMA (XY279)</div>
+									<div class="table__name table__name_bold">No-Cut FC5C Arthur (NO-CUT FC5C)</div>
+									<div class="table__name table__name_bold">VIBROSKIN NEW (XY278)</div>
+									<div class="table__name table__name_bold">Docker (XY148)</div>
+								</div>
+
+								<div class="table__custom-scrollbar"> <!-- Полоса прокрутки -->
+									<div class="table__track">
+										<div class="table__thumb js-thumb"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="table__body js-scrollable-content"> <!-- Прокручиваемый блок -->
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Коэффициент на стоимость</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">1.4</div>
+										<div class="table__text">1</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">0.4</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
+										<div class="table__text">0.62</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.62</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.62</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.62</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.62</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.62</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Стоимость</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">18091.6$ / 3820427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1091.6$ / 38427.4₽</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Кол-во</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2524</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">6335</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">6335</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">6335</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">6335</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">6335</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Объем</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">62.2342 м3 из 70</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2.79 м3</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Коэффициент на объем</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">0.02424</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Всего коробок</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1080</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">2526.7</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Нетто, кг</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">72</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">3526.7</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Брутто, кг</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">82</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">32</div>
+									</div>
+								</div>
+								<!-- внутри таблицы div-ы data-dnd-container с перетаскиваемыми строками отдельно внутри каждого -->
+								<div class="table__dnd-block">
+									<div class="table__dnd-container" data-dnd-container="1">
+										<!-- data-dropdown-triger триггер длы дропдауна .calc-detail__links-dropdown-template -->
+										<div class="table__row" data-dropdown-triger data-dnd-item="1">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Первая 20% предоплата Поставщику</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+										</div>
+										<div class="table__row" data-dropdown-triger data-dnd-item="2">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Комиссия Банка за совершение валютных операций для 20% предоплаты</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+										</div>
+										<!-- table__row_green и data-tippy-content добавляются у каких-то особых строк -->
+										<div class="table__row table__row_green" data-dropdown-triger data-dnd-item="3" data-tippy-content="Закреплено: Максим Романенко 14.02.2025  Курс: 101.6797">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Валютный контроль для 1й предоплаты стоимость</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+										</div>
+									</div>
+									<!-- каждый data-dnd-container заканчивается двумя строками разных цветов -->
+									<div class="table__row table__row_light-blue">
+										<div class="table__cell"></div>
+										<div class="table__cell">
+											<div class="table__text table__text_bold">Подытог</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+									</div>
+									<div class="table__row table__row_violet">
+										<div class="table__cell"></div>
+										<div class="table__cell">
+											<div class="table__text table__text_bold">Повышающий коэффициент итоговый</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+									</div>
+									<div class="table__dnd-container" data-dnd-container="2">
+										<div class="table__row" data-dropdown-triger data-dnd-item="1">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Валютный контроль для 2й предоплаты стоимость</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">186 517.04 ¥ / 2 424 721.52 ₽</div>
+											</div>
+										</div>
+										<div class="table__row" data-dropdown-triger data-dnd-item="2">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Окончательная 60% оплата Поставщику</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+										</div>
+										<div class="table__row table__row_green" data-dropdown-triger data-dnd-item="3" data-tippy-content="Закреплено: Максим Романенко 14.02.2025  Курс: 101.6797">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Комиссия банка за ежемесячное обслуживание (фиксированный тариф для каждого КТК)</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">223.8204 ¥ / 2 909.6658 ₽</div>
+											</div>
+										</div>
+										<div class="table__row" data-dropdown-triger data-dnd-item="4">
+											<div class="table__cell">
+												<div class="gripper" data-dnd-handle><img src="img/icons/gripper.svg" alt=""></div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">Валютный контроль для 3й 60% оплаты стоимость</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+											<div class="table__cell">
+												<div class="table__text">192.3076 ¥ / 2500 ₽</div>
+											</div>
+										</div>
+									</div>
+									<div class="table__row table__row_light-blue">
+										<div class="table__cell"></div>
+										<div class="table__cell">
+											<div class="table__text table__text_bold">Подытог</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+										</div>
+									</div>
+									<div class="table__row table__row_violet">
+										<div class="table__cell"></div>
+										<div class="table__cell">
+											<div class="table__text table__text_bold">Повышающий коэффициент итоговый</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
+										</div>
+										<div class="table__cell">
+											<div class="table__text">47.69 %/¥ || 11.78 %/₽</div>
 										</div>
 									</div>
 								</div>
 								<div class="table__row">
+									<div class="table__cell"></div>
 									<div class="table__cell">
-										<div class="table__text">TPE Clear (without color) (TPE)</div>
+										<div class="table__text table__text_bold">Итого затрат</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">GAOMI JIATE LABOR</div>
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">Violet</div>
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">8(l)</div>
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">1.5</div>
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
 									</div>
 									<div class="table__cell">
-										<div class="table__text">0.5</div>
-										<div class="table__actions-buttons">
-											<button type="button" class="table__button table__button_edit"><img src="img/icons/icon_edit.svg" alt=""></button>
-											<button type="button" class="table__button table__button_del"><img src="img/icons/icon_del.svg" alt=""></button>
-										</div>
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">1 377 338.3740 ¥ / 13 551 325.6566₽</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">Цена за единицу товара</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text"></div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text">Наценка</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">1</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+								</div>
+								<div class="table__row">
+									<div class="table__cell"></div>
+									<div class="table__cell">
+										<div class="table__text">Наценка</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text table__text_bold">1.1</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+									<div class="table__cell">
+										<div class="table__text">21.4285 ¥ / 211.2935 ₽</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="table__footer">
+								<button type="button" class="table__button button-black">Добавить параметр</button>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="calc-detail__grid">
+						<div class="calc-detail__section">
+							<div class="calc-detail__buttons">
+								<a href="" class="calc-detail__btn button-green">Утвердить калькуляцию</a>
+								<a href="" class="calc-detail__btn button-transparent">Изменить</a>
+								<a href="" class="calc-detail__btn button-transparent">Поменять статус на <span style="color: #ff9500;">Желтый</span></a>
+								<a href="" class="calc-detail__btn button-transparent">Отправить в архив</a>
+								<a href="" class="calc-detail__btn button-transparent">Поменять статус на <span style="color: #f00;">Красный</span></a>
+								<a href="" class="calc-detail__btn button-transparent">Отправить прайс менеджеру</a>
+							</div>
+						</div>
+						<div class="calc-detail__section">
+							<div class="calc-detail__docs">
+								<div class="calc-detail__docs-row">
+									<div class="calc-detail__docs-name">Инвойс реальный русский</div>
+									<div class="calc-detail__docs-links">
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_pdf">pdf</span>
+											<span>Скачать</span>
+										</a>
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_xls">xls</span>
+											<span>Скачать</span>
+										</a>
+									</div>
+								</div>
+								<div class="calc-detail__docs-row">
+									<div class="calc-detail__docs-name">Инвойс реальный English</div>
+									<div class="calc-detail__docs-links">
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_pdf">pdf</span>
+											<span>Скачать</span>
+										</a>
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_xls">xls</span>
+											<span>Скачать</span>
+										</a>
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_pdf">pdf</span>
+											<span>Скачать</span>
+										</a>
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_xls">xls</span>
+											<span>Скачать</span>
+										</a>
+									</div>
+								</div>
+								<div class="calc-detail__docs-row">
+									<div class="calc-detail__docs-name">Запрос цен</div>
+									<div class="calc-detail__docs-links">
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_pdf">pdf</span>
+											<span>Скачать</span>
+										</a>
+										<a href="" class="calc-detail__doc-link button-transparent">
+											<span class="doc-type doc-type_doc">doc</span>
+											<span>Скачать</span>
+										</a>
 									</div>
 								</div>
 							</div>

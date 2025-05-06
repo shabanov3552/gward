@@ -1,0 +1,70 @@
+@@include('html/_header.htm',{
+"title":"Создание калькуляции: Параметры",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Калькуляция: создание</div>
+         <!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
+      </div>
+      <div class="create-calc">
+         <div class="create-calc-steps">
+            <div class="create-calc-steps__wrapper">
+               <div class="create-calc-steps__step _active">
+                  <div class="create-calc-steps__step-num">1</div>
+                  <div class="create-calc-steps__step-title">Параметры</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">2</div>
+                  <div class="create-calc-steps__step-title">Продукты</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">3</div>
+                  <div class="create-calc-steps__step-title">Свойства</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">4</div>
+                  <div class="create-calc-steps__step-title">Документы</div>
+               </div>
+            </div>
+         </div>
+         <div class="create-calc__header">
+            <div class="create-calc__title">Параметры</div>
+         </div>
+         <div class="create-calc__section">
+            <form action="" class="form form_create-calc" id="create-calc-form">
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Название калькуляции",
+               "value":""
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Покупатель"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Продавец"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Порт отправления"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Порт прихода"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Склад"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Тип контейнера"
+               })
+               @@include('html/_form-select.htm',{
+               "label":"Валюта"
+               })
+            </form>
+         </div>
+         <button type="submit" form="create-calc-form" class="create-calc__save-button button-black">Сохранить</button>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

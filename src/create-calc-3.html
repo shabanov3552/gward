@@ -1,0 +1,62 @@
+@@include('html/_header.htm',{
+"title":"Создание калькуляции: Свойства",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">TPE на Москву 2 контейнера MAERSK</div>
+         <!-- <button type="button" data-popup="#add-oper-doc" class="action-button button-black">Добавить документ</button> -->
+      </div>
+      <div class="create-calc">
+         <div class="create-calc-steps">
+            <div class="create-calc-steps__wrapper">
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">1</div>
+                  <div class="create-calc-steps__step-title">Параметры</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">2</div>
+                  <div class="create-calc-steps__step-title">Продукты</div>
+               </div>
+               <div class="create-calc-steps__step _active">
+                  <div class="create-calc-steps__step-num">3</div>
+                  <div class="create-calc-steps__step-title">Свойства</div>
+               </div>
+               <div class="create-calc-steps__step">
+                  <div class="create-calc-steps__step-num">4</div>
+                  <div class="create-calc-steps__step-title">Документы</div>
+               </div>
+            </div>
+         </div>
+         <div class="create-calc__header">
+            <div class="create-calc__title">Свойства</div>
+         </div>
+         <div class="create-calc__section">
+            <form action="" class="form form_create-calc" id="create-calc-form">
+               @@include('html/_form-date.htm',{
+               "modifierClass":"",
+               "label":"Дата партии"
+               })
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Период партии",
+               "value":""
+               })
+               @@include('html/_form-date.htm',{
+               "modifierClass":"",
+               "label":"Еще какая-то дата"
+               })
+               @@include('html/_form-input.htm',{
+               "modifierClass":"",
+               "label":"Ещё какой-то инпут",
+               "value":""
+               })
+            </form>
+         </div>
+         <button type="submit" form="create-calc-form" class="create-calc__save-button button-black">Сохранить</button>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

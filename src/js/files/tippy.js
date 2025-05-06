@@ -4,7 +4,7 @@ import { isMobile, FLS } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 // Подключение из node_modules
-import tippy from 'tippy.js';
+import tippy, { followCursor } from 'tippy.js';
 
 // Подключение cтилей из src/scss/libs
 import "../../scss/libs/tippy.scss";
@@ -12,9 +12,39 @@ import "../../scss/libs/tippy.scss";
 //import 'tippy.js/dist/tippy.css';
 
 // Запускаем и добавляем в объект модулей
-flsModules.tippy = tippy('[data-tippy-content]', {
+tippy('.dc-product-spec__tippy', {
    placement: 'top-end',
 });
+
+tippy('.calc-detail-table [data-tippy-content]', {
+   plugins: [followCursor],
+   placement: 'right',
+   followCursor: true,
+   // interactive: true,
+   onShow(instance) {
+      instance.popper._tippy.popper.classList.add('tippy-fz');
+   },
+});
+
+if (document.querySelector('.js-template')) {
+   tippy(document.querySelectorAll('[data-dropdown-triger]'), {
+      plugins: [followCursor],
+      content: document.querySelector('.js-template').innerHTML,
+      allowHTML: true,
+      interactive: true,
+      trigger: 'click',
+      followCursor: 'initial',
+      onShow(instance) {
+         // Клонируем шаблон, чтобы не ломать оригинальный DOM
+         const template = document.querySelector('.js-template');
+         console.log(template);
+         const clone = template.cloneNode(true);
+         clone.style.display = 'block';
+         instance.setContent(clone);
+      }
+   });
+}
+
 // const breakpoint = window.matchMedia("(max-width: 768px)");
 
 // const breakpointChecker = () => {
