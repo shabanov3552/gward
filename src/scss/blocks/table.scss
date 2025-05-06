@@ -14,6 +14,18 @@
       max-width: 836px;
    }
 
+   &.calc-detail-table {
+      padding-top: 0;
+   }
+
+   // .table__sticky-head
+
+   &__sticky-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+   }
+
    // .table__title
 
    &__title {
@@ -32,6 +44,13 @@
    &__head {
       display: flex;
       margin-bottom: func.rem(10);
+      // .table__head_black
+
+      &_black {
+         padding: func.rem(14) 0;
+         background: #4c4c4c;
+         color: #fff;
+      }
 
       .products-table & {
          display: grid;
@@ -69,6 +88,23 @@
             grid-template-columns: 1fr 140px 150px 1fr;
          }
       }
+
+      .calc-detail-table & {
+         border-radius: 10px 10px 0 0;
+         display: grid;
+         grid-template-columns: 100px 250px;
+         grid-auto-columns: 230px;
+         grid-auto-flow: column;
+         overflow-x: auto;
+         margin-bottom: 0;
+
+         scrollbar-width: none;
+         -ms-overflow-style: none;
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+      }
    }
 
    // .table__name
@@ -78,6 +114,12 @@
       font-size: 16px;
       color: #000;
       padding-left: func.rem(15);
+
+      // .table__name_bold
+
+      &_bold {
+         font-weight: 600;
+      }
 
       .price-guide-table & {
          &:first-child {
@@ -90,11 +132,25 @@
             padding-left: func.rem(40);
          }
       }
+
+      .table__head_black & {
+         color: #fff;
+      }
    }
 
    // .table__body
 
-   &__body {}
+   &__body {
+      .calc-detail-table & {
+         overflow-x: auto;
+         scrollbar-width: none;
+         -ms-overflow-style: none;
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+      }
+   }
 
    // .table__row
 
@@ -114,6 +170,11 @@
             opacity: 1;
             visibility: visible;
          }
+      }
+
+      &[data-dropdown-triger] {
+         position: relative;
+         cursor: pointer;
       }
 
       .products-table & {
@@ -170,6 +231,41 @@
 
          @media (max-width:bp.$pc) {
             grid-template-columns: 1fr 140px 150px 1fr;
+         }
+      }
+
+      .calc-detail-table & {
+         min-width: min-content;
+         display: grid;
+         grid-template-columns: 100px 250px;
+         grid-auto-columns: 230px;
+         grid-auto-flow: column;
+      }
+
+      .table__dnd-container & {
+         background: #ffc108;
+      }
+
+      .table__dnd-block & {
+         border-color: #fff;
+
+         // .table__row_green
+
+         &_green {
+            background: #29a745;
+         }
+
+         // .table__row_light-blue
+
+         &_light-blue {
+            background: #87cefa;
+         }
+
+         // .table__row_violet
+
+         &_violet {
+            background: #6f42c1;
+            color: #fff;
          }
       }
    }
@@ -319,5 +415,49 @@
          width: 20px;
          flex: 0 0 20px;
       }
+   }
+
+   // .table__custom-scrollbar
+
+   &__custom-scrollbar {
+      height: 20px;
+      background: #fff;
+      position: relative;
+   }
+
+   // .table__track
+
+   &__track {
+      height: 100%;
+      position: relative;
+   }
+
+   // .table__thumb
+
+   &__thumb {
+      height: 11px;
+      width: 50px;
+      background: #bf152a;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      cursor: pointer;
+   }
+
+   // .table__footer
+
+   &__footer {
+      margin-top: func.rem(25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   // .table__button
+
+   &__button {
+      width: 750px;
    }
 }
