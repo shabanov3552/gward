@@ -379,7 +379,6 @@ body::after {
 }
 
 .form {
-
 	// .form_oper-doc
 
 	&_oper-doc {
@@ -420,9 +419,6 @@ body::after {
 			width: 100%;
 		}
 	}
-}
-
-.form {
 
 	// .form_create-parametr
 
@@ -442,6 +438,165 @@ body::after {
 
 		.form__button {
 			width: 100%;
+
+			&+.form__button {
+				margin-top: func.rem(12);
+			}
+		}
+
+		.checkbox {
+			margin-left: func.rem(190);
+			margin-top: func.rem(22);
+		}
+	}
+
+	// .form_error-report
+
+	&_error-report {
+		.form__label:empty {
+			display: none;
+		}
+
+		textarea {
+			min-height: 234px;
+		}
+
+		.form__button {
+			width: 100%;
+			margin-top: func.rem(21);
+		}
+	}
+
+	// .form_add-files
+
+	&_add-files {
+		.file-upload {
+			grid-template-columns: 230px 1fr;
+			gap: 15px;
+		}
+
+		.file-upload__name:empty {
+			display: none;
+		}
+
+		.file-upload__pseudo-input {
+			width: 100%;
+		}
+
+		.file-upload__preview {
+			gap: 5px 15px;
+		}
+	}
+}
+
+.form {
+
+	// .form_add-files
+
+	&_add-files {
+		margin-bottom: func.rem(31);
+
+		.form__main {
+			display: grid;
+			padding-bottom: func.rem(24);
+			margin-bottom: func.rem(24);
+			border-bottom: 1px solid #d8d8d8;
+		}
+
+		.form__line {
+			gap: 31px;
+			margin-bottom: func.rem(13);
+		}
+
+		.form__label {
+			flex: 0 0 160px;
+		}
+
+		.form__add {
+			// width: 100%;
+			font-size: 41px;
+			padding: 0;
+			margin-left: func.rem(192);
+		}
+
+		.form__upload {
+			margin-bottom: func.rem(31);
+		}
+
+		.form__title {
+			font-weight: 600;
+			font-size: 16px;
+			color: #000;
+			margin-bottom: func.rem(16);
+		}
+
+		.form__button {
+			width: 100%;
+		}
+	}
+}
+
+.added-files {
+
+	// .added-files__section
+
+	&__section {
+		margin-bottom: func.rem(37);
+	}
+
+	// .added-files__row
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 30px;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: func.rem(12);
+		}
+	}
+
+	// .added-files__file
+
+	&__file {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: 18px;
+		color: #000;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:has(img) {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 162%;
+			color: #7d0606;
+		}
+
+		.doc-type {
+			margin-right: func.rem(10);
+		}
+
+		img {
+			margin-right: func.rem(16);
+		}
+	}
+
+	// .added-files__delete-btn
+
+	&__delete-btn {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		color: #7d0606;
+		border-bottom: 1px dashed #7d0606;
+
+		&:hover {
+			border-color: #7d060600;
 		}
 	}
 }

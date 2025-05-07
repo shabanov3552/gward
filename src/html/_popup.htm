@@ -395,4 +395,203 @@
 		</div>
 	</div>
 	<!-- Добавить Прочий документ -->
+
+	<!-- Деталка калькуляции: Изменить параметр -->
+	<div id="change-parameter" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Изменить параметр</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<form action="" class="form form_create-parametr">
+						<div class="form__main">
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Название",
+							"value":""
+							})
+
+							@@include('./_form-select.htm',{
+							"label":"Действие"
+							})
+
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Переменная",
+							"value":""
+							})
+
+							@@include('./_form-select.htm',{
+							"label":"Коэффициент"
+							})
+
+							@@include('./_form-checkbox.htm',{
+							"name":"Сообщить об изменении"
+							})
+						</div>
+						<button type="submit" class="form__button button-black">Сохранить</button>
+						<button type="reset" class="form__button button-transparent">Отмена</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Деталка калькуляции: Изменить параметр -->
+
+	<!-- Деталка калькуляции: Сообщить об ошибке -->
+	<div id="error-report" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Сообщить об ошибке</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<form action="" class="form form_error-report">
+						<div class="form__main">
+							@@include('./_form-textarea.htm',{
+							"modifierClass":"",
+							"label":""
+							})
+						</div>
+						<button type="submit" class="form__button button-black">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Деталка калькуляции: Сообщить об ошибке -->
+
+	<!-- Деталка калькуляции: Закрепить значение -->
+	<div id="value-fix" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Закрепить значение</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<form action="" class="form form_create-parametr">
+						<div class="form__main">
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Курс валюты для фиксации",
+							"value":""
+							})
+							@@include('./_form-checkbox.htm',{
+							"name":"Сообщить об изменении"
+							})
+						</div>
+						<button type="submit" class="form__button button-black">Закрепить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Деталка калькуляции: Закрепить значение -->
+
+	<!-- Деталка калькуляции: Файлы -->
+	<div id="add-files" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__header">
+					<div class="popup__title">Файлы</div>
+					<button data-close type="button" class="popup__close">
+						<svg class="popup__close-svg">
+							<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="popup__main">
+					<form action="" class="form form_add-files">
+						<div class="form__main">
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Ссылка на файл",
+							"value":""
+							})
+
+							@@include('./_form-input.htm',{
+							"modifierClass":"",
+							"label":"Название файла",
+							"value":""
+							})
+							<button type="button" class="form__add button-transparent">+</button>
+						</div>
+						<div class="form__upload">
+							<div class="form__title">Загрузить с локального устройства:</div>
+							@@include('./_file-upload.htm',{
+							"name":""
+							})
+						</div>
+						<button type="submit" class="form__button button-black">Сохранить</button>
+					</form>
+					<div class="added-files">
+						<div class="added-files__section">
+							<div class="added-files__row">
+								<a href="" class="added-files__file">
+									@@include('./_doc-type.htm',{
+									"type":"pdf"
+									})
+									<span>Скан документа</span>
+								</a>
+								<a href="" class="added-files__delete-btn">Удалить</a>
+							</div>
+							<div class="added-files__row">
+								<a href="" class="added-files__file">
+									@@include('./_doc-type.htm',{
+									"type":"doc"
+									})
+									<span>Протокол сертификации</span>
+								</a>
+								<a href="" class="added-files__delete-btn">Удалить</a>
+							</div>
+							<div class="added-files__row">
+								<a href="" class="added-files__file">
+									@@include('./_doc-type.htm',{
+									"type":"doc"
+									})
+									<span>Протокол сертификации 2</span>
+								</a>
+								<a href="" class="added-files__delete-btn">Удалить</a>
+							</div>
+						</div>
+						<div class="added-files__section">
+							<div class="added-files__row">
+								<a href="" class="added-files__file">
+									<img src="@img/icons/dc-documents.svg" alt="">
+									<span>Скан сертификата №63675</span>
+								</a>
+								<a href="" class="added-files__delete-btn">Удалить</a>
+							</div>
+							<div class="added-files__row">
+								<a href="" class="added-files__file">
+									<img src="@img/icons/dc-documents.svg" alt="">
+									<span>Доверительное письмо</span>
+								</a>
+								<a href="" class="added-files__delete-btn">Удалить</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Деталка калькуляции: Файлы -->
+
+
 </div>
