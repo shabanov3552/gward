@@ -1,0 +1,53 @@
+@@include('html/_header.htm',{
+"title":"Фотоальбомы",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">Фотоальбомы</div>
+         <button type="button" data-popup="#create-photo-album" class="action-button button-black">Создать альбом</button>
+      </div>
+      <div class="photo-albums">
+         <div class="photo-albums__grid">
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-1.png" alt=""></div>
+               <a href="" class="photo-albums__link">Технологические этапы произ-водства резиновых перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-2.png" alt=""></div>
+               <a href="" class="photo-albums__link">Линия по производству нитриловых перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-3.png" alt=""></div>
+               <a href="" class="photo-albums__link">Станок для изготовления перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-4.png" alt=""></div>
+               <a href="" class="photo-albums__link">Линия по производству нитриловых перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-5.png" alt=""></div>
+               <a href="" class="photo-albums__link">Станок для изготовления перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-3.png" alt=""></div>
+               <a href="" class="photo-albums__link">Станок для изготовления перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-4.png" alt=""></div>
+               <a href="" class="photo-albums__link">Линия по производству нитриловых перчаток</a>
+            </div>
+            <div class="photo-albums__card">
+               <div class="photo-albums__preview-image"><img src="@img/photo-albums-5.png" alt=""></div>
+               <a href="" class="photo-albums__link">Станок для изготовления перчаток</a>
+            </div>
+         </div>
+         <div class="photo-albums__pagging">
+            @@include('html/_pagging.htm',{})
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

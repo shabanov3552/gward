@@ -1,0 +1,155 @@
+@@include('html/_header.htm',{
+"title":"Check СD",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">Check СD</div>
+      </div>
+      <div class="check-cd">
+         <div class="check-cd__header">
+            <div class="check-cd__search">
+               <form action="" class="form">
+                  @@include('html/_form-input.htm',{
+                  "modifierClass":"",
+                  "label":"Номер ДТ калькуляции",
+                  "value":""
+                  })
+                  <button type="submit" class="form__button button-black">Найти</button>
+               </form>
+            </div>
+            <!-- По нажатию на Найти, выводить одно из этих двух сообщений -->
+            <div class="check-cd__status">
+               <img src="@img/icons/doc-valid.svg" alt="" class="check-cd__status-icon">
+               <div class="check-cd__status-text">Такой номер ДТ есть в списке </div>
+            </div>
+            <div class="check-cd__status">
+               <img src="@img/icons/icon_error.svg" alt="" class="check-cd__status-icon">
+               <div class="check-cd__status-text">Такой калькуляции не найдено, требуется <a href="">создать</a></div>
+            </div>
+         </div>
+         <div class="check-cd__tables">
+            <div class="check-cd__title">История поиска</div>
+            <div class="check-cd__grid">
+               <div class="table check-cd-table">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="table check-cd-table">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="table check-cd-table">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <a href="" class="table__link">10620010/100720/0047448</a>
+                        <div class="table__actions-buttons">
+                           <button type="button" class="table__button table__button_edit"><img src="@img/icons/icon_edit.svg" alt=""></button>
+                           <button type="button" class="table__button table__button_del"><img src="@img/icons/icon_del.svg" alt=""></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

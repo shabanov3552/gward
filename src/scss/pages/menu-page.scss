@@ -1,0 +1,41 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.menu-page {
+
+   // .menu-page__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 30px 32px;
+   }
+
+   // .menu-page__link
+
+   &__link {
+      display: block;
+      background: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+      color: #bf152a;
+      padding: func.rem(0) func.rem(20);
+      padding-bottom: func.rem(26);
+   }
+
+   // .menu-page__image-ibg
+
+   &__image-ibg {
+      height: 277px;
+      margin-bottom: func.rem(16);
+
+      img {
+         object-fit: contain;
+      }
+   }
+}

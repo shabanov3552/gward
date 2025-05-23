@@ -14,6 +14,11 @@
       justify-content: space-between;
       align-items: end;
 
+      @media (max-width:bp.$pc) {
+         grid-template-columns: 1fr;
+         gap: 20px;
+      }
+
       .form {
 
          // .form_docs-list
@@ -27,6 +32,10 @@
             padding-left: func.rem(34);
             padding-right: func.rem(40);
             gap: 85px;
+
+            @media (max-width:bp.$pc) {
+               justify-self: start;
+            }
          }
 
          // .form__cheks
@@ -66,7 +75,11 @@
 
    // .docs-list__sort
 
-   &__sort {}
+   &__sort {
+      @media (max-width:bp.$pc) {
+         justify-self: end;
+      }
+   }
 
    // .docs-list__main
 

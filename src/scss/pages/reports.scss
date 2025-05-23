@@ -1,0 +1,52 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.reports {
+   background: #fff;
+   border-radius: 10px;
+   position: relative;
+   max-width: 836px;
+   padding: func.rem(40);
+
+   &::before {
+      content: '';
+      position: absolute;
+      right: 40px;
+      top: -35px;
+      width: 72px;
+      height: 116px;
+      background: url(../../img/home-section-docs-1.svg);
+   }
+
+   // .reports__list
+
+   &__list {}
+
+   // .reports__link
+
+   &__link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 162%;
+      color: #7d0606;
+
+      &:hover {
+         text-decoration: underline;
+      }
+
+      img {
+         width: 20px;
+         height: 20px;
+         flex: 0 0 20px;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: func.rem(14);
+      }
+   }
+}

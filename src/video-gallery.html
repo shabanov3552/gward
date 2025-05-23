@@ -1,0 +1,61 @@
+@@include('html/_header.htm',{
+"title":"Видео",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">Видео</div>
+         <button type="button" data-popup="#add-video" class="action-button button-black">Добавить видео</button>
+      </div>
+      <div class="video-gallery">
+         <div class="video-gallery__grid">
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-1.png" alt=""></div>
+               <div class="video-gallery__name">Технологические этапы произ-водства резиновых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-2.png" alt=""></div>
+               <div class="video-gallery__name">Линия по производству нитриловых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-3.png" alt=""></div>
+               <div class="video-gallery__name">Станок для изготовления перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-4.png" alt=""></div>
+               <div class="video-gallery__name">Технологические этапы произ-водства резиновых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-1.png" alt=""></div>
+               <div class="video-gallery__name">Линия по производству нитриловых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-5.png" alt=""></div>
+               <div class="video-gallery__name">Технологические этапы произ-водства резиновых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-3.png" alt=""></div>
+               <div class="video-gallery__name">Линия по производству нитриловых перчаток</div>
+            </div>
+            <div class="video-gallery__item">
+               <button type="button" class="video-gallery__edit" data-popup="#edit-video">Редактировать</button>
+               <div class="video-gallery__image"><img src="@img/photo-albums-2.png" alt=""></div>
+               <div class="video-gallery__name">Станок для изготовления перчаток</div>
+            </div>
+         </div>
+         <div class="video-gallery__pagging">
+            @@include('html/_pagging.htm',{})
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

@@ -147,6 +147,18 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 77px 32px;
 
+      .search-result-page & {
+         grid-template-columns: repeat(5, 1fr);
+
+         @media (max-width:bp.$pc) {
+            grid-template-columns: repeat(4, 1fr);
+         }
+
+         @media (max-width:bp.$xxl) {
+            grid-template-columns: repeat(3, 1fr);
+         }
+      }
+
       @media (max-width:bp.$pc) {
          grid-template-columns: repeat(3, 1fr);
       }

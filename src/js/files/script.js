@@ -471,6 +471,9 @@ function dropdownAction(e, ddWrapper, ddActive) {
 
 document.addEventListener('DOMContentLoaded', e => {
    const leftSidebar = document.querySelector('.left-sidebar');
+
+   if (!leftSidebar) return
+
    const menuItems = leftSidebar.querySelectorAll('[data-menu-item]');
    const submenuBlocks = leftSidebar.querySelectorAll('[data-submenu-block]');
    const submenuLinks = leftSidebar.querySelectorAll('[data-submenu-link]');

@@ -1,0 +1,57 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.trading {
+
+   // .trading__descr
+
+   &__descr {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 144%;
+      color: #000;
+      margin-bottom: func.rem(34);
+   }
+
+   // .trading__grid
+
+   &__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+   }
+
+   // .trading__card
+
+   &__card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px 66px;
+      background: #fff;
+      border-radius: 0 20px 0 0;
+      padding: func.rem(35);
+   }
+
+   // .trading__name
+
+   &__name {
+      font-weight: 600;
+      font-size: 26px;
+      color: #000;
+      max-width: 250px;
+   }
+
+   // .trading__link
+
+   &__link {
+      font-weight: 600;
+      font-size: 20px;
+      color: #bf152a;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}

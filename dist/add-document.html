@@ -6,13 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250507181410">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250523145611">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250507181410" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250523145611" rel="stylesheet">
 </head>
 
 <body>
@@ -171,7 +171,7 @@
 					</svg>
 				</a>
 				<div class="header__actions-block">
-					<button type="button" class="header__search">
+					<button type="button" class="header__search" data-popup="#search">
 						<svg class="header__search-icon">
 							<use xlink:href="img/icons/icons.svg#icon_search"></use>
 						</svg>
@@ -438,7 +438,7 @@
 						<div class="share">
 							<div class="share__social">
 								<!-- uSocial -->
-								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250507181410" data-script="usocial" charset="utf-8"></script>
+								<script async src="https://usocial.pro/usocial/usocial.js?uid=21cd4b58eaf61697&v=6.1.5&_v=20250523145611" data-script="usocial" charset="utf-8"></script>
 								<div class="uSocial-Share" data-pid="b7450283dbc9e941ee22b283d6036804" data-type="share" data-options="round-rect,style1,default,absolute,horizontal,size48,eachCounter0,counter0,nomobile,mobile_position_right" data-social="vk,ok,telegram,wa,vi"></div>
 								<!-- /uSocial -->
 							</div>
@@ -464,7 +464,7 @@
 			<div class="popup__wrapper">
 				<div class="popup__content">
 					<div class="popup__header">
-						<div class="popup__title">Спасибо</div>
+						<div class="popup__title">Спасибо за обращение</div>
 						<button data-close type="button" class="popup__close">
 							<svg class="popup__close-svg">
 								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
@@ -472,13 +472,10 @@
 						</button>
 					</div>
 					<div class="popup__main">
-						<div class="popup__text">Мы свяжемся с вами в ближайшее время для уточнения информации</div>
-						<button data-close type="button" class="popup__close">
-							Ok
+						<div class="popup__text">Администратор сайта свяжется с вами в ближайшее время для уточнения вопроса</div>
+						<button data-close type="button" class="popup__close-btn button-black">
+							Хорошо
 						</button>
-						<div class="popup__icon">
-							<img src="img/icons/popup__icon.svg" alt="">
-						</div>
 					</div>
 				</div>
 			</div>
@@ -490,7 +487,7 @@
 			<div class="popup__wrapper">
 				<div class="popup__content">
 					<div class="popup__header">
-						<div class="popup__title">Заказ звонка</div>
+						<div class="popup__title">Обратная связь</div>
 						<button data-close type="button" class="popup__close">
 							<svg class="">
 								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
@@ -498,34 +495,29 @@
 						</button>
 					</div>
 					<div class="popup__main">
-						<div class="popup__text">Оставьте контактные данные и мы вам перезвоним</div>
 						<div class="popup__form">
-							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form">
-								<div class="form__line">
-									<label for="p-callback-2.1" class="form__label">Ваше имя</label>
-									<input id="p-callback-2.1" type="text" class="form__input">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
+							<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form form_callback">
+								<div class="form__main">
+									<div class="form__line ">
+										<label for="" class="form__label">Тема</label>
+										<div class="form__input-chunk">
+											<input id="" type="text" name="" class="form__input" value="">
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
+									<div class="form__line ">
+										<label for="" class="form__label">Сообщение</label>
+										<div class="form__input-chunk">
+											<textarea required id="" autocomplete="off" name="" class="form__input"></textarea>
+											<svg class="form__clear-svg">
+												<use xlink:href="img/icons/icons.svg#input_clear"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
-								<div class="form__line">
-									<label for="p-callback-2.2" class="form__label">Телефон *</label>
-									<input required id="p-callback-2.2" type="tel" class="form__input js_phone">
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__line">
-									<label for="p-callback-2.3" class="form__label">Комментарий</label>
-									<textarea id="p-callback-2.3" autocomplete="off" name="" placeholder="" class="form__input"></textarea>
-									<svg class="form__clear-svg">
-										<use xlink:href="img/icons/icons.svg#input_clear"></use>
-									</svg>
-								</div>
-								<div class="form__footer">
-									<button type="submit" class="form__button btn btn_red">Отправить</button>
-									<div class="form__consent">Отправляя данные, я даю свое <a href="" class="form__consent-link">согласие на обработку перс. данных</a></div>
-								</div>
+								<button type="submit" class="form__button button-black">Отправить</button>
 							</form>
 						</div>
 					</div>
@@ -1249,10 +1241,247 @@
 		</div>
 		<!-- Деталка калькуляции: Файлы -->
 
+		<!-- Поиск -->
+		<div id="search" aria-hidden="true" class="popup popup-search">
+			<div class="popup__wrapper">
+				<form action="" class="popup__content form">
+					<div class="popup__header">
+						<div class="form__line">
+							<input id="" type="text" name="" class="form__input">
+							<svg class="form__clear-svg">
+								<use xlink:href="img/icons/icons.svg#input_clear"></use>
+							</svg>
+							<img src="img/icons/icon_search.svg" alt="" class="form__input-search-icon">
+						</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<div class="live-search">
+							<a href="" class="live-search__link">Перчатки резиновые</a>
+							<a href="" class="live-search__link">Перчатки резиновые в диспенсерах</a>
+							<a href="" class="live-search__link">Перчатки садовые Fiesta</a>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-1.webp" alt=""></div>
+								<a href="" class="live-search__card-link">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-2.webp" alt=""></div>
+								<a href="" class="live-search__card-link">VibroNit Перчатки виброзащитные с нитриловым покрытием</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-3.webp" alt=""></div>
+								<a href="" class="live-search__card-link">VibroHit Перчатки виброзащитные из HPPE-волокна с латексным покрытием</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-4.webp" alt=""></div>
+								<a href="" class="live-search__card-link">VibroSkin Перчатки вибро-защитные из кожи и спилка 1/20</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-5.webp" alt=""></div>
+								<a href="" class="live-search__card-link">ARGO Перчатки виброзащитные многофункциональные спилок/кожа</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-6.webp" alt=""></div>
+								<a href="" class="live-search__card-link">ARGO Перчатки</a>
+							</div>
+							<div class="live-search__card">
+								<div class="live-search__card-ibg"><img src="img/product-card-7.webp" alt=""></div>
+								<a href="" class="live-search__card-link">ARGO Перчатки спилок/кожа</a>
+							</div>
+						</div>
+						<div class="live-search__footer">
+							<button type="submit" class="form__button button-transparent">Показать все</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- Поиск -->
 
+		<!-- Создать фотоальбом -->
+		<div id="create-photo-album" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Создать фотоальбом</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<form action="" class="form form_create-photo-album">
+							<div class="form__main">
+								<div class="form__line ">
+									<label for="" class="form__label">Название</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="file-upload file-upload_photo-cover js-file-upload">
+									<div class="file-upload__name">Обложка</div>
+									<label class="file-upload__label">
+										<!-- data-max-files максимальное колличество файлов -->
+										<!-- data-max-size общий максимальный размер файлов в Мб -->
+										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
+										<div class="file-upload__pseudo-input">
+											<img src="img/icons/file-upload-icon.svg" alt="">
+											<span>Обложка альбома</span>
+										</div>
+									</label>
+									<div class="file-upload__preview"></div>
+								</div>
+								<div class="file-upload file-upload_photos js-file-upload">
+									<div class="file-upload__name">Фотографии</div>
+									<label class="file-upload__label">
+										<!-- data-max-files максимальное колличество файлов -->
+										<!-- data-max-size общий максимальный размер файлов в Мб -->
+										<input type="file" name="file" id="input-file" multiple accept="image.webp, image.webp, .pdf" data-max-files="10" data-max-size="20" class="file-upload__input visually-hidden">
+										<div class="file-upload__pseudo-input">
+											<img src="img/icons/file-upload-icon.svg" alt="">
+											<span>Загрузить фотографии в альбом</span>
+										</div>
+									</label>
+									<div class="file-upload__preview"></div>
+								</div>
+							</div>
+							<button type="submit" class="form__button button-black">Создать</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Создать фотоальбом -->
+
+		<!-- Добавить видео -->
+		<div id="add-video" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Добавить видео</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<form action="" class="form form_add-video">
+							<div class="form__main">
+								<div class="form__line ">
+									<label for="" class="form__label">Название</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="form__line ">
+									<label for="" class="form__label">Ссылка на видеохостинг</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="form__button button-black">Добавить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Добавить видео -->
+
+		<!-- Редактировать видео -->
+		<div id="edit-video" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">Редактировать видео</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<form action="" class="form form_add-video">
+							<div class="form__main">
+								<div class="form__line ">
+									<label for="" class="form__label">Название</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="Технологические этапы производств">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="form__line ">
+									<label for="" class="form__label">Ссылка на видеохостинг</label>
+									<div class="form__input-chunk">
+										<input id="" type="text" name="" class="form__input" value="https://www.youtube.com/watch?v=ME">
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="form__button button-black">Добавить</button>
+						</form>
+						<a href="" class="delete-button button-transparent">Удалить</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Редактировать видео -->
+
+		<!-- Модалка для страницы терминал -->
+		<div id="terminal-calc" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__header">
+						<div class="popup__title">TPE Clear (without color) (TPE)</div>
+						<button data-close type="button" class="popup__close">
+							<svg class="popup__close-svg">
+								<use xlink:href="img/icons/icons.svg#icon_close-modal"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__main">
+						<div class="product-info">
+							<div class="product-info__status">Продано</div>
+							<form action="" class="form form_product-info-error">
+								<div class="form__line ">
+									<label for="" class="form__label">Сообщить об ошибке</label>
+									<div class="form__input-chunk">
+										<textarea required id="" autocomplete="off" name="" class="form__input"></textarea>
+										<svg class="form__clear-svg">
+											<use xlink:href="img/icons/icons.svg#input_clear"></use>
+										</svg>
+									</div>
+								</div>
+								<button type="submit" class="form__button button-transparent">Отправить</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Модалка для страницы терминал -->
 	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250507181410" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="js/app.min.js?_v=20250507181410"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250523145611" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="js/app.min.js?_v=20250523145611"></script>
 </body>
 
 </html>

@@ -1,0 +1,74 @@
+@@include('html/_header.htm',{
+"title":"Данные пользователя",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">Данные пользователя</div>
+         <button type="button" data-popup="#create-photo-album" class="action-button button-black">Создать альбом</button>
+      </div>
+      <div class="cabinet">
+         <div class="cabinet__section">
+            <form action="" class="form form_cabinet">
+               <div class="form__line ">
+                  <label for="" class="form__label">Логин</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="text" name="" class="form__input" value="konstantinov">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="form__line ">
+                  <label for="" class="form__label">Группа пользователей</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="text" name="" class="form__input" value="Крестьяне">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="form__line ">
+                  <label for="" class="form__label">ФИО</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="text" name="" class="form__input" value="Константинов Евгений Петрович">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="form__line ">
+                  <label for="" class="form__label">Телефон</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="tel" name="" class="form__input js_phone" value="89131234567">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="form__line ">
+                  <label for="" class="form__label">E-mail</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="email" name="" class="form__input" value="kons@gward.ru">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+               <div class="form__line ">
+                  <label for="" class="form__label">Пароль</label>
+                  <div class="form__input-chunk">
+                     <input id="" type="password" name="" class="form__input" value="Пароль">
+                     <svg class="form__clear-svg">
+                        <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                     </svg>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

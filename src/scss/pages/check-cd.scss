@@ -1,0 +1,130 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.check-cd {
+
+   // .check-cd__header
+
+   &__header {
+      display: grid;
+      grid-template-columns: 1fr 0.66fr;
+
+      @media (max-width:bp.$pc) {
+         grid-template-columns: 1fr;
+      }
+
+      gap: 22px 58px;
+   }
+
+   // .check-cd__search
+
+   &__search {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(19) func.rem(43) func.rem(18) func.rem(24);
+
+      .form {
+         display: grid;
+         grid-template-columns: 1fr 208px;
+         gap: 32px;
+
+         // .form__line
+
+         &__line {}
+
+         // .form__label
+
+         &__label {
+            flex-shrink: 0;
+         }
+
+         // .form__input-chunk
+
+         &__input-chunk {}
+
+         // .form__input
+
+         &__input {}
+
+         // .form__clear-svg
+
+         &__clear-svg {}
+
+         // .form__button
+
+         &__button {}
+      }
+   }
+
+   // .check-cd__status
+
+   &__status {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(31) func.rem(37);
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      grid-column: 2/3;
+
+      @media (max-width:bp.$pc) {
+         grid-column: auto;
+         justify-self: end;
+      }
+   }
+
+   // .check-cd__status-icon
+
+   &__status-icon {
+      width: 20px;
+      height: 18px;
+      flex: 0 0 20px;
+      object-fit: contain;
+   }
+
+   // .check-cd__status-text
+
+   &__status-text {
+      line-height: 137%;
+
+      a {
+         font-weight: 400;
+         font-size: 16px;
+         line-height: 150%;
+         color: #7d0606;
+         text-decoration: underline dotted;
+         padding-left: func.rem(5);
+         text-underline-position: under;
+
+         &:hover {
+            text-decoration: none;
+         }
+      }
+   }
+
+   // .check-cd__tables
+
+   &__tables {}
+
+   // .check-cd__title
+
+   &__title {
+      font-weight: 600;
+      margin-bottom: func.rem(17);
+   }
+
+   // .check-cd__grid
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 54px;
+
+      @media (max-width:bp.$xxl) {
+         gap: 15px;
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+}

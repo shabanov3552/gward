@@ -1,0 +1,55 @@
+@@include('html/_header.htm',{
+"title":"Поиск",
+"modClass":"search-result-page"
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">По запросу «Перчатки» найдено 240 товаров</div>
+
+         <select name="" data-show-selected data-class-modif="catalog-sort">
+            <option value="1" selected>Показывать по 24</option>
+            <option value="2">Показывать по 40</option>
+            <option value="3">Показывать по 60</option>
+         </select>
+      </div>
+      <div class="catalog">
+
+         <div class="catalog__main">
+            <div class="catalog__content">
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card-1.png",
+               "name":"VibroNit Перчатки виброзащитные с нитриловым покрытием",
+               "article":"Артикул: TPE Clear (without color) "
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card-2.png",
+               "name":"VibroHit Перчатки виброзащитные из HPPE-волокна с латексным покрытием",
+               "article":"Артикул: TPE Clear (without color) "
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card-3.png",
+               "name":"VibroSkin Перчатки вибро-защитные из кожи и спилка 1/20",
+               "article":"Артикул: AP SK410 (XY147 Gward Ural Zima)"
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card-4.png",
+               "name":"ARGO Перчатки виброзащитные многофункциональные спилок/кожа",
+               "article":"Артикул: TPE Clear (without color) "
+               })
+               @@include('html/_product-card.htm',{
+               "src":"img/product-card-5.png",
+               "name":"No-Cut Arthur Перчатки из HPPE-нити со стекловолокном с нитриловым покрытием",
+               "article":"Артикул: TPE Clear (without color) "
+               })
+            </div>
+            <div class="catalog__pagging">
+               @@include('html/_pagging.htm',{})
+            </div>
+         </div>
+
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

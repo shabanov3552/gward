@@ -1,0 +1,709 @@
+@use '../config/breakpoints' as bp;
+@use '../config/variables' as var;
+@use '../config/functions' as func;
+@use '../config/mixins' as mixin;
+
+.work-calc {
+
+   // .work-calc__errors
+
+   &__errors {
+      margin-bottom: func.rem(35);
+   }
+
+   // .work-calc__grid
+
+   &__grid {
+      margin-bottom: func.rem(35);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 56px;
+
+      &:not(:has(.table)),
+      &:not(:has(.work-calc__requirements)) {
+         grid-template-columns: 1fr;
+         gap: 0;
+      }
+
+      // @media (max-width:func.em(1499.98)) {
+      //    grid-template-columns: 1fr;
+      //    gap: 35px;
+      // }
+   }
+
+   // .work-calc__search
+
+   &__search {
+      background: #fff;
+      border-radius: 10px;
+      padding: func.rem(40);
+   }
+
+   // .work-calc__requirements
+
+   &__requirements {
+      .req-table {
+         height: 100%;
+      }
+   }
+}
+
+.form {
+
+   // .form_work-calc
+
+   &_work-calc {
+      .form__title {
+         font-weight: 600;
+         margin-bottom: func.rem(18);
+      }
+
+      .form__main {}
+
+      .form__line {
+         gap: 16px;
+
+         &:not(:last-child) {
+            margin-bottom: func.rem(12);
+         }
+      }
+
+      .form__label {
+         flex: 0 0 190px;
+      }
+
+      .form__btns {
+         margin-top: func.rem(14);
+         margin-left: func.rem(206);
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 14px;
+
+         @media (max-width:bp.$xxl) {
+            grid-template-columns: 1fr;
+         }
+      }
+
+      .form__button {}
+   }
+}
+
+//========================================================================================================================================================
+
+.calcs-list {
+
+   // .calcs-list__title
+
+   &__title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+      margin-bottom: func.rem(13);
+   }
+}
+
+.calculation {
+   position: relative;
+   padding-left: func.rem(14);
+   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.5);
+   border-radius: 10px;
+   background: #fff;
+
+   &:not(:last-child) {
+      margin-bottom: func.rem(20);
+   }
+
+   // .calculation__status
+
+   &__status {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         right: -10px;
+         border: 5px solid transparent;
+      }
+
+      // .calculation__status_red
+
+      &_red {
+         background: #dc3545;
+
+         &::after {
+            border-bottom: 5px solid #dc3545;
+            border-left: 5px solid #dc3545;
+         }
+      }
+
+      // .calculation__status_green
+
+      &_green {
+         background: #28a745;
+
+         &::after {
+            border-bottom: 5px solid #28a745;
+            border-left: 5px solid #28a745;
+         }
+      }
+
+      // .calculation__status_yellow
+
+      &_yellow {
+         background: #ffa005;
+
+         &::after {
+            border-bottom: 5px solid #ffa005;
+            border-left: 5px solid #ffa005;
+         }
+      }
+   }
+
+   // .calculation__main
+
+   &__main {}
+
+   // .calculation__header
+
+   &__header {
+      display: grid;
+      grid-template-columns: 195px 1fr 170px;
+      gap: 50px;
+      padding: func.rem(21) 0;
+      padding-left: func.rem(30);
+      padding-right: func.rem(25);
+   }
+
+   // .calculation__name
+
+   &__name {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 137%;
+      color: #7d0606;
+   }
+
+   // .calculation__info
+
+   &__info {
+      // display: grid;
+      // grid-template-columns: repeat(7, auto);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px 55px;
+
+      @media (max-width:bp.$xxl) {
+         gap: 34px 45px;
+      }
+   }
+
+   // .calculation__info-param
+
+   &__info-param {
+      display: grid;
+      gap: 17px;
+      align-content: start;
+   }
+
+   // .calculation__param-name
+
+   &__param-name {
+      font-style: italic;
+      line-height: 137%;
+   }
+
+   // .calculation__param-value
+
+   &__param-value {
+      font-weight: 600;
+      line-height: 137%;
+   }
+
+   // .calculation__action-btns
+
+   &__action-btns {
+      display: flex;
+      gap: 12px;
+      padding-top: func.rem(9);
+   }
+
+   // .calculation__link
+
+   &__link {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border: 1px solid #4c4c4c;
+      border-radius: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease 0s;
+
+      svg {
+         width: 18px;
+         height: 19px;
+
+         use {
+            transition: all 0.3s ease 0s;
+         }
+      }
+
+      &:hover {
+         background: #ffe6e6;
+         border-color: transparent;
+
+         svg {
+            use {
+               fill: #da7b7b;
+            }
+         }
+      }
+   }
+
+   // .calculation__options
+
+   &__options {
+      .context-menu {
+         &:hover {
+            .context-menu__button {
+               border-color: transparent;
+            }
+         }
+
+         // .context-menu__button
+
+         &__button {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #4c4c4c;
+            border-radius: 9px;
+            background: transparent;
+            gap: 3px;
+
+            span {
+               box-shadow: none;
+               background: #4c4c4c;
+            }
+         }
+
+         // .context-menu__block
+
+         &__block {}
+
+         // .context-menu__list
+
+         &__list {
+            width: max-content;
+         }
+
+         // .context-menu__item
+
+         &__item {
+            padding-left: func.rem(25);
+            padding-right: func.rem(25);
+
+            // .context-menu__item_red
+
+            &_red {}
+         }
+      }
+   }
+
+   // .calculation__spoller-btn
+
+   &__spoller-btn {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border: 1px solid #4c4c4c;
+      border-radius: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease 0s;
+
+      svg {
+         width: 20px;
+         height: 12px;
+
+         use {
+            transition: all 0.3s ease 0s;
+         }
+      }
+
+      &:hover {
+         background: #ffe6e6;
+         border-color: transparent;
+
+         svg {
+            use {
+               fill: #da7b7b;
+            }
+         }
+      }
+   }
+
+   // .calculation__route-info
+
+   &__route-info {
+      padding-left: func.rem(30);
+      padding-right: func.rem(25);
+      padding-bottom: func.rem(25);
+      padding-top: func.rem(16);
+      border-top: 1px solid #b5b5b5;
+   }
+
+   // .calculation__change-status
+
+   &__change-status {
+      margin-bottom: func.rem(30);
+   }
+
+   // .calculation__route-detail
+
+   &__route-detail {}
+}
+
+//========================================================================================================================================================
+
+.route-info {
+
+   // .route-info__header
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: func.rem(23);
+   }
+
+   // .route-info__params
+
+   &__params {
+      display: flex;
+      gap: 15px 66px;
+      flex-wrap: wrap;
+      flex: 1 1 auto;
+      align-items: center;
+   }
+
+   // .route-info__param
+
+   &__param {
+      display: flex;
+   }
+
+   // .route-info__param-name
+
+   &__param-name {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      margin-right: func.rem(12);
+   }
+
+   // .route-info__param-value
+
+   &__param-value {
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+   }
+
+   // .route-info__main
+
+   &__main {}
+
+   // .route-info__stages-list
+
+   &__stages-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      align-items: start;
+      row-gap: 35px;
+      margin-bottom: func.rem(25);
+
+      @media (max-width:bp.$pc) {
+         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+   }
+
+   // .route-info__stage-item
+
+   &__stage-item {
+      padding-right: func.rem(20);
+      padding-top: func.rem(19);
+      text-align: left;
+      position: relative;
+      font-size: 16px;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         background: #000;
+      }
+
+      &::after {
+         content: '';
+         background: #d8d8d8;
+         position: absolute;
+         top: 3px;
+         left: 12px;
+         right: 4px;
+         height: 2px;
+         // width: 100%;
+      }
+
+      &:last-child {
+         &::after {
+            content: none;
+
+         }
+      }
+
+      // .route-info__stage-item_red
+
+      &_red {
+         font-weight: 600;
+         color: #dc3545;
+
+         &::before {
+            background: #dc3545;
+         }
+      }
+
+      // .route-info__stage-item_grey
+
+      &_grey {
+         color: #acacac;
+
+         &::before {
+            background: #cacaca;
+         }
+      }
+   }
+
+   // .route-info__spoller-btn
+
+   &__spoller-btn {}
+}
+
+//========================================================================================================================================================
+
+
+.change-status {
+   background: #f1f1f1;
+   border-radius: 20px;
+   padding: func.rem(18) func.rem(20) func.rem(31) func.rem(33);
+   margin-left: func.rem(-11);
+   margin-right: func.rem(-6);
+   display: flex;
+   justify-content: space-between;
+   align-items: start;
+
+   // .change-status__form
+
+   &__form {
+      flex: 1 1 auto;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: minmax(500px, 740px) auto;
+
+      .form__main {}
+
+      .form__line {
+         gap: 20px;
+         margin-bottom: func.rem(13);
+      }
+
+      .form__label {
+         flex: 0 0 190px;
+      }
+
+      .file-upload {
+         grid-template-columns: 228px 1fr;
+      }
+
+      .file-upload__pseudo-input {
+         width: 100%;
+         padding: func.rem(12) func.rem(10);
+         background: #fff;
+      }
+
+      .file-upload__name:empty {
+         display: none;
+      }
+
+      .form__footer {
+         margin-top: func.rem(62);
+         display: flex;
+         gap: 12px;
+         align-items: start;
+      }
+
+      .form__button {
+         width: 181px;
+      }
+   }
+
+   // .change-status__cancel-btn
+
+   &__cancel-btn {
+      width: 154px;
+      flex: 0 0 154px;
+   }
+}
+
+//========================================================================================================================================================
+
+.route-detail {
+
+   // .route-detail__item
+
+   &__item {
+      padding-left: func.rem(22);
+      padding-bottom: func.rem(35);
+      position: relative;
+
+      &::before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 6px;
+         border-radius: 5px;
+         width: 10px;
+         height: 10px;
+         background: #000;
+      }
+
+      &:not(:last-child) {
+         &::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 19px;
+            bottom: -3px;
+            width: 2px;
+            background: #d8d8d8;
+         }
+      }
+   }
+
+   // .route-detail__date
+
+   &__date {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 137%;
+      color: #000;
+      margin-bottom: func.rem(7);
+   }
+
+   // .route-detail__text
+
+   &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 137%;
+      color: #000;
+      margin-bottom: func.rem(14);
+   }
+
+   // .route-detail__status
+
+   &__status {
+      font-weight: 700;
+   }
+
+   // .route-detail__form
+
+   &__form {
+      display: grid;
+      grid-template-columns: minmax(700px, 1070px) 1fr;
+      gap: 21px;
+      align-items: center;
+
+      @media (max-width:bp.$pc) {
+         grid-template-columns: auto 1fr;
+      }
+
+      .form {
+         display: grid;
+         grid-template-columns: minmax(460px, 738px) repeat(2, auto);
+         align-items: start;
+         gap: 12px;
+
+         @media (max-width:bp.$pc) {
+            grid-template-columns: 460px repeat(2, auto);
+         }
+
+         .form__label:empty {
+            display: none;
+         }
+
+         .form__input {
+            min-height: 48px;
+         }
+
+         // .form__button
+
+         &__button {}
+      }
+   }
+
+   // .route-detail__doc-list
+
+   &__doc-list {}
+
+   // .route-detail__document
+
+   &__document {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      &:not(:last-child) {
+         margin-right: func.rem(10);
+      }
+   }
+
+   // .route-detail__document-name
+
+   &__document-name {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #000;
+   }
+
+   // .route-detail__doc-del-btn
+
+   &__doc-del-btn {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      cursor: pointer;
+
+      svg {
+         width: 100%;
+         height: 100%;
+
+         use {
+            fill: #8a8a8a;
+         }
+      }
+   }
+}

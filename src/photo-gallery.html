@@ -1,0 +1,29 @@
+@@include('html/_header.htm',{
+"title":"Фото",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. -->
+         <div class="page-title">Фото</div>
+         <!-- <button type="button" data-popup="#create-photo-album" class="action-button button-black">Создать альбом</button> -->
+      </div>
+      <div class="photo-gallery">
+         <div class="photo-gallery__grid" data-gallery>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-1.png"><img src="@img/photo-albums-1.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-2.png"><img src="@img/photo-albums-2.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-3.png"><img src="@img/photo-albums-3.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-4.png"><img src="@img/photo-albums-4.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-1.png"><img src="@img/photo-albums-1.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-5.png"><img src="@img/photo-albums-5.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-3.png"><img src="@img/photo-albums-3.png" alt=""></a>
+            <a href="" class="photo-gallery__image-ibg" data-src="@img/photo-albums-2.png"><img src="@img/photo-albums-2.png" alt=""></a>
+         </div>
+         <div class="photo-gallery__pagging">
+            @@include('html/_pagging.htm',{})
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

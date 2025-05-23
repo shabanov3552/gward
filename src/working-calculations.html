@@ -1,0 +1,632 @@
+@@include('html/_header.htm',{
+"title":"Рабочие калькуляции",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Рабочие калькуляции</div>
+         <a href="" class="action-button button-black">Создать новую калькуляцию</a>
+      </div>
+
+      <div class="work-calc">
+         <div class="work-calc__errors">
+            <!-- Комментарий от Глеба. Если ошибок нет, этот блок не выводится -->
+            <div class="table errors-table errors-table_col-5">
+               <div class="table__title">Найдены ошибки</div>
+               <div class="table__head">
+                  <div class="table__name">Калькуляция</div>
+                  <div class="table__name">Параметр</div>
+                  <div class="table__name">Дата</div>
+                  <div class="table__name">Автор</div>
+                  <div class="table__name">Сообщение</div>
+               </div>
+               <div class="table__body">
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <div class="table__text">TPE на Москву 2 контейнера MAERSK</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Стоимость</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">04.05.2007</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Ibragim</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">
+                           <img src="@img/icons/icon_error.svg" alt="">
+                           Что-то творится, будьте осторожны и оглядывайтесь по сторонам
+                        </div>
+                     </div>
+                  </div>
+                  <div class="table__row">
+                     <div class="table__cell">
+                        <div class="table__text">TPE на Москву 2 контейнера MAERSK</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Валютный контроль для 1й предоплаты стоимость</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">04.05.2007</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">Ibragim</div>
+                     </div>
+                     <div class="table__cell">
+                        <div class="table__text">
+                           <img src="@img/icons/icon_error.svg" alt="">
+                           Что-то творится, будьте осторожны и оглядывайтесь по сторонам
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="work-calc__grid">
+            <div class="work-calc__search">
+               <form action="" class="form form_work-calc">
+                  <div class="form__title">Поиск калькуляции</div>
+                  <div class="form__main">
+                     @@include('html/_form-input.htm',{
+                     "modifierClass":"",
+                     "label":"Ключ для поиска",
+                     "value":""
+                     })
+
+                     @@include('html/_form-select.htm',{
+                     "label":"Склад прибытия"
+                     })
+
+                     @@include('html/_form-input.htm',{
+                     "modifierClass":"",
+                     "label":"Артикул",
+                     "value":""
+                     })
+                  </div>
+                  <div class="form__btns">
+                     <button type="submit" class="form__button button-black">Найти</button>
+                     <button type="reset" class="form__button button-transparent">Сбросить</button>
+                  </div>
+               </form>
+            </div>
+            <div class="work-calc__requirements">
+               <!-- Комментарий от Глеба. Если требований нет, этот блок не выводится -->
+               <div class="table req-table">
+                  <div class="table__title">Требуется создать калькуляции</div>
+
+                  <div class="table__body">
+                     <div class="table__row">
+                        <div class="table__cell">
+                           <div class="table__text">
+                              <img src="@img/icons/icon_error.svg" alt="">
+                              10620010/100720/0047448
+                           </div>
+                        </div>
+                     </div>
+                     <div class="table__row">
+                        <div class="table__cell">
+                           <div class="table__text">
+                              <img src="@img/icons/icon_error.svg" alt="">
+                              10620010/130720/0048330
+                           </div>
+                        </div>
+                     </div>
+                     <div class="table__row">
+                        <div class="table__cell">
+                           <div class="table__text">
+                              <img src="@img/icons/icon_error.svg" alt="">
+                              10620010/140720/0048366
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="calcs-list" data-spollers>
+         <div class="calcs-list__title">Список калькуляций</div>
+         <div class="calculation">
+            <div class="calculation__status calculation__status_red">
+               <!-- статус без текста. просто полоска слева три вида _red, _yellow, _green -->
+            </div>
+            <div class="calculation__main">
+               <div class="calculation__header">
+                  <div class="calculation__name">TPE на Москву 2 контейнера MAERSK</div>
+                  <div class="calculation__info">
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">ID</div>
+                        <div class="calculation__param-value">436</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Создана</div>
+                        <div class="calculation__param-value">17.12.2024 в 9:23</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Инвойса</div>
+                        <div class="calculation__param-value">RUSSIA111</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата инвойса</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Контейнера</div>
+                        <div class="calculation__param-value">TRZD1298943</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ ДТ</div>
+                        <div class="calculation__param-value">10620010/100720/0047448</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата ДТ</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                  </div>
+                  <div class="calculation__action-btns">
+                     <a href="" class="calculation__link">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_calc-link"></use>
+                        </svg>
+                     </a>
+                     <div class="calculation__options">
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Изменить</a>
+                                 <a href="" class="context-menu__item">Скопировать</a>
+                                 <a href="" class="context-menu__item">Убрать в архив</a>
+                                 <a href="" class="context-menu__item">Убрать в тестовые</a>
+                                 <a href="" class="context-menu__item context-menu__item_red">Удалить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <button type="button" class="calculation__spoller-btn spoller-btn" data-spoller="route-info-1">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+               <div class="calculation__route-info" data-spoller-content="route-info-1">
+                  <div class="route-info">
+                     <div class="route-info__header">
+                        <div class="route-info__params">
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Маршрут</div>
+                              <div class="route-info__param-value">Яньтянь – Базаиха</div>
+                           </div>
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Склад прибытия</div>
+                              <div class="route-info__param-value">Красноярск, Линейная</div>
+                           </div>
+                        </div>
+                        <button type="button" class="route-info__spoller-btn spoller-btn" data-spoller="route-detail-1">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="route-info__stages-list">
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-1">Погружен на судно</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-1">Прибыл в порт</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-1">На таможенном транзите</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-1">Транзит оформлен, ждет поезда</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-1">Отправлен по ЖД</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-1">Прибыл на станцию назначения</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-1">Прибыл на станцию и подана ДТ</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-1">ДТ выпущена</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-1">Вывезен на склад</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-1">Оприходован</button>
+                     </div>
+                  </div>
+                  <div class="calculation__change-status" data-spoller-content="change-status-1">
+                     <div class="change-status">
+                        <form action="" class="form change-status__form">
+                           <div class="form__main">
+                              @@include('html/_form-select.htm',{
+                              "label":"Изменить на статус:"
+                              })
+                              @@include('html/_form-textarea.htm',{
+                              "modifierClass":"",
+                              "label":"Пояснительный комментарий"
+                              })
+                           </div>
+                           <div class="form__footer">
+                              <button type="submit" class="form__button button-transparent">Отправить</button>
+                              @@include('html/_file-upload.htm',{
+                              "name":""
+                              })
+                           </div>
+                        </form>
+                        <button class="change-status__cancel-btn button-transparent" data-spoller="change-status-1">Отмена</button>
+                     </div>
+                  </div>
+                  <div class="calculation__route-detail" data-spoller-content="route-detail-1">
+                     <div class="route-detail">
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                                 <div class="route-detail__document">
+                                    <div class="route-detail__document-name">protokol 1.pdf</div>
+                                    <div class="route-detail__doc-del-btn">
+                                       <svg>
+                                          <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="calculation">
+            <div class="calculation__status calculation__status_green">
+               <!-- статус без текста. просто полоска слева три вида _red, _yellow, _green -->
+            </div>
+            <div class="calculation__main">
+               <div class="calculation__header">
+                  <div class="calculation__name">TPE на Москву 2 контейнера MAERSK</div>
+                  <div class="calculation__info">
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">ID</div>
+                        <div class="calculation__param-value">436</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Создана</div>
+                        <div class="calculation__param-value">17.12.2024 в 9:23</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Инвойса</div>
+                        <div class="calculation__param-value">RUSSIA111</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата инвойса</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Контейнера</div>
+                        <div class="calculation__param-value">TRZD1298943</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ ДТ</div>
+                        <div class="calculation__param-value">10620010/100720/0047448</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата ДТ</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                  </div>
+                  <div class="calculation__action-btns">
+                     <a href="" class="calculation__link">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_calc-link"></use>
+                        </svg>
+                     </a>
+                     <div class="calculation__options">
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Изменить</a>
+                                 <a href="" class="context-menu__item">Скопировать</a>
+                                 <a href="" class="context-menu__item">Убрать в архив</a>
+                                 <a href="" class="context-menu__item">Убрать в тестовые</a>
+                                 <a href="" class="context-menu__item context-menu__item_red">Удалить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <button type="button" class="calculation__spoller-btn spoller-btn" data-spoller="route-info-2">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+               <div class="calculation__route-info" data-spoller-content="route-info-2">
+                  <div class="route-info">
+                     <div class="route-info__header">
+                        <div class="route-info__params">
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Маршрут</div>
+                              <div class="route-info__param-value">Яньтянь – Базаиха</div>
+                           </div>
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Склад прибытия</div>
+                              <div class="route-info__param-value">Красноярск, Линейная</div>
+                           </div>
+                        </div>
+                        <button type="button" class="route-info__spoller-btn spoller-btn" data-spoller="route-detail-2">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="route-info__stages-list">
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-2">Погружен на судно</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-2">Прибыл в порт</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-2">На таможенном транзите</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-2">Транзит оформлен, ждет поезда</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-2">Отправлен по ЖД</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-2">Прибыл на станцию назначения</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-2">Прибыл на станцию и подана ДТ</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-2">ДТ выпущена</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-2">Вывезен на склад</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-2">Оприходован</button>
+                     </div>
+                  </div>
+                  <div class="calculation__change-status" data-spoller-content="change-status-2">
+                     <div class="change-status">
+                        <form action="" class="form change-status__form">
+                           <div class="form__main">
+                              @@include('html/_form-select.htm',{
+                              "label":"Изменить на статус:"
+                              })
+                              @@include('html/_form-textarea.htm',{
+                              "modifierClass":"",
+                              "label":"Пояснительный комментарий"
+                              })
+                           </div>
+                           <div class="form__footer">
+                              <button type="submit" class="form__button button-transparent">Отправить</button>
+                              @@include('html/_file-upload.htm',{
+                              "name":""
+                              })
+                           </div>
+                        </form>
+                        <button class="change-status__cancel-btn button-transparent" data-spoller="change-status-2">Отмена</button>
+                     </div>
+                  </div>
+                  <div class="calculation__route-detail" data-spoller-content="route-detail-2">
+                     <div class="route-detail">
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                                 <div class="route-detail__document">
+                                    <div class="route-detail__document-name">protokol 1.pdf</div>
+                                    <div class="route-detail__doc-del-btn">
+                                       <svg>
+                                          <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="calculation">
+            <div class="calculation__status calculation__status_yellow">
+               <!-- статус без текста. просто полоска слева три вида _red, _yellow, _green -->
+            </div>
+            <div class="calculation__main">
+               <div class="calculation__header">
+                  <div class="calculation__name">TPE на Москву 2 контейнера MAERSK</div>
+                  <div class="calculation__info">
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">ID</div>
+                        <div class="calculation__param-value">436</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Создана</div>
+                        <div class="calculation__param-value">17.12.2024 в 9:23</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Инвойса</div>
+                        <div class="calculation__param-value">RUSSIA111</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата инвойса</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ Контейнера</div>
+                        <div class="calculation__param-value">TRZD1298943</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">№ ДТ</div>
+                        <div class="calculation__param-value">10620010/100720/0047448</div>
+                     </div>
+                     <div class="calculation__info-param">
+                        <div class="calculation__param-name">Дата ДТ</div>
+                        <div class="calculation__param-value">16.12.2024</div>
+                     </div>
+                  </div>
+                  <div class="calculation__action-btns">
+                     <a href="" class="calculation__link">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_calc-link"></use>
+                        </svg>
+                     </a>
+                     <div class="calculation__options">
+                        <div class="context-menu" data-dropdown>
+                           <button class="context-menu__button" data-dropdown-button><span></span><span></span><span></span></button>
+                           <div class="context-menu__block" data-dropdown-block>
+                              <div class="context-menu__list">
+                                 <a href="" class="context-menu__item">Изменить</a>
+                                 <a href="" class="context-menu__item">Скопировать</a>
+                                 <a href="" class="context-menu__item">Убрать в архив</a>
+                                 <a href="" class="context-menu__item">Убрать в тестовые</a>
+                                 <a href="" class="context-menu__item context-menu__item_red">Удалить</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <button type="button" class="calculation__spoller-btn spoller-btn" data-spoller="route-info-3">
+                        <svg>
+                           <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+               <div class="calculation__route-info" data-spoller-content="route-info-3">
+                  <div class="route-info">
+                     <div class="route-info__header">
+                        <div class="route-info__params">
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Маршрут</div>
+                              <div class="route-info__param-value">Яньтянь – Базаиха</div>
+                           </div>
+                           <div class="route-info__param">
+                              <div class="route-info__param-name">Склад прибытия</div>
+                              <div class="route-info__param-value">Красноярск, Линейная</div>
+                           </div>
+                        </div>
+                        <button type="button" class="route-info__spoller-btn spoller-btn" data-spoller="route-detail-3">
+                           <svg>
+                              <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                           </svg>
+                        </button>
+                     </div>
+                     <div class="route-info__stages-list">
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-3">Погружен на судно</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-3">Прибыл в порт</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-3">На таможенном транзите</button>
+                        <button type="button" class="route-info__stage-item" data-spoller="change-status-3">Транзит оформлен, ждет поезда</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-3">Отправлен по ЖД</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-3">Прибыл на станцию назначения</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_red" data-spoller="change-status-3">Прибыл на станцию и подана ДТ</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-3">ДТ выпущена</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-3">Вывезен на склад</button>
+                        <button type="button" class="route-info__stage-item route-info__stage-item_grey" data-spoller="change-status-3">Оприходован</button>
+                     </div>
+                  </div>
+                  <div class="calculation__change-status" data-spoller-content="change-status-3">
+                     <div class="change-status">
+                        <form action="" class="form change-status__form">
+                           <div class="form__main">
+                              @@include('html/_form-select.htm',{
+                              "label":"Изменить на статус:"
+                              })
+                              @@include('html/_form-textarea.htm',{
+                              "modifierClass":"",
+                              "label":"Пояснительный комментарий"
+                              })
+                           </div>
+                           <div class="form__footer">
+                              <button type="submit" class="form__button button-transparent">Отправить</button>
+                              @@include('html/_file-upload.htm',{
+                              "name":""
+                              })
+                           </div>
+                        </form>
+                        <button class="change-status__cancel-btn button-transparent" data-spoller="change-status-3">Отмена</button>
+                     </div>
+                  </div>
+                  <div class="calculation__route-detail" data-spoller-content="route-detail-3">
+                     <div class="route-detail">
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                                 <div class="route-detail__document">
+                                    <div class="route-detail__document-name">protokol 1.pdf</div>
+                                    <div class="route-detail__doc-del-btn">
+                                       <svg>
+                                          <use xlink:href="img/icons/icons.svg#input_clear"></use>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="route-detail__item">
+                           <div class="route-detail__date">19.12.2024</div>
+                           <div class="route-detail__text">Евгения Лидовская изменил статус на <span class="route-detail__status">Погружен на судно</span></div>
+                           <div class="route-detail__form">
+                              <form action="" class="form">
+                                 @@include('html/_form-textarea.htm',{
+                                 "modifierClass":"",
+                                 "label":""
+                                 })
+                                 <button type="submit" class="form__button button-transparent">Редактировать</button>
+                                 <button type="button" class="form__button button-transparent">Удалить</button>
+                              </form>
+                              <div class="route-detail__doc-list">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})

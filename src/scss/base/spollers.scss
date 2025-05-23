@@ -101,3 +101,42 @@
 	border-radius: func.rem(5);
 	border: 1px solid #eee;
 }
+
+.spoller-btn {
+	width: 48px;
+	height: 48px;
+	flex: 0 0 48px;
+	border: 1px solid #4c4c4c;
+	border-radius: 9px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease 0s;
+
+	svg {
+		width: 20px;
+		height: 12px;
+		transition: all 0.3s ease 0s;
+
+		use {
+			transition: all 0.3s ease 0s;
+		}
+	}
+
+	&:hover {
+		background: #ffe6e6;
+		border-color: transparent;
+
+		svg {
+			use {
+				fill: #da7b7b;
+			}
+		}
+	}
+
+	&._spoller-active {
+		svg {
+			transform: rotate(-180deg);
+		}
+	}
+}

@@ -1,0 +1,559 @@
+@@include('html/_header.htm',{
+"title":"Торговый терминал",
+"modClass":""
+})
+<main class="page">
+   <div class="page__container">
+      @@include('html/_breadcrumbs.htm',{})
+      <div class="page__headline"> <!-- page__headline блок есть почти для всех страниц. Кнопка внутри блока присутствует не на всех страницах -->
+         <div class="page-title">Торговый терминал</div>
+         <!-- <a href="" class="action-button button-black">Создать новую калькуляцию</a> -->
+      </div>
+
+      <div class="terminal">
+         <div class="terminal__section terminal__section_rates">
+            <form action="" class="form form_terminal-rates">
+               <div class="form__grid">
+                  <div class="form__chunk">
+                     @@include('html/_form-input.htm',{
+                     "modifierClass":"",
+                     "label":"Курс доллара",
+                     "value":""
+                     })
+                     <button type="submit" class="form__button button-transparent">Изменить</button>
+                  </div>
+                  <div class="form__chunk">
+                     @@include('html/_form-input.htm',{
+                     "modifierClass":"",
+                     "label":"Курс юаня",
+                     "value":""
+                     })
+                     <button type="submit" class="form__button button-transparent">Изменить</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+
+         <div class="terminal__section terminal__section_filters" data-spollers>
+            <div class="terminal__filter-header">
+               <div class="terminal__title">Поиск и фильтрация</div>
+               <button type="button" data-spoller="filters" class="terminal__spoller-btn spoller-btn _spoller-active">
+                  <svg>
+                     <use xlink:href="img/icons/icons.svg#icon_spoller"></use>
+                  </svg>
+               </button>
+            </div>
+            <div class="terminal__filter-form" data-spoller-content="filters">
+               <form action="" class="form form_terminal-filter">
+                  <div class="form__main">
+                     <div class="form__col">
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"",
+                        "label":"Поиск по номеру контейнера",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"",
+                        "label":"Поиск по номеру ДТ",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"",
+                        "label":"Поиск по номеру коносамента",
+                        "value":""
+                        })
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"",
+                        "label":"Поиск по номеру инвойса",
+                        "value":""
+                        })
+                     </div>
+                     <div class="form__col">
+                        @@include('html/_form-input.htm',{
+                        "modifierClass":"",
+                        "label":"Фильтр по артикулам",
+                        "value":""
+                        })
+                        @@include('html/_form-select.htm',{
+                        "label":"Фильтр по типу калькуляции"
+                        })
+                     </div>
+                  </div>
+                  <div class="form__buttons">
+                     <button type="submit" class="form__button button-black">Найти</button>
+                     <button type="reset" class="form__button button-transparent">Сбросить</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+
+         <div data-tabs class="terminal__calcs">
+            <nav data-tabs-titles class="terminal__navigation">
+               <button type="button" class="terminal__nav-title _tab-active">На продаже</button>
+               <button type="button" class="terminal__nav-title">Проданные</button>
+            </nav>
+            <div data-tabs-body class="terminal__content">
+               <div class="terminal__body">
+                  <div class="terminal-calc">
+                     <div class="terminal-calc__header terminal-calc__header_blue">
+                        <div class="terminal-calc__title">TPE на Москву 2 контейнера MAERSK</div>
+                        <div class="terminal-calc__params">
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Инвойс №</div>
+                              <div class="terminal-calc__value">ZXRP12152020_-2 от 15.12.2020</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">ДТ №</div>
+                              <div class="terminal-calc__value">10620010/050321/0045756</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Контейнер №</div>
+                              <div class="terminal-calc__value">MSKU9040252 ШАНХАЙ — МОСКВА-СИЛИКАТНАЯ</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__info">
+                        <div class="terminal-calc__article">
+                           <div class="terminal-calc__name">Артикул</div>
+                           <a href="" class="terminal-calc__link" data-popup="#terminal-calc">TPE Clear (without color) (TPE)</a>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Количество</div>
+                           <div class="terminal-calc__value">600</div>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Фабрика</div>
+                           <div class="terminal-calc__value">GAOMI JIATE LABOR PROTECTION PRODUCTS CO., LTD</div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__table">
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">Наценка (коэф.)</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.12</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.2</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.31</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.32</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.35</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.62</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">₽ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row terminal-calc__table-row_bg-green">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥/₽ курс</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.29</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.51</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.68</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.76</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.82</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.94</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.02</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.68</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="terminal-calc">
+                     <div class="terminal-calc__header terminal-calc__header_orange">
+                        <div class="terminal-calc__title">TPE на Москву 2 контейнера MAERSK</div>
+                        <div class="terminal-calc__params">
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Инвойс №</div>
+                              <div class="terminal-calc__value">ZXRP12152020_-2 от 15.12.2020</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">ДТ №</div>
+                              <div class="terminal-calc__value">10620010/050321/0045756</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Контейнер №</div>
+                              <div class="terminal-calc__value">MSKU9040252 ШАНХАЙ — МОСКВА-СИЛИКАТНАЯ</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__info">
+                        <div class="terminal-calc__article">
+                           <div class="terminal-calc__name">Артикул</div>
+                           <a href="" class="terminal-calc__link" data-popup="#terminal-calc">TPE Clear (without color) (TPE)</a>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Количество</div>
+                           <div class="terminal-calc__value">600</div>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Фабрика</div>
+                           <div class="terminal-calc__value">GAOMI JIATE LABOR PROTECTION PRODUCTS CO., LTD</div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__table">
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">Наценка (коэф.)</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.12</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.2</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.31</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.32</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.35</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.62</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">₽ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row terminal-calc__table-row_bg-green">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥/₽ курс</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.29</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.51</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.68</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.76</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.82</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.94</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.02</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.68</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="terminal-calc">
+                     <div class="terminal-calc__header terminal-calc__header_red">
+                        <div class="terminal-calc__title">TPE на Москву 2 контейнера MAERSK</div>
+                        <div class="terminal-calc__params">
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Инвойс №</div>
+                              <div class="terminal-calc__value">ZXRP12152020_-2 от 15.12.2020</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">ДТ №</div>
+                              <div class="terminal-calc__value">10620010/050321/0045756</div>
+                           </div>
+                           <div class="terminal-calc__param-item">
+                              <div class="terminal-calc__name">Контейнер №</div>
+                              <div class="terminal-calc__value">MSKU9040252 ШАНХАЙ — МОСКВА-СИЛИКАТНАЯ</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__info">
+                        <div class="terminal-calc__article">
+                           <div class="terminal-calc__name">Артикул</div>
+                           <a href="" class="terminal-calc__link" data-popup="#terminal-calc">TPE Clear (without color) (TPE)</a>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Количество</div>
+                           <div class="terminal-calc__value">600</div>
+                        </div>
+                        <div class="terminal-calc__param-item">
+                           <div class="terminal-calc__name">Фабрика</div>
+                           <div class="terminal-calc__value">GAOMI JIATE LABOR PROTECTION PRODUCTS CO., LTD</div>
+                        </div>
+                     </div>
+                     <div class="terminal-calc__table">
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">Наценка (коэф.)</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.1</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.12</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.2</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.31</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.32</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.35</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_bold">1.62</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">₽ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-red">2.06</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥ мин</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">0.15</div>
+                           </div>
+                        </div>
+                        <div class="terminal-calc__table-row terminal-calc__table-row_bg-green">
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text">¥/₽ курс</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.29</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.51</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.68</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.76</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.82</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">2.94</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.02</div>
+                           </div>
+                           <div class="terminal-calc__cell">
+                              <div class="terminal-calc__text terminal-calc__text_color-green">3.68</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="terminal__body">
+                  Содержимое второго таба
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+@@include('html/_footer.htm',{})
