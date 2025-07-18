@@ -463,7 +463,7 @@ class SelectConstructor {
 				originalSelectSelectedItems.forEach(originalSelectSelectedItem => {
 					originalSelectSelectedItem.removeAttribute('selected');
 				});
-				// Выбираем элементы 
+				// Выбираем элементы
 				const selectSelectedItems = selectItem.querySelectorAll(this.getSelectClass(this.selectClasses.classSelectOptionSelected));
 				selectSelectedItems.forEach(selectSelectedItems => {
 					originalSelect.querySelector(`option[value = "${selectSelectedItems.dataset.value}"]`).setAttribute('selected', 'selected');
@@ -492,7 +492,7 @@ class SelectConstructor {
 	// Реакция на измененение оригинального select
 	selectChange(e) {
 		const originalSelect = e.target;
-		if (e.isTrusted === false) {
+		if (e.isTrusted === false && !e.isForced) {
 			return; // Прерываем, если событие вызвано программно
 		}
 		this.selectBuild(originalSelect);

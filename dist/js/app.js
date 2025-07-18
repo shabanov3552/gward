@@ -6620,7 +6620,7 @@
             }
             selectChange(e) {
                 const originalSelect = e.target;
-                if (e.isTrusted === false) return;
+                if (e.isTrusted === false && !e.isForced) return;
                 this.selectBuild(originalSelect);
                 this.setSelectChange(originalSelect);
             }
