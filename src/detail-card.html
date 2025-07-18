@@ -96,8 +96,53 @@
                <div class="dc-barcode">
                   <div class="dc-barcode__item">
                      <div class="dc-barcode__title">Штрихкод изделия</div>
-                     <div class="dc-barcode__image"><img src="@img/dc-barcode.png" alt=""></div>
-                     <button type="button" class="dc-barcode__button button-black">
+                     <div class="dc-barcode__image">
+                        <svg id="barcode-4" width="234px" height="142px" x="0px" y="0px" viewBox="0 0 234 142" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translate(0,0)">
+                           <rect x="0" y="0" width="234" height="142" style="fill:#ffffff;"></rect>
+                           <g transform="translate(10, 10)" style="fill:#000000;"><text style="font: 20px monospace" text-anchor="start" x="0" y="122">6</text></g>
+                           <g transform="translate(34, 10)" style="fill:#000000;">
+                              <rect x="0" y="0" width="2" height="112"></rect>
+                              <rect x="4" y="0" width="2" height="112"></rect><text style="font: 20px monospace" text-anchor="middle" x="3" y="134"></text>
+                           </g>
+                           <g transform="translate(40, 10)" style="fill:#000000;">
+                              <rect x="2" y="0" width="8" height="100"></rect>
+                              <rect x="12" y="0" width="2" height="100"></rect>
+                              <rect x="16" y="0" width="4" height="100"></rect>
+                              <rect x="24" y="0" width="4" height="100"></rect>
+                              <rect x="30" y="0" width="6" height="100"></rect>
+                              <rect x="40" y="0" width="2" height="100"></rect>
+                              <rect x="46" y="0" width="6" height="100"></rect>
+                              <rect x="54" y="0" width="2" height="100"></rect>
+                              <rect x="60" y="0" width="4" height="100"></rect>
+                              <rect x="68" y="0" width="2" height="100"></rect>
+                              <rect x="72" y="0" width="4" height="100"></rect>
+                              <rect x="82" y="0" width="2" height="100"></rect><text style="font: 20px monospace" text-anchor="middle" x="42" y="122">315415</text>
+                           </g>
+                           <g transform="translate(124, 10)" style="fill:#000000;">
+                              <rect x="2" y="0" width="2" height="112"></rect>
+                              <rect x="6" y="0" width="2" height="112"></rect><text style="font: 20px monospace" text-anchor="middle" x="5" y="134"></text>
+                           </g>
+                           <g transform="translate(134, 10)" style="fill:#000000;">
+                              <rect x="0" y="0" width="4" height="100"></rect>
+                              <rect x="8" y="0" width="4" height="100"></rect>
+                              <rect x="14" y="0" width="2" height="100"></rect>
+                              <rect x="20" y="0" width="6" height="100"></rect>
+                              <rect x="28" y="0" width="4" height="100"></rect>
+                              <rect x="36" y="0" width="4" height="100"></rect>
+                              <rect x="42" y="0" width="2" height="100"></rect>
+                              <rect x="48" y="0" width="6" height="100"></rect>
+                              <rect x="56" y="0" width="4" height="100"></rect>
+                              <rect x="64" y="0" width="4" height="100"></rect>
+                              <rect x="70" y="0" width="2" height="100"></rect>
+                              <rect x="76" y="0" width="2" height="100"></rect><text style="font: 20px monospace" text-anchor="middle" x="42" y="122">151518</text>
+                           </g>
+                           <g transform="translate(218, 10)" style="fill:#000000;">
+                              <rect x="0" y="0" width="2" height="112"></rect>
+                              <rect x="4" y="0" width="2" height="112"></rect><text style="font: 20px monospace" text-anchor="middle" x="3" y="134"></text>
+                           </g>
+                        </svg>
+                     </div>
+                     <button type="button" class="dc-barcode__button js-print-barcode button-black">
                         <img src="@img/icons/icons_print.svg" alt="">
                         <span>Распечатать</span>
                      </button>
@@ -105,7 +150,7 @@
                   <div class="dc-barcode__item">
                      <div class="dc-barcode__title">Штрихкод пачки</div>
                      <div class="dc-barcode__image"><img src="@img/dc-barcode.png" alt=""></div>
-                     <button type="button" class="dc-barcode__button button-black">
+                     <button type="button" class="dc-barcode__button js-print-barcode button-black">
                         <img src="@img/icons/icons_print.svg" alt="">
                         <span>Распечатать</span>
                      </button>
@@ -113,7 +158,7 @@
                   <div class="dc-barcode__item">
                      <div class="dc-barcode__title">Штрихкод коробки</div>
                      <div class="dc-barcode__image"><img src="@img/dc-barcode.png" alt=""></div>
-                     <button type="button" class="dc-barcode__button button-black">
+                     <button type="button" class="dc-barcode__button js-print-barcode button-black">
                         <img src="@img/icons/icons_print.svg" alt="">
                         <span>Распечатать</span>
                      </button>
@@ -268,12 +313,12 @@
                <div data-showmore="items" class="dc-product-spec__sm-block">
                   <div data-showmore-content="10" class="dc-product-spec__sm-content">
                      <div class="dc-product-spec__row">
-                        <div class="dc-product-spec__tippy" data-tippy-content="Текст подсказки">?</div>
+                        <!-- <div class="dc-product-spec__tippy" data-tippy-content="Текст подсказки">?</div> -->
                         <div class="dc-product-spec__name">Материал основы</div>
                         <div class="dc-product-spec__value">
                            <p>Хлопок</p>
                         </div>
-                        <div class="dc-product-spec__tippy" data-tippy-content="Текст подсказки, снимающий все недопонимания. Умещает тонну текста и несет много пользы. Знания - сила.">?</div>
+                        <!-- <div class="dc-product-spec__tippy" data-tippy-content="Текст подсказки, снимающий все недопонимания. Умещает тонну текста и несет много пользы. Знания - сила.">?</div> -->
                      </div>
                      <div class="dc-product-spec__row">
                         <div class="dc-product-spec__tippy" data-tippy-content="Текст подсказки">?</div>

@@ -351,6 +351,11 @@
    }
 
    // .table__text
+   a.table__text {
+      &:hover {
+         text-decoration: underline;
+      }
+   }
 
    &__text {
       overflow-wrap: anywhere;

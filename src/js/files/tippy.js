@@ -45,6 +45,24 @@ if (document.querySelector('.js-template')) {
    });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+   const buttonsEdit = document.querySelectorAll('.table__button_edit');
+   const buttonsDel = document.querySelectorAll('.table__button_del');
+   if (buttonsEdit.length > 0 && buttonsDel.length > 0) {
+      buttonsEdit.forEach(button => {
+         tippy(button, {
+            content: 'Редактировать',
+         })
+      })
+      buttonsDel.forEach(button => {
+         tippy(button, {
+            content: 'Удалить',
+         })
+      })
+   }
+})
+
 // const breakpoint = window.matchMedia("(max-width: 768px)");
 
 // const breakpointChecker = () => {

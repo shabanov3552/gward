@@ -202,6 +202,8 @@ textarea {
 		background: #fff;
 		border-top-left-radius: 10px;
 		padding: func.rem(17) func.rem(30) func.rem(14) func.rem(28);
+		display: grid;
+		gap: 10px;
 	}
 
 	// .form__button-save

@@ -108,6 +108,23 @@
    }
 }
 
+.button-red {
+   color: #fff;
+   background: var(--red-color);
+   border-radius: 10px;
+   font-size: 16px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 400;
+   text-align: center;
+   padding: func.rem(15);
+
+   &:hover {
+      opacity: 0.85;
+   }
+}
+
 .page {
    padding-top: func.rem(30);
 
@@ -118,10 +135,19 @@
       justify-content: space-between;
       margin-bottom: func.rem(18);
       align-items: flex-start;
+      gap: 30px;
 
       .currencies-page & {
          max-width: 836px;
       }
+   }
+
+   // .page__headline-buttons
+
+   &__headline-buttons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
    }
 }
 
@@ -301,6 +327,10 @@
    }
 }
 
+.test {
+   font-size: 20px;
+}
+
 .doc-type {
    font-weight: 700;
    font-size: 16px;
@@ -401,4 +431,15 @@
       bottom: -76px;
       @include mixin.adaptiveValue("right", 325, 50, 0, 1800, 1300);
    }
+}
+
+
+.message {
+   display: block;
+   margin-top: func.rem(30);
+}
+
+.message--success {
+   font-size: 18px;
+   color: #28a745;
 }

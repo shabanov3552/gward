@@ -8989,6 +8989,22 @@
                 instance.setContent(clone);
             }
         });
+        document.addEventListener("DOMContentLoaded", (() => {
+            const buttonsEdit = document.querySelectorAll(".table__button_edit");
+            const buttonsDel = document.querySelectorAll(".table__button_del");
+            if (buttonsEdit.length > 0 && buttonsDel.length > 0) {
+                buttonsEdit.forEach((button => {
+                    tippy_esm(button, {
+                        content: "Редактировать"
+                    });
+                }));
+                buttonsDel.forEach((button => {
+                    tippy_esm(button, {
+                        content: "Удалить"
+                    });
+                }));
+            }
+        }));
         function isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
         }
@@ -16314,6 +16330,18 @@ PERFORMANCE OF THIS SOFTWARE.
                     isDragging = false;
                     document.body.style.userSelect = "";
                 }));
+            }
+        }));
+        document.addEventListener("click", (e => {
+            const target = e.target;
+            if (target.closest(".js-print-barcode")) {
+                const barcode = target.closest(".dc-barcode__item").querySelector(".dc-barcode__image");
+                var mywindow = window.open("", "PRINT");
+                mywindow.document.write(`<html>\n               <head>\n                  ${document.head.innerHTML}\n                  \n                  <style>\n                     .dc-barcode__image {\n                        width: 100vw;\n                        height: 100vh;\n                     }\n                     .dc-barcode__image svg {\n                        width: 100%;\n                        height: 100%;                    \n                     }\n                     .dc-barcode__image img {\n                        width: 100%;\n                        height: 100%;      \n                        object-fit: contain;              \n                     }\n                  </style>\n               </head>\n               <body>\n                  ${barcode.outerHTML}\n               </body>\n               <script>\n                  // document.addEventListener('DOMContentLoaded', () => {\n                     print()\n                     document.close()\n                     close()\n                  // })\n               <\/script>\n            </html>`);
+            }
+            if (target.closest(".file-upload__preview-image")) {
+                let newMindow = window.open();
+                newMindow.document.write(`<html>\n               <head>\n                  <title></title>\n                  <meta charset="UTF-8">\n                  <meta name="format-detection" content="telephone=no">\n                  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n                  <style>\n                     .file-upload__preview-image {\n                        width: 100%;\n                        height: 100%;\n                        object-fit: contain;\n                     }\n                  </style>\n               </head>\n\n               <body>\n                  ${target.closest(".file-upload__preview-image").outerHTML}\n               </body>\n\n            </html>`);
             }
         }));
         window["FLS"] = true;

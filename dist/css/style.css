@@ -259,7 +259,10 @@ textarea::-webkit-scrollbar {
   right: 0;
   background: #fff;
   border-top-left-radius: 10px;
-  padding: 1.0625rem 1.875rem .875rem 1.75rem
+  padding: 1.0625rem 1.875rem .875rem 1.75rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px
 }
 .form__button-save {
   height: 48px
@@ -1518,6 +1521,27 @@ body::after {
 .button-green:hover {
   opacity: .85
 }
+.button-red {
+  color: #fff;
+  background: var(--red-color);
+  border-radius: 10px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 400;
+  text-align: center;
+  padding: .9375rem
+}
+.button-red:hover {
+  opacity: .85
+}
 .page {
   padding-top: 1.875rem
 }
@@ -1531,10 +1555,20 @@ body::after {
   margin-bottom: 1.125rem;
   -webkit-box-align: start;
   -ms-flex-align: start;
-  align-items: flex-start
+  align-items: flex-start;
+  gap: 30px
 }
 .currencies-page .page__headline {
   max-width: 836px
+}
+.page__headline-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 .page-title {
   font-weight: 600;
@@ -1690,6 +1724,9 @@ body::after {
 .context-menu__item_red {
   color: #ffbcbc
 }
+.test {
+  font-size: 20px
+}
 .doc-type {
   font-weight: 700;
   font-size: 16px;
@@ -1750,6 +1787,14 @@ body::after {
   width: 361px;
   height: 414px;
   bottom: -76px
+}
+.message {
+  display: block;
+  margin-top: 1.875rem
+}
+.message--success {
+  font-size: 18px;
+  color: #28a745
 }
 .header {
   padding: .90625rem 0;
@@ -2173,6 +2218,9 @@ body::after {
 .file-upload~.file-upload {
   margin-top: .6875rem
 }
+.file-upload:has(+.form__line) {
+  margin-bottom: .6875rem
+}
 .file-upload__name {
   font-size: 18px;
   font-weight: 400;
@@ -2242,7 +2290,8 @@ body::after {
   border-radius: 5px;
   overflow: hidden;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  cursor: pointer
 }
 .file-upload__remove-preview {
   cursor: pointer;
@@ -2515,6 +2564,9 @@ body::after {
 }
 .req-table .table__cell:first-child {
   padding-left: 2.5rem
+}
+.table a.table__text:hover {
+  text-decoration: underline
 }
 .table__text {
   overflow-wrap: anywhere
@@ -3403,8 +3455,7 @@ body::after {
   -ms-grid-columns: 1fr 124px;
   grid-template-columns: 1fr 124px;
   gap: 20px;
-  -ms-grid-row-align: start;
-  align-self: start
+  max-height: 556px
 }
 .dc-product-photos__slider-main {
   min-width: 0;
@@ -3419,7 +3470,9 @@ body::after {
   grid-column: 2/3;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 1/2
+  grid-row: 1/2;
+  -ms-grid-row-align: start;
+  align-self: start
 }
 .dc-product-photos__slider-thumbs .dc-product-photos__wrapper {
   height: 412px
@@ -3443,7 +3496,9 @@ body::after {
   grid-row: 2/3;
   display: -ms-grid;
   display: grid;
-  gap: 4px
+  gap: 4px;
+  -ms-grid-row-align: end;
+  align-self: end
 }
 .dc-product-photos__nav .swiper-button-next,
 .dc-product-photos__nav .swiper-button-prev {
@@ -3557,7 +3612,9 @@ body::after {
 .dc-barcode__item {
   display: -ms-grid;
   display: grid;
-  justify-items: start
+  justify-items: start;
+  -ms-grid-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto auto
 }
 .dc-barcode__title {
   font-weight: 600;
@@ -3571,8 +3628,11 @@ body::after {
   height: 127px;
   margin-bottom: 1.625rem
 }
-.dc-barcode__image img {
-  max-width: 100%
+.dc-barcode__image img,
+.dc-barcode__image svg {
+  border: 2px dashed #000;
+  max-width: 100%;
+  max-height: 100%
 }
 .dc-barcode__button {
   width: 186px;
@@ -3679,8 +3739,8 @@ body::after {
 .dc-product-spec__row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr)[2] auto;
-  grid-template-columns: auto repeat(2,1fr) auto;
+  -ms-grid-columns: 24px (1fr)[2] 24px;
+  grid-template-columns: 24px repeat(2,1fr) 24px;
   padding: .375rem 1.25rem
 }
 .dc-product-spec__row:nth-child(odd) {
@@ -3716,9 +3776,15 @@ body::after {
 }
 .dc-product-spec__name {
   line-height: 137%;
-  padding-left: 1.25rem
+  padding-left: 1.25rem;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3
 }
 .dc-product-spec__value {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
   padding-right: 1.25rem
 }
 .dc-product-spec__value>*:not(:last-child) {
@@ -4348,10 +4414,10 @@ body::after {
   line-height: 137%;
   color: #7d0606;
   border-right: 9px solid transparent;
-  padding: 1.25rem 0;
-  padding-left: .5625rem;
+  padding: 1.25rem 1.875rem;
   display: block;
-  width: 100%
+  width: 100%;
+  text-align: left
 }
 .const-docs-detail__nav-title:nth-child(odd) {
   background: #f8f8f8
@@ -4387,7 +4453,6 @@ body::after {
   opacity: .8
 }
 .const-docs-detail__doc-link .doc-type {
-  width: 49px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8476,6 +8541,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @media (max-width:87.49875em) {
   [class*=__container] {
     padding: 0 3.125rem
+  }
+  .header__container {
+    padding-left: 6.25rem;
+    padding-right: 3.875rem
   }
   .related-products {
     padding: 1.25rem

@@ -183,10 +183,10 @@
       line-height: 137%;
       color: #7d0606;
       border-right: 9px solid transparent;
-      padding: func.rem(20) func.rem(0);
-      padding-left: func.rem(9);
+      padding: func.rem(20) func.rem(30);
       display: block;
       width: 100%;
+      text-align: left;
 
       &:nth-child(odd) {
          background: #f8f8f8;
@@ -241,7 +241,7 @@
       }
 
       .doc-type {
-         width: 49px;
+         // width: 49px;
          display: flex;
          justify-content: center;
          align-items: center;

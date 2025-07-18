@@ -743,3 +743,77 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 });
 //#endregion
+
+//#region Печать штрихкодов
+document.addEventListener("click", (e) => {
+   const target = e.target;
+
+   if (target.closest('.js-print-barcode')) {
+      const barcode = target.closest('.dc-barcode__item').querySelector('.dc-barcode__image');
+      var mywindow = window.open('', 'PRINT');
+
+      mywindow.document.write(
+         `<html>
+               <head>
+                  ${document.head.innerHTML}
+                  
+                  <style>
+                     .dc-barcode__image {
+                        width: 100vw;
+                        height: 100vh;
+                     }
+                     .dc-barcode__image svg {
+                        width: 100%;
+                        height: 100%;                    
+                     }
+                     .dc-barcode__image img {
+                        width: 100%;
+                        height: 100%;      
+                        object-fit: contain;              
+                     }
+                  </style>
+               </head>
+               <body>
+                  ${barcode.outerHTML}
+               </body>
+               <script>
+                  // document.addEventListener('DOMContentLoaded', () => {
+                     print()
+                     document.close()
+                     close()
+                  // })
+               </script>
+            </html>`
+      )
+   }
+
+
+   if (target.closest('.file-upload__preview-image')) {
+
+      let newMindow = window.open();
+
+      newMindow.document.write(
+         `<html>
+               <head>
+                  <title></title>
+                  <meta charset="UTF-8">
+                  <meta name="format-detection" content="telephone=no">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <style>
+                     .file-upload__preview-image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                     }
+                  </style>
+               </head>
+
+               <body>
+                  ${target.closest('.file-upload__preview-image').outerHTML}
+               </body>
+
+            </html>`
+      )
+   }
+})
+//#endregion

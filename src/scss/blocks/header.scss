@@ -16,6 +16,11 @@
 		padding-left: func.rem(100);
 		padding-right: func.rem(62);
 		max-width: 100%;
+
+		@media (max-width:bp.$xxl) {
+			padding-left: func.rem(100);
+			padding-right: func.rem(62);
+		}
 	}
 
 	// .header__logo

@@ -19,6 +19,10 @@
       margin-top: func.rem(11);
    }
 
+   &:has(+.form__line) {
+      margin-bottom: func.rem(11);
+   }
+
    // .file-upload__name
 
    &__name {
@@ -101,6 +105,7 @@
       border-radius: 5px;
       overflow: hidden;
       object-fit: cover;
+      cursor: pointer;
    }
 
    // .file-upload__remove-preview
