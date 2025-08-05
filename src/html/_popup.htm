@@ -73,7 +73,7 @@
 				</div>
 				<div class="popup__main">
 					<div class="popup__form">
-						<form action="" data-parsley-validate data-parsley-trigger="change" required="" class="form form_callback">
+						<form action="" data-parsley-validate data-parsley-trigger="change" class="form form_callback">
 							<div class="form__main">
 								@@include('./_form-input.htm',{
 								"modifierClass":"",
@@ -115,9 +115,16 @@
 							"label":"Артикул",
 							"value":""
 							})
-							@@include('./_form-select.htm',{
-							"label":"Продавец"
-							})
+							<div class="form__line">
+								<label for="" class="form__label">Продавец</label>
+								<select id="" name="" data-show-selected data-search>
+									<option value="" selected></option>
+									<option value="1">Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
 						</div>
 						<div class="popup-form-edit__main">
 							@@include('./_form-select.htm',{

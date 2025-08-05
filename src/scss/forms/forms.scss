@@ -204,12 +204,14 @@ textarea {
 		padding: func.rem(17) func.rem(30) func.rem(14) func.rem(28);
 		display: grid;
 		gap: 10px;
+		z-index: 5;
 	}
 
 	// .form__button-save
 
 	&__button-save {
 		height: 48px;
+		cursor: pointer;
 
 		.form__fixed-block & {
 			width: 331px;

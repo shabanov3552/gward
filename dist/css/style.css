@@ -262,10 +262,12 @@ textarea::-webkit-scrollbar {
   padding: 1.0625rem 1.875rem .875rem 1.75rem;
   display: -ms-grid;
   display: grid;
-  gap: 10px
+  gap: 10px;
+  z-index: 5
 }
 .form__button-save {
-  height: 48px
+  height: 48px;
+  cursor: pointer
 }
 .form__fixed-block .form__button-save {
   width: 331px
@@ -511,7 +513,8 @@ textarea::-webkit-scrollbar {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 20px
+  gap: 20px;
+  height: 100%
 }
 .select__value:after {
   content: "";
@@ -550,6 +553,21 @@ textarea::-webkit-scrollbar {
   width: 100%;
   background-color: rgba(0,0,0,0);
   height: 100%
+}
+.select__input::-webkit-input-placeholder {
+  color: #000
+}
+.select__input::-moz-placeholder {
+  color: #000
+}
+.select__input:-ms-input-placeholder {
+  color: #000
+}
+.select__input::-ms-input-placeholder {
+  color: #000
+}
+.select__input::placeholder {
+  color: #000
 }
 .select__options {
   color: #000;
@@ -1581,6 +1599,9 @@ body::after {
 }
 .currencies-page .action-button {
   min-width: 139px
+}
+.form__fixed-block .action-button {
+  width: 331px
 }
 .gripper {
   width: 100%;
@@ -3455,7 +3476,7 @@ body::after {
   -ms-grid-columns: 1fr 124px;
   grid-template-columns: 1fr 124px;
   gap: 20px;
-  max-height: 556px
+  height: 556px
 }
 .dc-product-photos__slider-main {
   min-width: 0;
