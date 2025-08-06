@@ -6322,6 +6322,7 @@
                     classSelectTitle: "select__title",
                     classSelectValue: "select__value",
                     classSelectLabel: "select__label",
+                    classSelectSearch: "select__search",
                     classSelectInput: "select__input",
                     classSelectText: "select__text",
                     classSelectLink: "select__link",
@@ -6473,16 +6474,12 @@
                 const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
                 if (selectItemTitle) selectItemTitle.remove();
                 selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
-                originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null;
             }
             getSelectTitleValue(selectItem, originalSelect) {
                 let selectTitleValue = this.getSelectedOptionsData(originalSelect, 2).html;
                 if (originalSelect.multiple && originalSelect.hasAttribute("data-tags")) {
                     selectTitleValue = this.getSelectedOptionsData(originalSelect).elements.map((option => `<span role="button" data-select-id="${selectItem.dataset.id}" data-value="${option.value}" class="_select-tag">${this.getSelectElementContent(option)}</span>`)).join("");
-                    if (originalSelect.dataset.tags && document.querySelector(originalSelect.dataset.tags)) {
-                        document.querySelector(originalSelect.dataset.tags).innerHTML = selectTitleValue;
-                        if (originalSelect.hasAttribute("data-search")) selectTitleValue = false;
-                    }
+                    if (originalSelect.dataset.tags && document.querySelector(originalSelect.dataset.tags)) document.querySelector(originalSelect.dataset.tags).innerHTML = selectTitleValue;
                 }
                 selectTitleValue = selectTitleValue.length ? selectTitleValue : originalSelect.dataset.placeholder ? originalSelect.dataset.placeholder : "";
                 let pseudoAttribute = "";
@@ -6492,10 +6489,8 @@
                     pseudoAttributeClass = ` ${this.selectClasses.classSelectPseudoLabel}`;
                 }
                 this.getSelectedOptionsData(originalSelect).values.length ? selectItem.classList.add(this.selectClasses.classSelectActive) : selectItem.classList.remove(this.selectClasses.classSelectActive);
-                if (originalSelect.hasAttribute("data-search")) return `<div class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${this.selectClasses.classSelectInput}"></span></div>`; else {
-                    const customClass = this.getSelectedOptionsData(originalSelect).elements.length && this.getSelectedOptionsData(originalSelect).elements[0].dataset.class ? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}` : "";
-                    return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
-                }
+                const customClass = this.getSelectedOptionsData(originalSelect).elements.length && this.getSelectedOptionsData(originalSelect).elements[0].dataset.class ? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}` : "";
+                return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
             }
             getSelectElementContent(selectOption) {
                 const selectOptionData = selectOption.dataset.asset ? `${selectOption.dataset.asset}` : "";
@@ -6561,6 +6556,7 @@
             setOptions(selectItem, originalSelect) {
                 const selectItemOptions = this.getSelectElement(selectItem, this.selectClasses.classSelectOptions).selectElement;
                 selectItemOptions.innerHTML = this.getOptions(originalSelect);
+                if (originalSelect.hasAttribute("data-search")) selectItemOptions.insertAdjacentHTML("afterbegin", `\n\t\t\t\t<div class="${this.selectClasses.classSelectSearch}">\n\t\t\t\t\t<input type="text" class="${this.selectClasses.classSelectInput}" placeholder="Поиск...">\n\t\t\t\t\t<svg class="form__clear-svg">\n\t\t\t\t\t\t<use xlink:href="img/icons/icons.svg#input_clear"></use>\n\t\t\t\t\t</svg>\n\t\t\t\t</div>\n\t\t\t`);
             }
             setOptionsPosition(selectItem) {
                 const originalSelect = this.getSelectElement(selectItem).originalSelect;
@@ -6655,12 +6651,10 @@
                 const selectInput = this.getSelectElement(selectItem, this.selectClasses.classSelectInput).selectElement;
                 const selectOptions = this.getSelectElement(selectItem, this.selectClasses.classSelectOptions).selectElement;
                 const selectOptionsItems = selectOptions.querySelectorAll(`.${this.selectClasses.classSelectOption} `);
-                const _this = this;
                 selectInput.addEventListener("input", (function() {
                     selectOptionsItems.forEach((selectOptionsItem => {
                         if (selectOptionsItem.textContent.toUpperCase().includes(selectInput.value.toUpperCase())) selectOptionsItem.hidden = false; else selectOptionsItem.hidden = true;
                     }));
-                    selectOptions.hidden === true ? _this.selectAction(selectItem) : null;
                 }));
             }
             selectCallback(selectItem, originalSelect) {
@@ -17231,12 +17225,13 @@ PERFORMANCE OF THIS SOFTWARE.
                 document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
             }
             if (e.target.closest(".form__clear-svg")) {
-                let input = e.target.closest(".form__line").querySelector(".form__input") || e.target.closest(".form__line").querySelector(".form__txt");
+                let input = e.target.closest(".form__line").querySelector(".form__input") || e.target.closest(".form__line").querySelector(".form__txt") || e.target.closest(".select__search").querySelector(".select__input");
                 input.value = "";
                 input.classList.remove("_form-focus");
                 input.parentElement.classList.remove("_form-focus");
                 e.target.closest(".form__clear-svg").classList.remove("_active");
                 input.style.height = null;
+                if (input.closest(".select__options")) input.closest(".select__options").querySelectorAll(".select__option").forEach((optionElement => optionElement.hidden = false));
             }
             if (e.target.closest(".personal-data__change")) {
                 changeData(e.target);

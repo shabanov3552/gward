@@ -60,6 +60,7 @@ class SelectConstructor {
 			classSelectTitle: "select__title", // Заголовок
 			classSelectValue: "select__value", // Значение в заголовке
 			classSelectLabel: "select__label", // Лабел
+			classSelectSearch: "select__search", // Поле ввода
 			classSelectInput: "select__input", // Поле ввода
 			classSelectText: "select__text", // Оболочка текстовых данных
 			classSelectLink: "select__link", // Ссылка в элементе
@@ -280,7 +281,7 @@ class SelectConstructor {
 		const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement;
 		if (selectItemTitle) selectItemTitle.remove();
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
-		originalSelect.hasAttribute('data-search') ? this.searchActions(selectItem) : null;
+		// originalSelect.hasAttribute('data-search') ? this.searchActions(selectItem) : null;
 	}
 	// Конструктор значения заголовка
 	getSelectTitleValue(selectItem, originalSelect) {
@@ -293,7 +294,7 @@ class SelectConstructor {
 			// Если вывод тегов во внешний блок
 			if (originalSelect.dataset.tags && document.querySelector(originalSelect.dataset.tags)) {
 				document.querySelector(originalSelect.dataset.tags).innerHTML = selectTitleValue;
-				if (originalSelect.hasAttribute('data-search')) selectTitleValue = false;
+				// if (originalSelect.hasAttribute('data-search')) selectTitleValue = false;
 			}
 		}
 		// Значение(я) или плейсхолдер
@@ -308,15 +309,15 @@ class SelectConstructor {
 		// Если есть значение, добавляем класс
 		this.getSelectedOptionsData(originalSelect).values.length ? selectItem.classList.add(this.selectClasses.classSelectActive) : selectItem.classList.remove(this.selectClasses.classSelectActive);
 		// Возвращаем поле ввода для поиска или текст
-		if (originalSelect.hasAttribute('data-search')) {
-			// Выводим поле ввода для поиска
-			return `<div class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${this.selectClasses.classSelectInput}"></span></div>`;
-		} else {
-			// Если выбран элемент со своим классом
-			const customClass = this.getSelectedOptionsData(originalSelect).elements.length && this.getSelectedOptionsData(originalSelect).elements[0].dataset.class ? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}` : '';
-			// Выводим текстовое значение
-			return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
-		}
+		// if (originalSelect.hasAttribute('data-search')) {
+		// 	// Выводим поле ввода для поиска
+		// 	return `<div class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${this.selectClasses.classSelectInput}"></span></div>`;
+		// } else {
+		// }
+		// Если выбран элемент со своим классом
+		const customClass = this.getSelectedOptionsData(originalSelect).elements.length && this.getSelectedOptionsData(originalSelect).elements[0].dataset.class ? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}` : '';
+		// Выводим текстовое значение
+		return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
 	}
 	// Конструктор данных для значения заголовка
 	getSelectElementContent(selectOption) {
@@ -413,6 +414,16 @@ class SelectConstructor {
 		const selectItemOptions = this.getSelectElement(selectItem, this.selectClasses.classSelectOptions).selectElement;
 		// Запускаем конструктор элементов списка (options) и добавляем в тело псевдоселекта
 		selectItemOptions.innerHTML = this.getOptions(originalSelect);
+		if (originalSelect.hasAttribute('data-search')) {
+			selectItemOptions.insertAdjacentHTML('afterbegin', `
+				<div class="${this.selectClasses.classSelectSearch}">
+					<input type="text" class="${this.selectClasses.classSelectInput}" placeholder="Поиск...">
+					<svg class="form__clear-svg">
+						<use xlink:href="img/icons/icons.svg#input_clear"></use>
+					</svg>
+				</div>
+			`)
+		}
 	}
 	// Определяем, где отобразить выпадающий список
 	setOptionsPosition(selectItem) {
@@ -546,7 +557,7 @@ class SelectConstructor {
 				}
 			});
 			// Если список закрыт открываем
-			selectOptions.hidden === true ? _this.selectAction(selectItem) : null;
+			// selectOptions.hidden === true ? _this.selectAction(selectItem) : null;
 		});
 	}
 	// Коллбэк функция

@@ -37,7 +37,10 @@ document.addEventListener("click", function (e) {
    }
    // очистка input по клику на крестик
    if (e.target.closest('.form__clear-svg')) {
-      let input = e.target.closest('.form__line').querySelector('.form__input') || e.target.closest('.form__line').querySelector('.form__txt');
+      let input = e.target.closest('.form__line').querySelector('.form__input') ||
+         e.target.closest('.form__line').querySelector('.form__txt') ||
+         e.target.closest('.select__search').querySelector('.select__input');
+
       input.value = '';
       input.classList.remove('_form-focus');
       input.parentElement.classList.remove('_form-focus');
@@ -45,6 +48,9 @@ document.addEventListener("click", function (e) {
       // Inputmask.remove(input);
       // input.style.height = `auto`;
       input.style.height = null;
+      if (input.closest('.select__options')) {
+         input.closest('.select__options').querySelectorAll('.select__option').forEach(optionElement => optionElement.hidden = false)
+      }
    }
    // автовысота для textarea
    // if (e.target.closest('textarea')) {

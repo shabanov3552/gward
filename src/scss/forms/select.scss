@@ -97,10 +97,32 @@
 	// .select__text
 	&__text {}
 
+	&__search {
+		padding: func.rem(0) func.rem(15);
+		margin-bottom: func.rem(10);
+		position: relative;
+
+		.form__clear-svg {
+			top: 50%;
+			transform: translateY(-50%);
+			right: 17px;
+			border-radius: 100%;
+		}
+	}
+
 	&__input {
 		width: 100%;
 		background-color: transparent;
 		height: 100%;
+
+		// font-size: 18px;
+		border: none;
+		box-shadow: none;
+		border-radius: 28px;
+		background: #ececec;
+		padding-right: 3.75rem;
+		height: 36px;
+		padding: func.rem(0) func.rem(16);
 
 		&::placeholder {
 			color: #000;

@@ -549,10 +549,31 @@ textarea::-webkit-scrollbar {
   row-gap: 8px;
   padding: .9375rem 0
 }
+.select__search {
+  padding: 0 .9375rem;
+  margin-bottom: .625rem;
+  position: relative
+}
+.select__search .form__clear-svg {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 17px;
+  border-radius: 100%
+}
 .select__input {
   width: 100%;
   background-color: rgba(0,0,0,0);
-  height: 100%
+  height: 100%;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 28px;
+  background: #ececec;
+  padding-right: 3.75rem;
+  height: 36px;
+  padding: 0 1rem
 }
 .select__input::-webkit-input-placeholder {
   color: #000

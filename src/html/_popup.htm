@@ -115,16 +115,9 @@
 							"label":"Артикул",
 							"value":""
 							})
-							<div class="form__line">
-								<label for="" class="form__label">Продавец</label>
-								<select id="" name="" data-show-selected data-search>
-									<option value="" selected></option>
-									<option value="1">Пункт №1</option>
-									<option value="2">Пункт №2</option>
-									<option value="3">Пункт №3</option>
-									<option value="4">Пункт №4</option>
-								</select>
-							</div>
+							@@include('./_form-select.htm',{
+							"label":"Продавец"
+							})
 						</div>
 						<div class="popup-form-edit__main">
 							@@include('./_form-select.htm',{
