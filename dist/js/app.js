@@ -17668,9 +17668,23 @@ PERFORMANCE OF THIS SOFTWARE.
         document.addEventListener("click", (e => {
             const target = e.target;
             if (target.closest(".js-print-barcode")) {
+                const title = target.closest(".dc-barcode__item").querySelector(".dc-barcode__title");
                 const barcode = target.closest(".dc-barcode__item").querySelector(".dc-barcode__image");
-                var mywindow = window.open("", "PRINT");
-                mywindow.document.write(`<html>\n               <head>\n                  ${document.head.innerHTML}\n                  \n                  <style>\n                     .dc-barcode__image {\n                        width: 100vw;\n                        height: 100vh;\n                     }\n                     .dc-barcode__image svg {\n                        width: 100%;\n                        height: 100%;                    \n                     }\n                     .dc-barcode__image img {\n                        width: 100%;\n                        height: 100%;      \n                        object-fit: contain;              \n                     }\n                  </style>\n               </head>\n               <body>\n                  ${barcode.outerHTML}\n               </body>\n               <script>\n                  // document.addEventListener('DOMContentLoaded', () => {\n                     print()\n                     document.close()\n                     close()\n                  // })\n               <\/script>\n            </html>`);
+                const iframe = document.createElement("iframe");
+                iframe.style.position = "absolute";
+                iframe.style.left = "-9999px";
+                iframe.style.width = "100vw";
+                iframe.style.height = "100vh";
+                document.body.appendChild(iframe);
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                doc.open();
+                doc.write(`\n      <html>\n         <head>\n            <title>${title.textContent}</title>\n            <style>\n               .dc-barcode__image {width: 100%; height: 100%;}\n               .dc-barcode__image svg {\n                  width: 100%;\n                  height: 100%;                    \n               }\n               .dc-barcode__image img {\n                  width: 100%;\n                  height: 100%;      \n                  object-fit: contain;              \n               }\n            </style>\n         </head>\n         <body>${barcode.outerHTML}</body>\n      </html>\n      `);
+                doc.close();
+                iframe.onload = function() {
+                    iframe.contentWindow.focus();
+                    iframe.contentWindow.print();
+                    setTimeout((() => document.body.removeChild(iframe)), 1e3);
+                };
             }
             if (target.closest(".file-upload__preview-image")) {
                 let newMindow = window.open();
