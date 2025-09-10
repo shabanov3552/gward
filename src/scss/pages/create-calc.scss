@@ -31,6 +31,12 @@
       align-items: center;
       gap: 11px;
 
+      &:hover {
+         .create-calc-steps__step-num {
+            background: #931222;
+         }
+      }
+
       &._active {}
    }
 

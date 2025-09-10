@@ -4731,6 +4731,9 @@ body::after {
   align-items: center;
   gap: 11px
 }
+.create-calc-steps__step:hover .create-calc-steps__step-num {
+  background: #931222
+}
 .create-calc-steps__step-num {
   background: #6c6c6c;
   border-radius: 50%;
